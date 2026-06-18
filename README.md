@@ -1,14 +1,14 @@
 # lean-ksk2026
 
-Public materials for the 2026 lecture notes on measure and integration.
+2026 年度の測度論・積分論講義資料の公開用リポジトリです。
 
-The generated website is served from `docs/` on the `main` branch. The Lean
-formalization is the `NoteKsk` Lake project at the repository root.
+GitHub Pages 用の生成済みサイトは、`main` branch の `docs/` 配下に置いています。
+Lean 形式化はリポジトリ直下の `NoteKsk` Lake project です。
 
 ```bash
 lake exe cache get
 lake build NoteKsk
 ```
 
-The local API documentation under `docs/docs/` is generated only for `NoteKsk`.
-Links to mathlib declarations point to the public mathlib documentation.
+`docs/docs/` 以下のローカル API documentation は `NoteKsk` モジュールだけを対象に
+生成しています。mathlib 宣言へのリンクは公開 mathlib documentation を指します。
