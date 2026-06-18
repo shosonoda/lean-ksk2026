@@ -1,2 +1,19 @@
-# cache and other artifacts produced by Lean's Lake build tool
-.lake/
+.DS_Store
+__pycache__/
+*.pyc
+
+/.lake/
+/lakefile.olean
+/docbuild/.lake/
+/docbuild/lakefile.olean
+
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.xdv

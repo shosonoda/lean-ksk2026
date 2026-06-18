@@ -1,0 +1,312 @@
+/-
+Copyright (c) 2026 Sho Sonoda. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Sho Sonoda
+-/
+import Mathlib
+
+/-!
+# Common definitions for the lecture notes
+
+This file contains shared definitions used by the early chapters:
+
+* the Lean model `Space d` of `ℝ^d`;
+* axis-parallel boxes and their volumes;
+* elementary sets, Jordan outer/inner measure, and Jordan measurability;
+* lightweight predicates for finite additive families.
+-/
+
+noncomputable section
+
+open scoped BigOperators Topology
+open Set MeasureTheory
+
+namespace NoteKsk
+
+/-! ## Extended values and Euclidean spaces -/
+
+/-- Extended real line, used in the informal exposition. -/
+abbrev ExtendedReal : Type := EReal
+
+/-- Nonnegative extended real numbers `[0, ∞]`, mathlib's value type for measures. -/
+abbrev NNExtendedReal : Type := ENNReal
+
+/-- The Lean model of `ℝ^d`. -/
+abbrev Space (d : ℕ) : Type := Fin d → ℝ
+
+/-! ## Boxes and elementary sets -/
+
+/-- A coordinate rectangle is recorded by lower and upper endpoints. -/
+structure Box (d : ℕ) where
+  lower : Space d
+  upper : Space d
+
+namespace Box
+
+variable {d : ℕ}
+
+/-- Open rectangle `∏ i (a_i, b_i)`. -/
+def Ioo (Q : Box d) : Set (Space d) :=
+  Set.pi Set.univ fun i => Set.Ioo (Q.lower i) (Q.upper i)
+
+/-- Left-open/right-closed rectangle `∏ i (a_i, b_i]`. -/
+def Ioc (Q : Box d) : Set (Space d) :=
+  Set.pi Set.univ fun i => Set.Ioc (Q.lower i) (Q.upper i)
+
+/-- Left-closed/right-open rectangle `∏ i [a_i, b_i)`. -/
+def Ico (Q : Box d) : Set (Space d) :=
+  Set.pi Set.univ fun i => Set.Ico (Q.lower i) (Q.upper i)
+
+/-- Closed rectangle `∏ i [a_i, b_i]`. -/
+def Icc (Q : Box d) : Set (Space d) :=
+  Set.Icc Q.lower Q.upper
+
+/-- The formal volume of a rectangle, `∏ i (b_i - a_i)`, as an `ENNReal`. -/
+def volume (Q : Box d) : ENNReal :=
+  ∏ i, ENNReal.ofReal (Q.upper i - Q.lower i)
+
+/-- A nondegenerate finite rectangle. -/
+def Nondegenerate (Q : Box d) : Prop :=
+  ∀ i, Q.lower i < Q.upper i
+
+end Box
+
+/-! ## Standard windows -/
+
+/-- The closed cube `[-R, R]^d`, bundled as a `Box`. -/
+def closedCubeBox (d : ℕ) (R : ℝ) : Box d where
+  lower := fun _ => -R
+  upper := fun _ => R
+
+/-- The closed cube `Q_R = [-R, R]^d` used to localize unbounded sets. -/
+def closedCube (d : ℕ) (R : ℝ) : Set (Space d) :=
+  (closedCubeBox d R).Icc
+
+/--
+The family `𝓔_d`: left half-open rectangles together with the empty set.
+Endpoints are finite real numbers at this stage of the development.
+-/
+def IsLeftHalfOpenBox {d : ℕ} (S : Set (Space d)) : Prop :=
+  S = ∅ ∨ ∃ Q : Box d, Q.Nondegenerate ∧ Q.Ioc = S
+
+/--
+Elementary sets `𝓐_d`: finite disjoint unions of nondegenerate left half-open boxes.
+-/
+def IsElementarySet {d : ℕ} (S : Set (Space d)) : Prop :=
+  ∃ n : ℕ, ∃ Q : Fin n → Box d,
+    (∀ j, (Q j).Nondegenerate) ∧
+    (∀ ⦃i j : Fin n⦄, i ≠ j → Disjoint ((Q i).Ioc) ((Q j).Ioc)) ∧
+    S = ⋃ j, (Q j).Ioc
+
+/--
+The volume assigned to an elementary set.  This is deliberately defined by
+mathlib's `volume` for now; Chapter 2 later proves that this agrees with the
+finite disjoint-box presentation.
+-/
+def elementaryVolume {d : ℕ} (E : Set (Space d)) : ENNReal :=
+  (volume : Measure (Space d)) E
+
+/-- Translate a set by a vector. -/
+def translate {d : ℕ} (A : Set (Space d)) (c : Space d) : Set (Space d) :=
+  (fun x => x + c) '' A
+
+/-! ## Jordan outer and inner content -/
+
+/-- Jordan outer measure: infimum of elementary volumes over elementary supersets. -/
+def jordanOuterMeasure {d : ℕ} (A : Set (Space d)) : ENNReal :=
+  ⨅ E : Set (Space d), ⨅ _hE : IsElementarySet E, ⨅ _hAE : A ⊆ E, elementaryVolume E
+
+/-- Jordan inner measure: supremum of elementary volumes over elementary subsets. -/
+def jordanInnerMeasure {d : ℕ} (A : Set (Space d)) : ENNReal :=
+  ⨆ E : Set (Space d), ⨆ _hE : IsElementarySet E, ⨆ _hEA : E ⊆ A, elementaryVolume E
+
+/--
+Jordan measurability, restricted to bounded sets as in the notes.
+
+The `MeasurableSet` field records the later theorem that Jordan-measurable sets
+are Lebesgue measurable; this lets Chapter 03 use mathlib's countable additivity
+of `volume` without adding another placeholder.
+-/
+def JordanMeasurable {d : ℕ} (A : Set (Space d)) : Prop :=
+  Bornology.IsBounded A ∧ MeasurableSet A ∧ jordanOuterMeasure A = jordanInnerMeasure A
+
+/-- Jordan measure of a Jordan-measurable set, represented by the outer value. -/
+def jordanMeasure {d : ℕ} (A : Set (Space d)) : ENNReal :=
+  jordanOuterMeasure A
+
+/-- Jordan null sets. -/
+def JordanNullSet {d : ℕ} (A : Set (Space d)) : Prop :=
+  jordanOuterMeasure A = 0
+
+/-! ## Finite additive families -/
+
+/-- A finite additive family of subsets. -/
+def FiniteAdditiveFamily {α : Type*} (𝓕 : Set (Set α)) : Prop :=
+  (∅ : Set α) ∈ 𝓕 ∧
+    (∀ A, A ∈ 𝓕 → Aᶜ ∈ 𝓕) ∧
+    (∀ A B, A ∈ 𝓕 → B ∈ 𝓕 → A ∪ B ∈ 𝓕)
+
+/-! ## Abstract measure-theory vocabulary -/
+
+/--
+A σ-algebra on a type.  This is only a lecture-note synonym for mathlib's
+`MeasurableSpace`.
+-/
+abbrev SigmaAlgebra (α : Type*) : Type _ :=
+  MeasurableSpace α
+
+/-- The σ-algebra generated by a family of subsets. -/
+abbrev generatedSigmaAlgebra {α : Type*} (C : Set (Set α)) : MeasurableSpace α :=
+  MeasurableSpace.generateFrom C
+
+/-! ## Measurable maps and measurable functions -/
+
+/-- The inverse-image family `f⁻¹(C)` attached to a family of target sets. -/
+abbrev preimageFamily {α β : Type*} (f : α → β) (C : Set (Set β)) : Set (Set α) :=
+  Set.image (fun s => Set.preimage f s) C
+
+/-- Lecture-note synonym for mathlib's measurable maps. -/
+abbrev MeasurableMap {α β : Type*} [MeasurableSpace α] [MeasurableSpace β]
+    (f : α → β) : Prop :=
+  Measurable f
+
+/-- Extended-real-valued measurable functions on a measurable space. -/
+abbrev MeasurableERealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → EReal // Measurable f }
+
+/-- Real-valued measurable functions on a measurable space. -/
+abbrev MeasurableRealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → ℝ // Measurable f }
+
+/-- Nonnegative extended-real-valued measurable functions. -/
+abbrev NonnegativeMeasurableERealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → EReal // Measurable f ∧ 0 ≤ f }
+
+/-- Pointwise supremum of a sequence of extended-real-valued functions. -/
+def pointwiseSup {α : Type*} (f : ℕ → α → EReal) : α → EReal :=
+  fun x => ⨆ n, f n x
+
+/-- Pointwise infimum of a sequence of extended-real-valued functions. -/
+def pointwiseInf {α : Type*} (f : ℕ → α → EReal) : α → EReal :=
+  fun x => ⨅ n, f n x
+
+/-- Pointwise limsup of a sequence of extended-real-valued functions. -/
+def pointwiseLimsup {α : Type*} (f : ℕ → α → EReal) : α → EReal :=
+  fun x => Filter.limsup (fun n => f n x) Filter.atTop
+
+/-- Pointwise liminf of a sequence of extended-real-valued functions. -/
+def pointwiseLiminf {α : Type*} (f : ℕ → α → EReal) : α → EReal :=
+  fun x => Filter.liminf (fun n => f n x) Filter.atTop
+
+/--
+`P` holds almost everywhere on `E`, expressed using mathlib's restricted
+measure.  This is the formal counterpart of the lecture notation
+`P μ-a.e. on E`.
+-/
+def AlmostEverywhereOn {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (E : Set α) (P : α → Prop) : Prop :=
+  ∀ᵐ x ∂ μ.restrict E, P x
+
+/-- Almost-everywhere equality on a set, expressed using the restricted measure. -/
+def AEEqualOn {α β : Type*} [MeasurableSpace α] [MeasurableSpace β]
+    (μ : Measure α) (E : Set α) (f g : α → β) : Prop :=
+  f =ᵐ[μ.restrict E] g
+
+/-- Almost-everywhere convergence on a set. -/
+def AEConvergesOn {α β : Type*} [MeasurableSpace α] [TopologicalSpace β]
+    (μ : Measure α) (E : Set α) (f : ℕ → α → β) (g : α → β) : Prop :=
+  ∀ᵐ x ∂ μ.restrict E, Filter.Tendsto (fun n : ℕ => f n x) Filter.atTop (𝓝 (g x))
+
+/-! ## Lebesgue integral vocabulary -/
+
+/-- Nonnegative extended-real-valued simple functions. -/
+abbrev SimpleNNFun (α : Type*) [MeasurableSpace α] : Type _ :=
+  MeasureTheory.SimpleFunc α ENNReal
+
+/-- The integral of a nonnegative simple function, using mathlib's `SimpleFunc.lintegral`. -/
+noncomputable abbrev simpleLintegral {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (f : SimpleNNFun α) : ENNReal :=
+  f.lintegral μ
+
+/-- The lower Lebesgue integral of an `ENNReal`-valued function. -/
+noncomputable abbrev lintegralNN {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (f : α → ENNReal) : ENNReal :=
+  ∫⁻ x, f x ∂μ
+
+/-- The lower Lebesgue integral over a subset. -/
+noncomputable abbrev setLintegralNN {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (s : Set α) (f : α → ENNReal) : ENNReal :=
+  ∫⁻ x in s, f x ∂μ
+
+/-- Positive part of a real-valued function, represented as an `ENNReal`-valued function. -/
+noncomputable abbrev positivePart {α : Type*} (f : α → ℝ) : α → ENNReal :=
+  fun x => ENNReal.ofReal (f x)
+
+/-- Negative part of a real-valued function, represented as an `ENNReal`-valued function. -/
+noncomputable abbrev negativePart {α : Type*} (f : α → ℝ) : α → ENNReal :=
+  fun x => ENNReal.ofReal (-f x)
+
+/--
+Positive part of a real-valued function, represented as a real-valued function.
+This is the notation used in Chapter 09 for identities such as
+`f = f⁺ - f⁻`.  The earlier `positivePart` is `ENNReal`-valued because it is
+adapted to lower Lebesgue integrals.
+-/
+noncomputable abbrev realPositivePart {α : Type*} (f : α → ℝ) : α → ℝ :=
+  fun x => max (f x) 0
+
+/--
+Negative part of a real-valued function, represented as a real-valued function.
+This is kept separate from the `ENNReal`-valued `negativePart` used in Chapter 08.
+-/
+noncomputable abbrev realNegativePart {α : Type*} (f : α → ℝ) : α → ℝ :=
+  fun x => max (-f x) 0
+
+/-- Lecture-note synonym for mathlib's Bochner integrability of real-valued functions. -/
+abbrev LebesgueIntegrable {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (f : α → ℝ) : Prop :=
+  Integrable f μ
+
+/-- The signed Lebesgue integral of a real-valued integrable function. -/
+noncomputable abbrev lebesgueIntegral {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (f : α → ℝ) : ℝ :=
+  ∫ x, f x ∂μ
+
+/-- The `L¹` space as mathlib's space of a.e.-equivalence classes of integrable functions. -/
+abbrev L1Space (α : Type*) [MeasurableSpace α] (μ : Measure α) : Type _ :=
+  α →₁[μ] ℝ
+
+/-- Carathéodory measurability for an outer measure. -/
+def CaratheodoryMeasurableSet {α : Type*} (μ : OuterMeasure α) (A : Set α) : Prop :=
+  μ.IsCaratheodory A
+
+/-- The measurable structure consisting of the Carathéodory-measurable sets of an outer measure. -/
+abbrev caratheodoryMeasurableSpace {α : Type*} (μ : OuterMeasure α) : MeasurableSpace α :=
+  μ.caratheodory
+
+/--
+The finite additive family generated by a semiring of sets.
+
+Mathlib represents this as `supClosure C`, the family of finite unions of
+members of `C`.
+-/
+abbrev algebraGeneratedBySemiring {α : Type*} (C : Set (Set α)) : Set (Set α) :=
+  supClosure C
+
+/--
+A premeasure on a semiring, in the sense needed for the Carathéodory--Hahn
+extension theorem: an additive content with countable subadditivity.
+-/
+def IsPremeasureOnSemiring {α : Type*} {C : Set (Set α)}
+    (m : AddContent ENNReal C) : Prop :=
+  m.IsSigmaSubadditive
+
+/--
+The measurable sets in the completion of a measure.  Mathlib calls these
+`NullMeasurableSet`s.
+-/
+def CompletedMeasurableSet {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (A : Set α) : Prop :=
+  NullMeasurableSet A μ
+
+end NoteKsk

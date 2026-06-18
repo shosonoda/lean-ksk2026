@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>測度空間上の積分の性質</title>
+<link rel="next" href="sect0010.html" title="収束定理" />
+<link rel="prev" href="sect0008.html" title="Lebesgue積分" />
+<link rel="up" href="index.html" title="Lecture note on KSK" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Lecture note on KSK</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref"></span> <span class="toc_entry">Riemann積分</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000018"><span class="toc_ref"></span> <span class="toc_entry">Riemann和による定義</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000028"><span class="toc_ref"></span> <span class="toc_entry">Darbouxの上積分と下積分による定義</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000039"><span class="toc_ref"></span> <span class="toc_entry">Riemann可積分関数の例</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000101"><span class="toc_ref"></span> <span class="toc_entry">Riemann可積分でない例</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000114"><span class="toc_ref"></span> <span class="toc_entry">極限と積分の順序交換</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000123"><span class="toc_ref"></span> <span class="toc_entry">順序交換の応用例</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000132"><span class="toc_ref"></span> <span class="toc_entry">Riemann積分の長所と短所</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-2">
+     <li class="">
+  <a href="sect0001.html#a0000000133"><span class="toc_ref"></span> <span class="toc_entry">長所：定義が素朴であり，計算しやすい</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000134"><span class="toc_ref"></span> <span class="toc_entry">短所：無限回操作に対して不安定</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000135"><span class="toc_ref"></span> <span class="toc_entry">原因：Riemann積分の定義が有限和（有限分割\(\mathcal P\)）の極限</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000137"><span class="toc_ref"></span> <span class="toc_entry">技術的課題：無限和（無限分割）にすると何が起きるか</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000139"><span class="toc_ref"></span> <span class="toc_entry">解決策：Lebesgue積分</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000140"><span class="toc_ref"></span> <span class="toc_entry">展望：何が嬉しいか</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000141"><span class="toc_ref"></span> <span class="toc_entry">多くの応用先</span></a>
+ </li>
+
+  </ul>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref"></span> <span class="toc_entry">Jordan測度</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html#a0000000142"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000143"><span class="toc_ref"></span> <span class="toc_entry">\(\mathbb R^d\)の基本集合</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000144"><span class="toc_ref"></span> <span class="toc_entry">\(\mathbb R^d\)のRiemann積分</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000145"><span class="toc_ref"></span> <span class="toc_entry">Jordan測度・Jordan可測</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000146"><span class="toc_ref"></span> <span class="toc_entry">Jordan零集合</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000147"><span class="toc_ref"></span> <span class="toc_entry">Jordan可測性の判定法</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000148"><span class="toc_ref"></span> <span class="toc_entry">Jordan可測集合の性質</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000149"><span class="toc_ref"></span> <span class="toc_entry">Jordan測度の性質</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000150"><span class="toc_ref"></span> <span class="toc_entry">有限加法族・有限加法的測度</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000151"><span class="toc_ref"></span> <span class="toc_entry">概念の整理</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue外測度</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0003.html#a0000000152"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000153"><span class="toc_ref"></span> <span class="toc_entry">動機づけ</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000154"><span class="toc_ref"></span> <span class="toc_entry">拡大実数</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000155"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue外測度の定義</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000156"><span class="toc_ref"></span> <span class="toc_entry">具体例</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000157"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue外測度の性質</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000158"><span class="toc_ref"></span> <span class="toc_entry">Jordan測度との整合</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000159"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue外測度の外正則性</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000160"><span class="toc_ref"></span> <span class="toc_entry">外測度に関する補助定理</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000161"><span class="toc_ref"></span> <span class="toc_entry">解釈</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue内測度</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0004.html#a0000000162"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000163"><span class="toc_ref"></span> <span class="toc_entry">定義</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000164"><span class="toc_ref"></span> <span class="toc_entry">基本性質</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000165"><span class="toc_ref"></span> <span class="toc_entry">具体例</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000166"><span class="toc_ref"></span> <span class="toc_entry">Jordan測度との関係</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000167"><span class="toc_ref"></span> <span class="toc_entry">同値な定義</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000168"><span class="toc_ref"></span> <span class="toc_entry">解釈</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue測度</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0005.html#a0000000169"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html#a0000000170"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue可測集合とLebesgue測度</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html#a0000000171"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue可測集合の性質</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-2">
+     <li class="">
+  <a href="sect0005.html#a0000000172"><span class="toc_ref"></span> <span class="toc_entry">有界閉区間上のLebesgue可測集合</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html#a0000000173"><span class="toc_ref"></span> <span class="toc_entry">全空間上のLebesgue可測集合</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0005.html#sec:lebesgue-measure-properties"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue測度の性質</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html#sec:lebesgue-caratheodory-comparison"><span class="toc_ref"></span> <span class="toc_entry">Carathéodory条件との比較</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html#a0000000174"><span class="toc_ref"></span> <span class="toc_entry">まとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref"></span> <span class="toc_entry">Carathéodory流の測度論</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0006.html#a0000000175"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000176"><span class="toc_ref"></span> <span class="toc_entry">動機づけ</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000177"><span class="toc_ref"></span> <span class="toc_entry">可測空間と測度</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000178"><span class="toc_ref"></span> <span class="toc_entry">外測度とCarathéodory可測性</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000179"><span class="toc_ref"></span> <span class="toc_entry">半加法族と前測度</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000180"><span class="toc_ref"></span> <span class="toc_entry">誘導外測度と拡張定理</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000181"><span class="toc_ref"></span> <span class="toc_entry">Borel集合族</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000182"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue可測性の限界</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000183"><span class="toc_ref"></span> <span class="toc_entry">まとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref"></span> <span class="toc_entry">可測関数</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0007.html#a0000000184"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#a0000000185"><span class="toc_ref"></span> <span class="toc_entry">動機づけ</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#a0000000186"><span class="toc_ref"></span> <span class="toc_entry">可測写像</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#a0000000187"><span class="toc_ref"></span> <span class="toc_entry">可測関数の定義</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#a0000000188"><span class="toc_ref"></span> <span class="toc_entry">基本例</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#a0000000189"><span class="toc_ref"></span> <span class="toc_entry">ベクトル値可測写像と合成</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#a0000000190"><span class="toc_ref"></span> <span class="toc_entry">不等式・極限で作られる関数</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#a0000000191"><span class="toc_ref"></span> <span class="toc_entry">ほとんど至る所（almost everywhere）</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#sec:ae-convergence"><span class="toc_ref"></span> <span class="toc_entry">概収束</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html#a0000000192"><span class="toc_ref"></span> <span class="toc_entry">解釈とまとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue積分</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0008.html#a0000000193"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html#a0000000194"><span class="toc_ref"></span> <span class="toc_entry">単関数の積分</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html#a0000000195"><span class="toc_ref"></span> <span class="toc_entry">非負可測関数の積分</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html#a0000000196"><span class="toc_ref"></span> <span class="toc_entry">零集合と almost everywhere</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html#a0000000197"><span class="toc_ref"></span> <span class="toc_entry">実数値符号付可測関数の積分</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html#a0000000198"><span class="toc_ref"></span> <span class="toc_entry">積分の絶対連続性</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html#a0000000199"><span class="toc_ref"></span> <span class="toc_entry">具体例</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html#a0000000200"><span class="toc_ref"></span> <span class="toc_entry">Riemann積分との関係</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html#a0000000201"><span class="toc_ref"></span> <span class="toc_entry">解釈とまとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active current">
+  <a href="sect0009.html"><span class="toc_ref"></span> <span class="toc_entry">測度空間上の積分の性質</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0009.html#a0000000202"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html#a0000000203"><span class="toc_ref"></span> <span class="toc_entry">準備：正部分と負部分</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html#a0000000204"><span class="toc_ref"></span> <span class="toc_entry">集合に関する性質</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html#a0000000205"><span class="toc_ref"></span> <span class="toc_entry">順序と大きさ</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html#a0000000206"><span class="toc_ref"></span> <span class="toc_entry">線形性</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html#a0000000207"><span class="toc_ref"></span> <span class="toc_entry">計算則のまとめ</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html#a0000000208"><span class="toc_ref"></span> <span class="toc_entry">\(\mathcal L^1\) と \(L^1\) の空間構造</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html#a0000000209"><span class="toc_ref"></span> <span class="toc_entry">解釈とまとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref"></span> <span class="toc_entry">収束定理</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0010.html#a0000000210"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html#a0000000211"><span class="toc_ref"></span> <span class="toc_entry">動機づけ</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html#a0000000212"><span class="toc_ref"></span> <span class="toc_entry">単調収束定理</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html#a0000000213"><span class="toc_ref"></span> <span class="toc_entry">Fatouの補題</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html#a0000000214"><span class="toc_ref"></span> <span class="toc_entry">優収束定理</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html#a0000000215"><span class="toc_ref"></span> <span class="toc_entry">項別積分</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html#a0000000216"><span class="toc_ref"></span> <span class="toc_entry">積分記号下の連続性と微分</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html#a0000000217"><span class="toc_ref"></span> <span class="toc_entry">解釈とまとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0011.html"><span class="toc_ref"></span> <span class="toc_entry">Fubiniと変数変換</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html#a0000000218"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html#a0000000219"><span class="toc_ref"></span> <span class="toc_entry">積測度と切片</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html#a0000000220"><span class="toc_ref"></span> <span class="toc_entry">Tonelliの定理</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html#a0000000221"><span class="toc_ref"></span> <span class="toc_entry">Fubiniの定理</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html#a0000000222"><span class="toc_ref"></span> <span class="toc_entry">Lebesgue測度での積測度</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html#a0000000223"><span class="toc_ref"></span> <span class="toc_entry">変数変換</span></a>
+ </li>
+<li class="">
+  <a href="sect0011.html#a0000000224"><span class="toc_ref"></span> <span class="toc_entry">解釈とまとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref"></span> <span class="toc_entry">Banach空間</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0012.html#a0000000225"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html#a0000000226"><span class="toc_ref"></span> <span class="toc_entry">動機づけ</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html#a0000000227"><span class="toc_ref"></span> <span class="toc_entry">ノルム空間とBanach空間</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html#a0000000228"><span class="toc_ref"></span> <span class="toc_entry">\(C(X)\) と sup-norm</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html#a0000000229"><span class="toc_ref"></span> <span class="toc_entry">\(L^p(X)\) 空間</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html#a0000000230"><span class="toc_ref"></span> <span class="toc_entry">Hölderの不等式とMinkowskiの不等式</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html#a0000000231"><span class="toc_ref"></span> <span class="toc_entry">Riesz–Fischerの定理</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html#a0000000232"><span class="toc_ref"></span> <span class="toc_entry">解釈とまとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0013.html"><span class="toc_ref"></span> <span class="toc_entry">Hilbert空間</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0013.html#a0000000233"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0013.html#a0000000234"><span class="toc_ref"></span> <span class="toc_entry">動機づけ</span></a>
+ </li>
+<li class="">
+  <a href="sect0013.html#a0000000235"><span class="toc_ref"></span> <span class="toc_entry">内積空間とHilbert空間</span></a>
+ </li>
+<li class="">
+  <a href="sect0013.html#a0000000236"><span class="toc_ref"></span> <span class="toc_entry">\(L^2(X)\) はHilbert空間</span></a>
+ </li>
+<li class="">
+  <a href="sect0013.html#a0000000237"><span class="toc_ref"></span> <span class="toc_entry">正規直交系と直交射影</span></a>
+ </li>
+<li class="">
+  <a href="sect0013.html#a0000000238"><span class="toc_ref"></span> <span class="toc_entry">Fourier関数系</span></a>
+ </li>
+<li class="">
+  <a href="sect0013.html#a0000000239"><span class="toc_ref"></span> <span class="toc_entry">解釈とまとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0014.html"><span class="toc_ref"></span> <span class="toc_entry">線形作用素</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0014.html#a0000000240"><span class="toc_ref"></span> <span class="toc_entry">本章の目標</span></a>
+ </li>
+<li class="">
+  <a href="sect0014.html#a0000000241"><span class="toc_ref"></span> <span class="toc_entry">動機づけ</span></a>
+ </li>
+<li class="">
+  <a href="sect0014.html#a0000000242"><span class="toc_ref"></span> <span class="toc_entry">線形作用素と連続性</span></a>
+ </li>
+<li class="">
+  <a href="sect0014.html#a0000000243"><span class="toc_ref"></span> <span class="toc_entry">作用素ノルム</span></a>
+ </li>
+<li class="">
+  <a href="sect0014.html#a0000000244"><span class="toc_ref"></span> <span class="toc_entry">\(\mathcal B(X,Y)\) の完備性</span></a>
+ </li>
+<li class="">
+  <a href="sect0014.html#a0000000245"><span class="toc_ref"></span> <span class="toc_entry">例</span></a>
+ </li>
+<li class="">
+  <a href="sect0014.html#a0000000246"><span class="toc_ref"></span> <span class="toc_entry">解釈とまとめ</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000010"> 測度空間上の積分の性質</h1>
+<h4 id="a0000000202">本章の目標</h4>
+<p> ??で 測度空間上の積分と関数空間 \(\mathcal L^1(X)\)，\(L^1(X)\) を定義した． 本章では，その積分を実際の計算に使うための基本性質を整理する． 特に単調性，線形性，a.e. 不変性，Chebyshev不等式を証明し， 確率論や関数解析で必要になる計算規則を揃える． </p>
+<h1 id="a0000000203"> 準備：正部分と負部分</h1>
+<p>以後，測度空間 \((X,\mathcal M,\mu )\) を固定し，\(f,g\in M(X)\) とする． </p>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:positive-negative-basic-identities">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.1</span>
+    <span class="proposition_thmtitle">基本恒等式</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:positive-negative-basic-identities">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000967"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#def:positive-negative-parts">Definition .15</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.realPositivePart" class="lean_decl">NoteKsk.realPositivePart</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.realNegativePart" class="lean_decl">NoteKsk.realNegativePart</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.realPositivePart_nonneg" class="lean_decl">NoteKsk.Chapter09.realPositivePart_nonneg</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.realNegativePart_nonneg" class="lean_decl">NoteKsk.Chapter09.realNegativePart_nonneg</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.realPositivePart_sub_realNegativePart" class="lean_decl">NoteKsk.Chapter09.realPositivePart_sub_realNegativePart</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.realPositivePart_add_realNegativePart" class="lean_decl">NoteKsk.Chapter09.realPositivePart_add_realNegativePart</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.realPositivePart_mul_realNegativePart" class="lean_decl">NoteKsk.Chapter09.realPositivePart_mul_realNegativePart</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   任意の可測関数 \(f\) に対して \(f=f^+-f^-\)，\(|f|=f^++f^-\)，\(f^+f^-=0\) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000967">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>\(f(x)\ge 0\) のとき \(f^+(x)=f(x)\)，\(f^-(x)=0\) であり， \(f(x){\lt}0\) のとき \(f^+(x)=0\)，\(f^-(x)=-f(x)\) である． したがって各点 \(x\) ごとに上の3つの等式が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integrable-as-difference">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.2</span>
+    <span class="proposition_thmtitle">非負関数による表示</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integrable-as-difference">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000968"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:positive-negative-basic-identities">Proposition .1</a></li>
+          
+          <li><a href="sect0008.html#def:lebesgue-integrable-function">Definition .16</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.realPositivePart_integrable" class="lean_decl">NoteKsk.Chapter09.realPositivePart_integrable</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.realNegativePart_integrable" class="lean_decl">NoteKsk.Chapter09.realNegativePart_integrable</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integrable_iff_exists_integrable_sub_nonneg" class="lean_decl">NoteKsk.Chapter09.integrable_iff_exists_integrable_sub_nonneg</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_eq_sub_of_ae_eq_sub" class="lean_decl">NoteKsk.Chapter09.integral_eq_sub_of_ae_eq_sub</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_eq_realPositivePart_sub_realNegativePart" class="lean_decl">NoteKsk.Chapter09.integral_eq_realPositivePart_sub_realNegativePart</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(f\in \mathcal L^1(X)\) であることと， ある \(u,v\in \mathcal L^1(X)\) が存在して \(u,v\ge 0\) かつ \(f=u-v\) と書けることは同値である． このとき \(\int _X f\, d\mu =\int _X u\, d\mu -\int _X v\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000968">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p><a href="sect0008.html#prop:integral-representation-independence">proposition .17</a>より， \(f=u-v\) と書ければ積分値 \(\int _X u\, d\mu -\int _X v\, d\mu \) は表示に依らない． </p>
+<p>まず \(f\) が可積分なら \(f=f^+-f^-\) であり， \(f^+,f^-\) は非負可積分であるから条件を満たす． </p>
+<p>逆に \(f=u-v\) と書け，\(u,v\) が非負可積分とする． このとき \(f^+\le u\)，\(f^-\le v\) が成り立つ． 実際，\(f(x)\ge 0\) なら \(f^+(x)=f(x)=u(x)-v(x)\le u(x)\) であり，\(f(x){\lt}0\) なら \(f^+(x)=0\le u(x)\) である． \(f^-\le v\) も同様である． したがって<a href="sect0008.html#prop:nonnegative-integral-basic">proposition .9</a>より \(\int _X f^+\, d\mu \le \int _X u\, d\mu {\lt}\infty \)， \(\int _X f^-\, d\mu \le \int _X v\, d\mu {\lt}\infty \) である． よって \(f\) は可積分である． </p>
+
+  </div>
+</div>
+<h1 id="a0000000204"> 集合に関する性質</h1>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-zero-on-null-set">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.3</span>
+    <span class="proposition_thmtitle">零集合上では積分は消える</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-zero-on-null-set">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000969"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#prop:null-set-integral-signed">Proposition .21</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_eq_zero_of_measure_univ_zero" class="lean_decl">NoteKsk.Chapter09.integral_eq_zero_of_measure_univ_zero</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.setIntegral_eq_zero_of_measure_zero" class="lean_decl">NoteKsk.Chapter09.setIntegral_eq_zero_of_measure_zero</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(\mu (X)=0\) で \(f\in \mathcal L^1(X)\) ならば \(\int _X f\, d\mu =0\) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000969">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p><a href="sect0008.html#prop:null-set-integral-signed">proposition .21</a>そのものである． </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-disjoint-additivity">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.4</span>
+    <span class="proposition_thmtitle">互いに素な集合への加法性</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-disjoint-additivity">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000970"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#prop:nonnegative-integral-disjoint-additivity">Proposition .11</a></li>
+          
+          <li><a href="sect0009.html#prop:integrable-as-difference">Proposition .2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.setIntegral_union_of_disjoint" class="lean_decl">NoteKsk.Chapter09.setIntegral_union_of_disjoint</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.setIntegral_union_of_disjoint_of_integrable" class="lean_decl">NoteKsk.Chapter09.setIntegral_union_of_disjoint_of_integrable</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(A,B \subset X\) を互いに素な可測集合とし， \(f\in \mathcal L^1(X)\) とする． このとき \(\int _{A \sqcup B} f\, d\mu =\int _A f\, d\mu +\int _B f\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000970">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>\(f=f^+-f^-\) と書く． \(f^+,f^-\) は非負可積分だから，<a href="sect0008.html#prop:nonnegative-integral-disjoint-additivity">proposition .11</a>より \(\int _{A \sqcup B} f^+\, d\mu =\int _A f^+\, d\mu +\int _B f^+\, d\mu \) および \(\int _{A \sqcup B} f^-\, d\mu =\int _A f^-\, d\mu +\int _B f^-\, d\mu \) が成り立つ． したがって </p>
+<div class="displaymath" id="a0000000971">
+  \[  \int _{A \sqcup B} f\, d\mu =\int _{A \sqcup B} f^+\, d\mu -\int _{A \sqcup B} f^-\, d\mu =\int _A f\, d\mu +\int _B f\, d\mu .  \]
+</div>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-ae-invariance">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.5</span>
+    <span class="proposition_thmtitle">a.e. 不変性</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-ae-invariance">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000972"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#prop:signed-integral-ae-invariance">Proposition .22</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_congr_ae" class="lean_decl">NoteKsk.Chapter09.integral_congr_ae</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integrable_congr_ae" class="lean_decl">NoteKsk.Chapter09.integrable_congr_ae</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_aestrongly_congr" class="lean_decl">NoteKsk.Chapter09.integral_aestrongly_congr</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(f,g\in \mathcal L^1(X)\) とする． もし \(f=g\) a.e. on \(X\) ならば \(\int _X f\, d\mu =\int _X g\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000972">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p><a href="sect0008.html#prop:signed-integral-ae-invariance">proposition .22</a>そのものである． </p>
+
+  </div>
+</div>
+<h1 id="a0000000205"> 順序と大きさ</h1>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-monotonicity">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.6</span>
+    <span class="proposition_thmtitle">単調性</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-monotonicity">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000973"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:integral-ae-invariance">Proposition .5</a></li>
+          
+          <li><a href="sect0008.html#prop:nonnegative-integral-basic">Proposition .9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_mono_ae_real" class="lean_decl">NoteKsk.Chapter09.integral_mono_ae_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_mono_real" class="lean_decl">NoteKsk.Chapter09.integral_mono_real</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(f,g\in \mathcal L^1(X)\) とする． もし \(f\le g\) a.e. on \(X\) ならば \(\int _X f\, d\mu \le \int _X g\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000973">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>零集合上で値を変えても積分値は変わらない （<a href="sect0009.html#prop:integral-ae-invariance">proposition .5</a>）ので，\(f\le g\) が各点で成り立つとしてよい． このとき \(g^+ + f^- \ge f^+ + g^-\) である． 実際，これは \(g^+-g^- \ge f^+-f^-\) と同値である． <a href="sect0008.html#prop:nonnegative-integral-basic">proposition .9</a>を非負関数に適用すると </p>
+<div class="displaymath" id="a0000000974">
+  \[  \int _X g^+\, d\mu +\int _X f^-\, d\mu \ge \int _X f^+\, d\mu +\int _X g^-\, d\mu  \]
+</div>
+<p> である．両辺を移項して \(\int _X f\, d\mu \le \int _X g\, d\mu \) を得る． </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-bound-by-constants">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.7</span>
+    <span class="proposition_thmtitle">定数による評価</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-bound-by-constants">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000975"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:integral-monotonicity">Proposition .6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_bounds_of_ae_const_le" class="lean_decl">NoteKsk.Chapter09.integral_bounds_of_ae_const_le</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(\mu (X){\lt}\infty \) とし，\(a,b \in \mathbb R\) が \(a\le f(x)\le b\) a.e. on \(X\) を満たすとする． このとき \(a\, \mu (X)\le \int _X f\, d\mu \le b\, \mu (X)\) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000975">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>a.e. で \(a1_X\le f\le b1_X\) だから，<a href="sect0009.html#prop:integral-monotonicity">proposition .6</a>より \(\int _X a1_X\, d\mu \le \int _X f\, d\mu \le \int _X b1_X\, d\mu \) である． 定数関数の積分 \(\int _X c1_X\, d\mu =c\, \mu (X)\) を用いれば結論を得る． </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-absolute-value-bound">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.8</span>
+    <span class="proposition_thmtitle">絶対値による評価</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-absolute-value-bound">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000976"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:integral-monotonicity">Proposition .6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.abs_integral_le_integral_abs" class="lean_decl">NoteKsk.Chapter09.abs_integral_le_integral_abs</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.norm_integral_le_integral_norm" class="lean_decl">NoteKsk.Chapter09.norm_integral_le_integral_norm</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(f\in \mathcal L^1(X)\) ならば \(\left|\int _X f\, d\mu \right|\le \int _X |f|\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000976">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>a.e. で \(-|f|\le f\le |f|\) だから，<a href="sect0009.html#prop:integral-monotonicity">proposition .6</a>より \(-\int _X |f|\, d\mu \le \int _X f\, d\mu \le \int _X |f|\, d\mu \) である． したがって絶対値をとればよい． </p>
+
+  </div>
+</div>
+<div class="remark_thmwrapper theorem-style-remark" id="a0000000977">
+  <div class="remark_thmheading">
+    <span class="remark_thmcaption">
+    Remark
+    </span>
+    <span class="remark_thmlabel">44</span>
+    <span class="remark_thmtitle">ベクトル値の場合</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#a0000000977">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="remark_thmcontent">
+  <p> 有限次元ベクトル値関数 \(F:X\to \mathbb R^n\) についても， 絶対値をノルムに置き換えた評価 </p>
+<div class="displaymath" id="a0000000978">
+  \[  \left\| \int _X F\, d\mu \right\|  \le \int _X \| F\| \, d\mu  \]
+</div>
+<p> が成り立つ． この講義のこの段階では，必要なら各成分ごとに実数値関数の積分として読めば十分である． 後でより一般のベクトル値積分を扱うときも，この評価が基本になる． </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-zero-iff-ae-zero">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.9</span>
+    <span class="proposition_thmtitle">積分が \(0\) であることの判定</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-zero-iff-ae-zero">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000979"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:integral-ae-invariance">Proposition .5</a></li>
+          
+          <li><a href="sect0008.html#prop:nonnegative-integral-zero-iff-ae-zero">Proposition .14</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_abs_eq_zero_iff_ae_eq_zero" class="lean_decl">NoteKsk.Chapter09.integral_abs_eq_zero_iff_ae_eq_zero</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(f\in \mathcal L^1(X)\) とする． このとき次は同値である． </p>
+<ol class="enumerate">
+  <li><p>\(\int _X |f|\, d\mu =0\) </p>
+</li>
+  <li><p>\(f=0\) a.e. on \(X\) </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000979">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p><b class="bfseries">(2) \(\Rightarrow \) (1)</b>&#8195;\(|f|=0\) a.e. だから，<a href="sect0009.html#prop:integral-ae-invariance">proposition .5</a>より \(\int _X |f|\, d\mu =0\) である． </p>
+<p><b class="bfseries">(1) \(\Rightarrow \) (2)</b>&#8195;\(|f|\) は非負可測関数であり， <a href="sect0008.html#prop:nonnegative-integral-zero-iff-ae-zero">proposition .14</a>より \(|f|=0\) a.e. on \(X\) である． これは \(f=0\) a.e. と同値である． </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:nonnegative-chebyshev-inequality">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.10</span>
+    <span class="proposition_thmtitle">非負関数のChebyshev不等式</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:nonnegative-chebyshev-inequality">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000980"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#prop:nonnegative-integral-basic">Proposition .9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.chebyshev_lintegral" class="lean_decl">NoteKsk.Chapter09.chebyshev_lintegral</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(f\in M^+(X)\) とし，\(\alpha {\gt}0\) とする． このとき </p>
+<div class="displaymath" id="a0000000981">
+  \[  \mu (\{ x\in X\mid f(x)\ge \alpha \} ) \le \alpha ^{-1}\int _X f\, d\mu  \]
+</div>
+<p> が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000980">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>\(A:=\{ x\in X\mid f(x)\ge \alpha \} \) とおく． すると \(\alpha 1_A\le f\) だから，単調性より \(\alpha \mu (A)=\int _X \alpha 1_A\, d\mu \le \int _X f\, d\mu \) である． 両辺を \(\alpha \) で割ればよい． </p>
+
+  </div>
+</div>
+<div class="corollary_thmwrapper theorem-style-plain" id="prop:chebyshev-inequality">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">.11</span>
+    <span class="corollary_thmtitle">Chebyshev不等式</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:chebyshev-inequality">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000982"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:nonnegative-chebyshev-inequality">Proposition .10</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.chebyshev_integrable_abs" class="lean_decl">NoteKsk.Chapter09.chebyshev_integrable_abs</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>   \(f\in \mathcal L^1(X)\) とし，\(\alpha {\gt}0\) とする． このとき \(\mu (\{ x \in X \mid |f(x)|\ge \alpha \} )\le \alpha ^{-1}\int _X |f|\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000982">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p><a href="sect0009.html#prop:nonnegative-chebyshev-inequality">proposition .10</a>を \(|f|\) に適用すればよい． </p>
+
+  </div>
+</div>
+<div class="remark_thmwrapper theorem-style-remark" id="a0000000983">
+  <div class="remark_thmheading">
+    <span class="remark_thmcaption">
+    Remark
+    </span>
+    <span class="remark_thmlabel">45</span>
+    <span class="remark_thmtitle">Chebyshev不等式の使い途</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#a0000000983">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="remark_thmcontent">
+  <p> Chebyshev不等式は， 「積分で測った大きさ」から「大きい値をとる集合の測度」を評価する道具である． ここでは \(\| f\| _1:=\int _X |f|\, d\mu \) と書くことにすると， </p>
+<div class="displaymath" id="a0000000984">
+  \[  \mu (\{ |f|\ge \alpha \} )\le \frac{\| f\| _1}{\alpha }  \]
+</div>
+<p> である． したがって \(\| f\| _1\) が小さい関数は，大きな値をとる集合も小さい． また \(f\in \mathcal L^1(X)\) なら \(\mu (\{ |f|\ge R\} )\le \| f\| _1/R\to 0\) \((R\to \infty )\) であるから， 可積分関数の大きな値は測度の意味でまれにしか現れない． </p>
+<p>確率測度の場合，これは 「期待値が小さければ，大きな偏差が起こる確率も小さい」 という Markov 不等式そのものである． 確率論で確率変数の尾確率を評価するときに最初に使う基本的な不等式である． </p>
+
+  </div>
+</div>
+<div class="corollary_thmwrapper theorem-style-plain" id="cor:L1-convergence-in-measure">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">.12</span>
+    <span class="corollary_thmtitle">\(L^1\) 収束は測度収束を導く</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#cor:L1-convergence-in-measure">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000985"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:chebyshev-inequality">Corollary .11</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.chebyshev_integrable_abs" class="lean_decl">NoteKsk.Chapter09.chebyshev_integrable_abs</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>   \(f_n-f\in \mathcal L^1(X)\) \((n\in \mathbb N)\) とし， </p>
+<div class="displaymath" id="a0000000986">
+  \[  \int _X |f_n-f|\, d\mu \to 0  \]
+</div>
+<p> とする． このとき任意の \(\varepsilon {\gt}0\) に対して </p>
+<div class="displaymath" id="a0000000987">
+  \[  \mu (\{ x\in X\mid |f_n(x)-f(x)|\ge \varepsilon \} )\to 0  \]
+</div>
+<p> が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000985">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Chebyshev不等式を \(f_n-f\) に適用すると， </p>
+<div class="displaymath" id="a0000000988">
+  \[  \mu (\{ |f_n-f|\ge \varepsilon \} ) \le \varepsilon ^{-1}\int _X |f_n-f|\, d\mu  \]
+</div>
+<p> である． 右辺は \(0\) に収束するので結論を得る． </p>
+
+  </div>
+</div>
+<h1 id="a0000000206"> 線形性</h1>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-homogeneity">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.13</span>
+    <span class="proposition_thmtitle">斉次性</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-homogeneity">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000989"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:integrable-as-difference">Proposition .2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_const_mul_real" class="lean_decl">NoteKsk.Chapter09.integral_const_mul_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_smul" class="lean_decl">NoteKsk.Chapter09.integral_smul</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(f\in \mathcal L^1(X)\)，\(c \in \mathbb R\) とする． このとき \(\int _X cf\, d\mu =c\int _X f\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000989">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>まず \(c\ge 0\) の場合を示す．\(f=f^+-f^-\) だから \(cf=(cf^+)-(cf^-)\) であり，\(cf^+,cf^-\) は非負可積分である． したがって </p>
+<div class="displaymath" id="a0000000990">
+  \[  \int _X cf\, d\mu =\int _X cf^+\, d\mu -\int _X cf^-\, d\mu =c\int _X f^+\, d\mu -c\int _X f^-\, d\mu =c\int _X f\, d\mu .  \]
+</div>
+<p>次に \(c{\lt}0\) とする． このとき \(cf=(-c)(-f)\) であり，\(-c{\gt}0\) だから前半の結果を \(-f\) に適用して \(\int _X cf\, d\mu =(-c)\int _X (-f)\, d\mu =(-c)(-\int _X f\, d\mu )=c\int _X f\, d\mu \) を得る． </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:integral-additivity">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.14</span>
+    <span class="proposition_thmtitle">加法性</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:integral-additivity">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000991"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0008.html#cor:dominated-integrability">Corollary .19</a></li>
+          
+          <li><a href="sect0008.html#prop:integral-representation-independence">Proposition .17</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integrable_add_real" class="lean_decl">NoteKsk.Chapter09.integrable_add_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_add_real" class="lean_decl">NoteKsk.Chapter09.integral_add_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_neg_real" class="lean_decl">NoteKsk.Chapter09.integral_neg_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_sub_real" class="lean_decl">NoteKsk.Chapter09.integral_sub_real</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   \(f,g\in \mathcal L^1(X)\) とする． このとき \(f+g\in \mathcal L^1(X)\) で， \(\int _X (f+g)\, d\mu =\int _X f\, d\mu +\int _X g\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000991">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>まず \(|f+g|\le |f|+|g|\) だから，右辺の可積分性より <a href="sect0008.html#cor:dominated-integrability">corollary .19</a>から \(f+g\) も可積分である． </p>
+<p>次に \(f=f^+-f^-\)，\(g=g^+-g^-\) と書くと \(f+g=(f^++g^+)-(f^-+g^-)\) である． \(f^++g^+\) と \(f^-+g^-\) は非負可積分であるから， ??より </p>
+<div class="displaymath" id="a0000000992">
+  \[  \int _X (f+g)\, d\mu =\int _X (f^++g^+)\, d\mu -\int _X (f^-+g^-)\, d\mu  \]
+</div>
+<p> である． また \(\int _X (f^++g^+)\, d\mu =\int _X f^+\, d\mu +\int _X g^+\, d\mu \) かつ \(\int _X (f^-+g^-)\, d\mu =\int _X f^-\, d\mu +\int _X g^-\, d\mu \) だから， 右辺は \(\int _X f\, d\mu +\int _X g\, d\mu \) に等しい． </p>
+
+  </div>
+</div>
+<div class="corollary_thmwrapper theorem-style-plain" id="cor:integral-finite-sum">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">.15</span>
+    <span class="corollary_thmtitle">有限和</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#cor:integral-finite-sum">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000993"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:integral-additivity">Proposition .14</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_finset_sum" class="lean_decl">NoteKsk.Chapter09.integral_finset_sum</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>   \(f_1,\dots ,f_n\in \mathcal L^1(X)\) とすると \(\int _X (\sum _{k=1}^n f_k)\, d\mu =\sum _{k=1}^n \int _X f_k\, d\mu \) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000993">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p><a href="sect0009.html#prop:integral-additivity">proposition .14</a>を繰り返し用いればよい． </p>
+
+  </div>
+</div>
+<h1 id="a0000000207"> 計算則のまとめ</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:lebesgue-integral-basic-formulas">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">.16</span>
+    <span class="theorem_thmtitle">測度空間上の積分の基本公式</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#thm:lebesgue-integral-basic-formulas">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000994"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:integral-zero-on-null-set">Proposition .3</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-ae-invariance">Proposition .5</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-monotonicity">Proposition .6</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-homogeneity">Proposition .13</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-additivity">Proposition .14</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-absolute-value-bound">Proposition .8</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-zero-iff-ae-zero">Proposition .9</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-disjoint-additivity">Proposition .4</a></li>
+          
+          <li><a href="sect0009.html#prop:chebyshev-inequality">Corollary .11</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_eq_zero_of_measure_univ_zero" class="lean_decl">NoteKsk.Chapter09.integral_eq_zero_of_measure_univ_zero</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_aestrongly_congr" class="lean_decl">NoteKsk.Chapter09.integral_aestrongly_congr</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_mono_ae_real" class="lean_decl">NoteKsk.Chapter09.integral_mono_ae_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_const_mul_real" class="lean_decl">NoteKsk.Chapter09.integral_const_mul_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_add_real" class="lean_decl">NoteKsk.Chapter09.integral_add_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.abs_integral_le_integral_abs" class="lean_decl">NoteKsk.Chapter09.abs_integral_le_integral_abs</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_abs_eq_zero_iff_ae_eq_zero" class="lean_decl">NoteKsk.Chapter09.integral_abs_eq_zero_iff_ae_eq_zero</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.setIntegral_union_of_disjoint_of_integrable" class="lean_decl">NoteKsk.Chapter09.setIntegral_union_of_disjoint_of_integrable</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.chebyshev_integrable_abs" class="lean_decl">NoteKsk.Chapter09.chebyshev_integrable_abs</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   \(f,g\in \mathcal L^1(X)\) とする． このとき次が成り立つ． </p>
+<ol class="enumerate">
+  <li><p>\(\mu (X)=0\) なら \(\int _X f\, d\mu =0\) </p>
+</li>
+  <li><p>\(f=g\) a.e. なら \(\int _X f\, d\mu =\int _X g\, d\mu \) </p>
+</li>
+  <li><p>\(f\le g\) a.e. なら \(\int _X f\, d\mu \le \int _X g\, d\mu \) </p>
+</li>
+  <li><p>任意の \(c \in \mathbb R\) に対して \(\int _X cf\, d\mu =c\int _X f\, d\mu \) </p>
+</li>
+  <li><p>\(\int _X (f+g)\, d\mu =\int _X f\, d\mu +\int _X g\, d\mu \) </p>
+</li>
+  <li><p>\(\left|\int _X f\, d\mu \right|\le \int _X |f|\, d\mu \) </p>
+</li>
+  <li><p>\(\int _X |f|\, d\mu =0 \iff f=0\) a.e. on \(X\) </p>
+</li>
+  <li><p>\(A,B \subset X\) が互いに素な可測集合なら \(\int _{A \sqcup B} f\, d\mu =\int _A f\, d\mu +\int _B f\, d\mu \) </p>
+</li>
+  <li><p>\(\alpha {\gt}0\) に対して \(\mu (\{ |f|\ge \alpha \} )\le \alpha ^{-1}\int _X |f|\, d\mu \) </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000994">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>各項は順に ?? で示した内容である． </p>
+
+  </div>
+</div>
+<div class="remark_thmwrapper theorem-style-remark" id="a0000000995">
+  <div class="remark_thmheading">
+    <span class="remark_thmcaption">
+    Remark
+    </span>
+    <span class="remark_thmlabel">46</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#a0000000995">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="remark_thmcontent">
+  <p>この章で得た公式は，今後の章でほぼ毎回使う． 特に \(f=g\) a.e. なら積分値を区別しなくてよいこと，および \(\left|\int f\right|\le \int |f|\) という評価は， 収束定理を運用する際の基本になる． </p>
+
+  </div>
+</div>
+<div class="example_thmwrapper theorem-style-plain" id="a0000000996">
+  <div class="example_thmheading">
+    <span class="example_thmcaption">
+    Example
+    </span>
+    <span class="example_thmlabel">.17</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#a0000000996">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000997"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="example_thmcontent">
+  <p>\(\mu (X){\lt}\infty \) とし， \(f\in M(X)\) が \(|f(x)|\le M\) a.e. on \(X\) を満たすとする． このとき \(f\) は可積分で，\(\left|\int _X f\, d\mu \right|\le M\, \mu (X)\) が成り立つ． </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000997">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>\(|f|\le M1_X\) だから \(\int _X |f|\, d\mu \le M\, \mu (X){\lt}\infty \) である． よって \(f\) は可積分である． さらに<a href="sect0009.html#prop:integral-absolute-value-bound">proposition .8</a>より \(\left|\int _X f\, d\mu \right|\le \int _X |f|\, d\mu \le M\, \mu (X)\) である． </p>
+
+  </div>
+</div>
+<h1 id="a0000000208"> \(\mathcal L^1\) と \(L^1\) の空間構造</h1>
+<p>ここまでに示した性質は，\(\mathcal L^1(X)\) と \(L^1(X)\) が単なる集合ではなく， 線形構造，順序構造，大きさを測る構造をもつことを意味している． </p>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:L1-space-structure">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">.18</span>
+    <span class="proposition_thmtitle">\(\mathcal L^1\) と \(L^1\) の構造</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#prop:L1-space-structure">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000998"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#prop:integral-homogeneity">Proposition .13</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-additivity">Proposition .14</a></li>
+          
+          <li><a href="sect0009.html#prop:integral-zero-iff-ae-zero">Proposition .9</a></li>
+          
+          <li><a href="sect0008.html#cor:dominated-integrability">Corollary .19</a></li>
+          
+          <li><a href="sect0008.html#def:L1-space">Definition .23</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="../docs/find/#doc/NoteKsk.L1Space" class="lean_decl">NoteKsk.L1Space</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integrable_add_real" class="lean_decl">NoteKsk.Chapter09.integrable_add_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_add_real" class="lean_decl">NoteKsk.Chapter09.integral_add_real</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_smul" class="lean_decl">NoteKsk.Chapter09.integral_smul</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integral_abs_eq_zero_iff_ae_eq_zero" class="lean_decl">NoteKsk.Chapter09.integral_abs_eq_zero_iff_ae_eq_zero</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.integrable_of_ae_abs_le_const" class="lean_decl">NoteKsk.Chapter09.integrable_of_ae_abs_le_const</a></li>
+          
+          <li><a href="../docs/find/#doc/NoteKsk.Chapter09.abs_integral_le_const_mul_measure" class="lean_decl">NoteKsk.Chapter09.abs_integral_le_const_mul_measure</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   次が成り立つ． </p>
+<ol class="enumerate">
+  <li><p>\(\mathcal L^1(X)\) は実ベクトル空間であり，写像 \(f\mapsto \int _X f\, d\mu \) は \(\mathcal L^1(X)\) 上の線形写像である． </p>
+</li>
+  <li><p>\(\| f\| _1:=\int _X |f|\, d\mu \) とおくと，これは \(\mathcal L^1(X)\) 上の半ノルムである． すなわち \(\| cf\| _1=|c|\, \| f\| _1\)，\(\| f+g\| _1\le \| f\| _1+\| g\| _1\) が成り立つ． また \(\| f\| _1=0\) であることと \(f=0\) a.e. on \(X\) であることは同値である． </p>
+</li>
+  <li><p>\(L^1(X)=\mathcal L^1(X)/{\sim }\) 上では </p>
+<div class="displaymath" id="a0000000999">
+  \[  \| [f]\| _1:=\int _X |f|\, d\mu  \]
+</div>
+<p> によってノルムが定まる．したがって \(L^1(X)\) はノルム空間である． </p>
+</li>
+  <li><p>\(\mathcal L^1(X)\) は点ごとの順序に関してベクトル束（Riesz空間）である． つまり \(f,g\in \mathcal L^1(X)\) なら \(f\vee g:=\max (f,g)\)，\(f\wedge g:=\min (f,g)\)，\(|f|\) も \(\mathcal L^1(X)\) に属する． さらに，\(h\in M(X;\mathbb R)\) が \(|h|\le |f|\) a.e. on \(X\) を満たし，\(f\in \mathcal L^1(X)\) ならば \(h\in \mathcal L^1(X)\) である． </p>
+</li>
+  <li><p>\(L^1(X)\) には \([f]\le [g] \iff f\le g\) a.e. on \(X\) によって順序が定まり， この順序に関して \(L^1(X)\) もベクトル束である． さらに \(|[f]|\le |[g]|\) なら \(\| [f]\| _1\le \| [g]\| _1\) であり，ノルムは順序と両立している． </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000998">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>(1) は斉次性と加法性から従う． (2) の斉次性は \(|cf|=|c|\, |f|\) から従い，三角不等式は \(|f+g|\le |f|+|g|\) と積分の単調性・加法性から従う． また \(\| f\| _1=0\) の判定は<a href="sect0009.html#prop:integral-zero-iff-ae-zero">proposition .9</a>である． </p>
+<p>(3) について，\(\mathcal L^1(X)\) の和とスカラー倍は a.e. 同値関係と両立するので，\(L^1(X)\) は実ベクトル空間である． また \(f=g\) a.e. なら \(|f|=|g|\) a.e. であるから，\(\| [f]\| _1\) は代表元の取り方に依らない． さらに (2) より \(\| [f]\| _1=0\) なら \(f=0\) a.e. であり，これは \(L^1(X)\) の元として \([f]=0\) であることを意味する． </p>
+<p>(4) について，\(f\vee g\) と \(f\wedge g\) は </p>
+<div class="displaymath" id="a0000001000">
+  \[  f\vee g=\frac{f+g+|f-g|}{2},\qquad f\wedge g=\frac{f+g-|f-g|}{2}  \]
+</div>
+<p> と書けるので，\(\mathcal L^1(X)\) に属する． また \(|h|\le |f|\) a.e. なら <a href="sect0008.html#cor:dominated-integrability">corollary .19</a> より \(h\in \mathcal L^1(X)\) である． </p>
+<p>(5) は，a.e. に一致する代表元に取り替えても大小関係，和，スカラー倍，\(\vee ,\wedge \) が a.e. の意味で変わらないことから従う． また \(|[f]|\le |[g]|\) なら \(|f|\le |g|\) a.e. なので，積分の単調性より \(\| [f]\| _1\le \| [g]\| _1\) である． </p>
+
+  </div>
+</div>
+<div class="remark_thmwrapper theorem-style-remark" id="a0000001001">
+  <div class="remark_thmheading">
+    <span class="remark_thmcaption">
+    Remark
+    </span>
+    <span class="remark_thmlabel">47</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#a0000001001">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="remark_thmcontent">
+  <p>\(\mathcal L^1(X)\) 上の \(\| \cdot \| _1\) は，関数を点ごとに区別する限りノルムではなく半ノルムである． 零でない関数でも，零集合上にだけ値をもつなら \(\| f\| _1=0\) になりうるからである． このため関数解析では，a.e. に等しい関数を同一視した \(L^1(X)\) を使う． 後で Riesz–Fischer の定理を示すと，このノルム空間 \(L^1(X)\) は完備であり，Banach空間になる． さらに順序構造も保たれるので，後の言葉では \(L^1(X)\) はBanach束の典型例である． </p>
+
+  </div>
+</div>
+<h1 id="a0000000209"> 解釈とまとめ</h1>
+<p>本章で示した性質により，\(\mathcal L^1(X)\) 上の積分は順序を保ち，線形で，零集合を無視できることが分かった． これはまさに，確率論や関数解析で積分を計算道具として使うために必要な性質である． </p>
+<p>特に重要なのは次の3点である． </p>
+<ol class="enumerate">
+  <li><p>\(f=g\) a.e. なら積分値も同じ </p>
+</li>
+  <li><p>\(|f|\) を積分すれば \(f\) の大きさを制御できる </p>
+</li>
+  <li><p>集合の大きさと積分の大きさをChebyshev不等式で結びつけられ，特に \(L^1\) 収束から測度収束が従う </p>
+</li>
+</ol>
+<p>次章では，これらの性質を基礎にして \(\lim \) と \(\int \) の順序交換を正当化する収束定理を学ぶ．  </p>
+
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0008.html" title="Lebesgue積分"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Lecture note on KSK"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0010.html" title="収束定理"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

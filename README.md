@@ -1,7 +1,14 @@
-# LeanKSK2026
+# lean-ksk2026
 
-Lebesgue積分論（2026年度・解析数理工学）の講義資料に沿った Lean blueprint です．
+Public materials for the 2026 lecture notes on measure and integration.
 
-URL: [https://shosonoda.github.io/lean-ksk/blueprint/](https://shosonoda.github.io/lean-ksk/blueprint/)
+The generated website is served from `docs/` on the `main` branch. The Lean
+formalization is the `NoteKsk` Lake project at the repository root.
 
-Lean version: leanprover/lean4:v4.30.0
+```bash
+lake exe cache get
+lake build NoteKsk
+```
+
+The local API documentation under `docs/docs/` is generated only for `NoteKsk`.
+Links to mathlib declarations point to the public mathlib documentation.
