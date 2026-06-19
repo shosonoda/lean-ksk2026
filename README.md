@@ -13,5 +13,6 @@ lake build NoteKsk
 ```
 
 `docs/blueprint/` は Verso Blueprint の生成済み HTML です．
+`docs/print.pdf` は講義ノート本文の PDF です．
 `docs/docs/` 以下のローカル API documentation は `NoteKsk` モジュールだけを対象に
 生成しています．mathlib 宣言へのリンクは公開 mathlib documentation を指します．
