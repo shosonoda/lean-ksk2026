@@ -6,6 +6,9 @@ __pycache__/
 /lakefile.olean
 /docbuild/.lake/
 /docbuild/lakefile.olean
+/versobuild/.lake/
+/versobuild/lakefile.olean
+/versobuild/_out/
 
 *.aux
 *.bbl

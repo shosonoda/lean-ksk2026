@@ -1,6 +1,6 @@
 # lean-ksk2026
 
-2026年度「解析数理工学」（Lebesgue積分論）の講義資料に付随する Lean blueprint です．
+2026年度「解析数理工学」（Lebesgue積分論）の講義資料に付随する Lean / Verso Blueprint です．
 
 URL : [https://shosonoda.github.io/lean-ksk2026/](https://shosonoda.github.io/lean-ksk2026/)
 
@@ -12,5 +12,6 @@ lake exe cache get
 lake build NoteKsk
 ```
 
+`docs/blueprint/` は Verso Blueprint の生成済み HTML です．
 `docs/docs/` 以下のローカル API documentation は `NoteKsk` モジュールだけを対象に
 生成しています．mathlib 宣言へのリンクは公開 mathlib documentation を指します．

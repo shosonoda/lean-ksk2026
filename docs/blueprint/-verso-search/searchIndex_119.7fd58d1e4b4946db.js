@@ -1,0 +1,1 @@
+window.docContents[119].resolve({"/ch04-lebesgue-inner/#chapter-ch04-lebesgue-inner":{"contents":"本章の目標\nLebesgue流の可測性\n\n\n\nを定義するため，\nLebesgue内測度を導入する．\nただし，内測度は外測度や位相の言葉を用いて定義される副次的な量であり，\nCarathéodoryが整理した抽象理論では外測度が主役となることを後に説明する．\n\n\n\n\n\n\n\n\n\n\n\n\n\n","context":"Lebesgue積分講義ノート","header":"4. Lebesgue内測度","id":"/ch04-lebesgue-inner/#chapter-ch04-lebesgue-inner"}});

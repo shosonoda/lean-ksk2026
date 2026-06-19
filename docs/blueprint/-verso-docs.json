@@ -1,0 +1,1318 @@
+{"99":
+ "<code>NoteKsk.Chapter03.lambdaStar_boxIco {d : ℕ} (Q : NoteKsk.Box d) : NoteKsk.Chapter03.lambdaStar Q.Ico = Q.volume</code>",
+ "98":
+ "<code>NoteKsk.Chapter03.lambdaStar_boxIoc {d : ℕ} (Q : NoteKsk.Box d) : NoteKsk.Chapter03.lambdaStar Q.Ioc = Q.volume</code>",
+ "97":
+ "<code>NoteKsk.Chapter03.lambdaStar_boxIoo {d : ℕ} (Q : NoteKsk.Box d) : NoteKsk.Chapter03.lambdaStar Q.Ioo = Q.volume</code>",
+ "96":
+ "<code>Set.Countable.{u} {α : Type u} (s : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set `s` is countable if the corresponding subtype is countable,\ni.e., there exists an injective map `f : s → ℕ`.\n\nNote that this is an abbreviation, so `hs : Set.Countable s` in the proof context\nis the same as an instance `Countable s`.\nFor a constructive version, see `Encodable`.\n</code>",
+ "95": "<code>A.Countable</code>",
+ "94":
+ "<code>NoteKsk.Chapter03.lambdaStar_countable_eq_zero {d : ℕ} [Nonempty (Fin d)] {A : Set (NoteKsk.Space d)}\n  (hA : A.Countable) : NoteKsk.Chapter03.lambdaStar A = 0</code><span class=\"sep\"></span><code class=\"docstring\">Countable subsets of positive-dimensional Euclidean space are null. </code>",
+ "93":
+ "<code>Singleton.singleton.{u, v} {α : outParam (Type u)} {β : Type v} [self : Singleton α β] : α → β</code><span class=\"sep\"></span><code class=\"docstring\">`singleton x` is a collection with the single element `x` (notation: `{x}`). \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `{x}` in identifiers is `singleton`.</code>",
+ "92":
+ "<code>Fin (n : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">Natural numbers less than some upper bound.\n\nIn particular, a `Fin n` is a natural number `i` with the constraint that `i &lt; n`. It is the\ncanonical type with `n` elements.\n</code>",
+ "91":
+ "<code>Nonempty.{u} (α : Sort u) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Nonempty α` is a typeclass that says that `α` is not an empty type,\nthat is, there exists an element in the type. It differs from `Inhabited α`\nin that `Nonempty α` is a `Prop`, which means that it does not actually carry\nan element of `α`, only a proof that *there exists* such an element.\nGiven `Nonempty α`, you can construct an element of `α` *nonconstructively*\nusing `Classical.choice`.\n</code>",
+ "90":
+ "<code>NoteKsk.Chapter03.lambdaStar_singleton {d : ℕ} [Nonempty (Fin d)] (a : NoteKsk.Space d) :\n  NoteKsk.Chapter03.lambdaStar {a} = 0</code><span class=\"sep\"></span><code class=\"docstring\">One-point sets are null in positive dimension.\n\nThe assumption `[Nonempty (Fin d)]` excludes the degenerate `ℝ^0`, whose whole\nspace is a singleton.\n</code>",
+ "9":
+ "<code>NoteKsk.Chapter01.IntervalPartition.b (self : NoteKsk.Chapter01.IntervalPartition) : ℝ</code>",
+ "89": "<code>Bornology.IsBounded A</code>",
+ "88":
+ "<code>NoteKsk.Chapter03.lambdaStar_le_jordanOuterMeasure {d : ℕ} {A : Set (NoteKsk.Space d)} (_hA : Bornology.IsBounded A) :\n  NoteKsk.Chapter03.lambdaStar A ≤ NoteKsk.jordanOuterMeasure A</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue outer measure is bounded above by Jordan outer measure on bounded sets.\nThis is a Chapter 2 compatibility statement.\n</code>",
+ "87":
+ "<code>NoteKsk.Chapter03.lambdaStar_eq_iInf_boxCovers {d : ℕ} (A : Set (NoteKsk.Space d)) :\n  NoteKsk.Chapter03.lambdaStar A = NoteKsk.Chapter03.lambdaStarByBoxes A</code><span class=\"sep\"></span><code class=\"docstring\">The box-cover definition agrees with mathlib's Lebesgue outer measure.\n\nThis is the formal version of the definition in the lecture notes.  The\nnontrivial construction direction is isolated in\n`lambdaStarByBoxes_le_lambdaStar`.\n</code>",
+ "86":
+ "<code>NoteKsk.Chapter03.lambdaStarByBoxes {d : ℕ} (A : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">The blueprint definition: infimum of costs over all countable covers by left\nhalf-open boxes.\n</code>",
+ "85":
+ "<code>NoteKsk.Chapter03.boxCoverCost {d : ℕ} (Q : ℕ → NoteKsk.Chapter03.CoverBox d) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Cost of a countable box cover, `∑ n |Q_n|`. </code>",
+ "84": "<code>ℕ → NoteKsk.Chapter03.CoverBox d</code>",
+ "83":
+ "<code>NoteKsk.Chapter03.IsBoxCover {d : ℕ} (A : Set (NoteKsk.Space d)) (Q : ℕ → NoteKsk.Chapter03.CoverBox d) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A sequence of boxes covers `A`. </code>",
+ "82":
+ "<code>NoteKsk.Chapter03.CoverBox.volume {d : ℕ} : NoteKsk.Chapter03.CoverBox d → ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">The volume of a covering piece. </code>",
+ "81":
+ "<code>NoteKsk.Chapter03.CoverBox.carrier {d : ℕ} : NoteKsk.Chapter03.CoverBox d → Set (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">The set carried by a covering piece. </code>",
+ "80":
+ "<code>NoteKsk.Chapter03.CoverBox.box {d : ℕ} : NoteKsk.Box d → NoteKsk.Chapter03.CoverBox d</code>",
+ "8":
+ "<code>NoteKsk.Chapter01.IntervalPartition.a (self : NoteKsk.Chapter01.IntervalPartition) : ℝ</code>",
+ "79":
+ "<code>NoteKsk.Chapter03.CoverBox (d : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">A covering piece is either a left half-open box or the explicitly allowed empty set. </code>",
+ "78":
+ "<code>NoteKsk.Chapter03.CoverBox.empty {d : ℕ} : NoteKsk.Chapter03.CoverBox d</code>",
+ "77":
+ "<code>NoteKsk.Chapter03.lambdaStar {d : ℕ} (A : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue outer measure `λ*`.\n\nIn mathlib this is simply Lebesgue measure `volume` evaluated on an arbitrary set.\nFor measurable sets it is the usual measure; for nonmeasurable sets it is the\ncorresponding outer-measure value.\n</code>",
+ "769": "<code>E → F</code>",
+ "768":
+ "<code>NoteKsk.Chapter11.integral_image_eq_integral_abs_det_fderiv_smul.{u_1, u_2} {E : Type u_1} {F : Type u_2}\n  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]\n  [NormedAddCommGroup F] [NormedSpace ℝ F] {s : Set E} {φ : E → E} {φ' : E → E →L[ℝ] E} (μ : MeasureTheory.Measure E)\n  [μ.IsAddHaarMeasure] (hs : MeasurableSet s) (hφ' : ∀ x ∈ s, HasFDerivWithinAt φ (φ' x) s x) (hφ : Set.InjOn φ s)\n  (g : E → F) : ∫ (x : E) in φ '' s, g x ∂μ = ∫ (x : E) in s, |(φ' x).det| • g (φ x) ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Jacobian change-of-variables formula for Bochner integrals.\n\nThe lecture statement for a diffeomorphism is represented here by mathlib's\nimage formula on a measurable set with an injectivity hypothesis.\n</code>",
+ "767":
+ "<code>ContinuousLinearMap.det.{u_1, u_2} {R : Type u_1} [CommRing R] {M : Type u_2} [TopologicalSpace M] [AddCommGroup M]\n  [Module R M] (A : M →L[R] M) : R</code><span class=\"sep\"></span><code class=\"docstring\">The determinant of a continuous linear map, mainly as a convenience device to be able to\nwrite `A.det` instead of `(A : M →ₗ[R] M).det`. </code>",
+ "766":
+ "<code>Set.image.{u, v} {α : Type u} {β : Type v} (f : α → β) (s : Set α) : Set β</code><span class=\"sep\"></span><code class=\"docstring\">The image of `s : Set α` by `f : α → β`, written `f '' s`, is the set of `b : β` such that\n`f a = b` for some `a ∈ s`. </code>",
+ "765": "<code>E → ENNReal</code>",
+ "764":
+ "<code>Set.InjOn.{u, v} {α : Type u} {β : Type v} (f : α → β) (s : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`f` is injective on `s` if the restriction of `f` to `s` is injective. </code>",
+ "763": "<code>Set.InjOn φ s</code>",
+ "762":
+ "<code>HasFDerivWithinAt.{u_1, u_2, u_3} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type u_2} [AddCommGroup E]\n  [Module 𝕜 E] [TopologicalSpace E] {F : Type u_3} [AddCommGroup F] [Module 𝕜 F] [TopologicalSpace F] (f : E → F)\n  (f' : E →L[𝕜] F) (s : Set E) (x : E) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f` has the continuous linear map `f'` as derivative at `x` within a set `s` if\n`f x' = f x + f' (x' - x) + o (x' - x)` when `x'` tends to `x` inside `s`. </code>",
+ "761": "<code>E</code>",
+ "760": "<code>∀ x ∈ s, HasFDerivWithinAt φ (φ' x) s x</code>",
+ "76":
+ "<code>MeasureTheory.OuterMeasure.{u_2} (α : Type u_2) : Type u_2</code><span class=\"sep\"></span><code class=\"docstring\">An outer measure is a countably subadditive monotone function that sends `∅` to `0`. </code>",
+ "759":
+ "<code>MeasureTheory.Measure.IsAddHaarMeasure.{u_3} {G : Type u_3} [AddGroup G] [TopologicalSpace G] [MeasurableSpace G]\n  (μ : MeasureTheory.Measure G) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A measure on an additive group is an additive Haar measure if it is left-invariant, and\ngives finite mass to compact sets and positive mass to open sets.\n\nTextbooks generally require an additional regularity assumption to ensure nice behavior on\narbitrary locally compact groups. Use `[IsAddHaarMeasure μ] [Regular μ]` or\n`[IsAddHaarMeasure μ] [InnerRegular μ]` in these situations. Note that a Haar measure in our\nsense is automatically regular and inner regular on second countable locally compact groups, as\nchecked just below this definition. </code>",
+ "758": "<code>MeasureTheory.Measure E</code>",
+ "757": "<code>E → E →L[ℝ] E</code>",
+ "756": "<code>E → E</code>",
+ "755": "<code>Set E</code>",
+ "754":
+ "<code>FiniteDimensional.{u_1, u_2} (K : Type u_1) (V : Type u_2) [DivisionRing K] [AddCommGroup V] [Module K V] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`FiniteDimensional` vector spaces are defined to be finite modules.\nUse `Module.Basis.finiteDimensional_of_finite` to prove finite dimension from another definition. </code>",
+ "753":
+ "<code>NoteKsk.Chapter11.lintegral_image_eq_lintegral_abs_det_fderiv_mul.{u_1} {E : Type u_1} [NormedAddCommGroup E]\n  [NormedSpace ℝ E] [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] {s : Set E} {φ : E → E}\n  {φ' : E → E →L[ℝ] E} (μ : MeasureTheory.Measure E) [μ.IsAddHaarMeasure] (hs : MeasurableSet s)\n  (hφ' : ∀ x ∈ s, HasFDerivWithinAt φ (φ' x) s x) (hφ : Set.InjOn φ s) (g : E → ENNReal) :\n  ∫⁻ (x : E) in φ '' s, g x ∂μ = ∫⁻ (x : E) in s, ENNReal.ofReal |(φ' x).det| * g (φ x) ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Jacobian change-of-variables formula for nonnegative functions.\n\nThis is the formal replacement for the lecture's affine/linear change of\nvariables statements.  Those are obtained by taking `f` to be an affine map and\n`f'` to be its constant derivative.\n</code>",
+ "752":
+ "<code>Function.uncurry.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {φ : Sort u_3} : (α → β → φ) → α × β → φ</code><span class=\"sep\"></span><code class=\"docstring\">Transforms a two-parameter function into an equivalent function from pairs.\n\nExamples:\n* `Function.uncurry List.drop (1, [\"a\", \"b\", \"c\"]) = [\"b\", \"c\"]`\n* `[(\"orange\", 2), (\"android\", 3) ].map (Function.uncurry String.take) = [\"or\", \"and\"]`\n</code>",
+ "751": "<code>MeasureTheory.Integrable (Function.uncurry f) (μ.prod ν)</code>",
+ "750": "<code>α → β → E</code>",
+ "75":
+ "<code>NoteKsk.Chapter03.lebesgueOuterMeasure (d : ℕ) : MeasureTheory.OuterMeasure (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">Bundled Lebesgue outer measure on `ℝ^d`. </code>",
+ "749":
+ "<code>NoteKsk.Chapter11.integral_integral_swap.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {E : Type u_3}\n  [MeasurableSpace α] [MeasurableSpace β] {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β}\n  [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasureTheory.SFinite μ] [MeasureTheory.SFinite ν] {f : α → β → E}\n  (hf : MeasureTheory.Integrable (Function.uncurry f) (μ.prod ν)) :\n  ∫ (x : α), ∫ (y : β), f x y ∂ν ∂μ = ∫ (y : β), ∫ (x : α), f x y ∂μ ∂ν</code><span class=\"sep\"></span><code class=\"docstring\">Exchange of iterated integrals for an integrable function. </code>",
+ "748":
+ "<code>NoteKsk.Chapter11.integrable_integral_section_left.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {E : Type u_3}\n  [MeasurableSpace α] [MeasurableSpace β] {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β}\n  [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasureTheory.SFinite μ] [MeasureTheory.SFinite ν] {f : α × β → E}\n  (hf : MeasureTheory.Integrable f (μ.prod ν)) : MeasureTheory.Integrable (fun y ↦ ∫ (x : α), f (x, y) ∂μ) ν</code><span class=\"sep\"></span><code class=\"docstring\">Integrability of the function obtained by integrating the left section. </code>",
+ "747":
+ "<code>NoteKsk.Chapter11.integrable_integral_section_right.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {E : Type u_3}\n  [MeasurableSpace α] [MeasurableSpace β] {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β}\n  [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasureTheory.SFinite ν] {f : α × β → E}\n  (hf : MeasureTheory.Integrable f (μ.prod ν)) : MeasureTheory.Integrable (fun x ↦ ∫ (y : β), f (x, y) ∂ν) μ</code><span class=\"sep\"></span><code class=\"docstring\">Integrability of the function obtained by integrating the right section. </code>",
+ "746":
+ "<code>NoteKsk.Chapter11.fubini_integral_prod_symm.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {E : Type u_3}\n  [MeasurableSpace α] [MeasurableSpace β] {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β}\n  [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasureTheory.SFinite μ] [MeasureTheory.SFinite ν] (f : α × β → E)\n  (hf : MeasureTheory.Integrable f (μ.prod ν)) : ∫ (z : α × β), f z ∂μ.prod ν = ∫ (y : β), ∫ (x : α), f (x, y) ∂μ ∂ν</code><span class=\"sep\"></span><code class=\"docstring\">Fubini's theorem with the order of integration reversed. </code>",
+ "745":
+ "<code>NoteKsk.Chapter11.fubini_integral_prod.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {E : Type u_3} [MeasurableSpace α]\n  [MeasurableSpace β] {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β} [NormedAddCommGroup E]\n  [NormedSpace ℝ E] [MeasureTheory.SFinite μ] [MeasureTheory.SFinite ν] (f : α × β → E)\n  (hf : MeasureTheory.Integrable f (μ.prod ν)) : ∫ (z : α × β), f z ∂μ.prod ν = ∫ (x : α), ∫ (y : β), f (x, y) ∂ν ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Fubini's theorem for Bochner integrals. </code>",
+ "744": "<code>MeasureTheory.Integrable f (μ.prod ν)</code>",
+ "743": "<code>α × β → E</code>",
+ "742":
+ "<code>NoteKsk.Chapter11.ae_integrable_section_right.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {E : Type u_3}\n  [MeasurableSpace α] [MeasurableSpace β] {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β}\n  [NormedAddCommGroup E] [MeasureTheory.SFinite ν] {f : α × β → E} (hf : MeasureTheory.Integrable f (μ.prod ν)) :\n  ∀ᵐ (x : α) ∂μ, MeasureTheory.Integrable (fun y ↦ f (x, y)) ν</code><span class=\"sep\"></span><code class=\"docstring\">Almost-everywhere integrability of sections. </code>",
+ "741": "<code>AEMeasurable g ν</code>",
+ "740": "<code>β → ENNReal</code>",
+ "74": "<code>NoteKsk.JordanNullSet N</code>",
+ "739":
+ "<code>NoteKsk.Chapter11.lintegral_prod_mul.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α] [MeasurableSpace β]\n  {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β} [MeasureTheory.SFinite ν] {f : α → ENNReal}\n  {g : β → ENNReal} (hf : AEMeasurable f μ) (hg : AEMeasurable g ν) :\n  ∫⁻ (z : α × β), f z.1 * g z.2 ∂μ.prod ν = (∫⁻ (x : α), f x ∂μ) * ∫⁻ (y : β), g y ∂ν</code><span class=\"sep\"></span><code class=\"docstring\">Product form of Tonelli. </code>",
+ "738":
+ "<code>NoteKsk.Chapter11.measurable_lintegral_section_right.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {ν : MeasureTheory.Measure β} [MeasureTheory.SFinite ν] {f : α × β → ENNReal}\n  (hf : Measurable f) : Measurable fun x ↦ ∫⁻ (y : β), f (x, y) ∂ν</code><span class=\"sep\"></span><code class=\"docstring\">The inner integral in Tonelli is measurable. </code>",
+ "737":
+ "<code>NoteKsk.Chapter11.tonelli_lintegral_symm.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β} [MeasureTheory.SFinite μ]\n  [MeasureTheory.SFinite ν] (f : α × β → ENNReal) (hf : AEMeasurable f (μ.prod ν)) :\n  ∫⁻ (z : α × β), f z ∂μ.prod ν = ∫⁻ (y : β), ∫⁻ (x : α), f (x, y) ∂μ ∂ν</code><span class=\"sep\"></span><code class=\"docstring\">Tonelli's theorem with the order of integration reversed. </code>",
+ "736":
+ "<code>Prod.mk.{u, v} {α : Type u} {β : Type v} (fst : α) (snd : β) : α × β</code><span class=\"sep\"></span><code class=\"docstring\">Constructs a pair. This is usually written `(x, y)` instead of `Prod.mk x y`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `(a, b)` in identifiers is `mk`.</code>",
+ "735": "<code>α × β</code>",
+ "734": "<code>AEMeasurable f (μ.prod ν)</code>",
+ "733": "<code>α × β → ENNReal</code>",
+ "732":
+ "<code>NoteKsk.Chapter11.tonelli_lintegral.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α] [MeasurableSpace β]\n  {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β} [MeasureTheory.SFinite ν] (f : α × β → ENNReal)\n  (hf : AEMeasurable f (μ.prod ν)) : ∫⁻ (z : α × β), f z ∂μ.prod ν = ∫⁻ (x : α), ∫⁻ (y : β), f (x, y) ∂ν ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Tonelli's theorem for nonnegative functions. </code>",
+ "731":
+ "<code>NoteKsk.Chapter11.measurable_measure_ySection.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {μ : MeasureTheory.Measure α} [MeasureTheory.SFinite μ] {E : Set (α × β)} (hE : MeasurableSet E) :\n  Measurable fun y ↦ μ (NoteKsk.Chapter11.ySection E y)</code><span class=\"sep\"></span><code class=\"docstring\">Measurability of the other section-measure function. </code>",
+ "730":
+ "<code>NoteKsk.Chapter11.measurable_measure_xSection.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {ν : MeasureTheory.Measure β} [MeasureTheory.SFinite ν] {E : Set (α × β)} (hE : MeasurableSet E) :\n  Measurable fun x ↦ ν (NoteKsk.Chapter11.xSection E x)</code><span class=\"sep\"></span><code class=\"docstring\">Measurability of the section-measure function. </code>",
+ "73":
+ "<code>NoteKsk.Chapter02.jordanMeasure_eq_zero_of_null {d : ℕ} {N : Set (NoteKsk.Space d)} (hN : NoteKsk.JordanNullSet N) :\n  NoteKsk.jordanMeasure N = 0</code>",
+ "729":
+ "<code>NoteKsk.Chapter11.productMeasure_apply_symm.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β} [MeasureTheory.SFinite μ]\n  [MeasureTheory.SFinite ν] {E : Set (α × β)} (hE : MeasurableSet E) :\n  (μ.prod ν) E = ∫⁻ (y : β), μ (NoteKsk.Chapter11.ySection E y) ∂ν</code><span class=\"sep\"></span><code class=\"docstring\">Product measure on measurable sets, written using the other family of sections. </code>",
+ "728":
+ "<code>MeasureTheory.Measure.prod.{u_4, u_5} {α : Type u_4} {β : Type u_5} [MeasurableSpace α] [MeasurableSpace β]\n  (μ : MeasureTheory.Measure α) (ν : MeasureTheory.Measure β) : MeasureTheory.Measure (α × β)</code><span class=\"sep\"></span><code class=\"docstring\">The binary product of measures. They are defined for arbitrary measures, but we basically\nprove all properties under the assumption that at least one of them is s-finite. </code>",
+ "727": "<code>MeasureTheory.Measure β</code>",
+ "726":
+ "<code>NoteKsk.Chapter11.productMeasure_apply.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α] [MeasurableSpace β]\n  {μ : MeasureTheory.Measure α} {ν : MeasureTheory.Measure β} [MeasureTheory.SFinite ν] {E : Set (α × β)}\n  (hE : MeasurableSet E) : (μ.prod ν) E = ∫⁻ (x : α), ν (NoteKsk.Chapter11.xSection E x) ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Product measure on measurable sets, written using sections. </code>",
+ "725":
+ "<code>NoteKsk.Chapter11.measurable_functionYSection.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {γ : Type u_3}\n  [MeasurableSpace α] [MeasurableSpace β] [MeasurableSpace γ] {f : α × β → γ} (hf : Measurable f) (y : β) :\n  Measurable (NoteKsk.Chapter11.functionYSection f y)</code>",
+ "724":
+ "<code>NoteKsk.Chapter11.measurable_functionXSection.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {γ : Type u_3}\n  [MeasurableSpace α] [MeasurableSpace β] [MeasurableSpace γ] {f : α × β → γ} (hf : Measurable f) (x : α) :\n  Measurable (NoteKsk.Chapter11.functionXSection f x)</code>",
+ "723":
+ "<code>NoteKsk.Chapter11.measurableSet_ySection.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {E : Set (α × β)} (hE : MeasurableSet E) (y : β) : MeasurableSet (NoteKsk.Chapter11.ySection E y)</code>",
+ "722": "<code>MeasurableSet E</code>",
+ "721":
+ "<code>NoteKsk.Chapter11.measurableSet_xSection.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {E : Set (α × β)} (hE : MeasurableSet E) (x : α) : MeasurableSet (NoteKsk.Chapter11.xSection E x)</code>",
+ "720":
+ "<code>NoteKsk.Chapter11.functionYSection.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {γ : Type u_3} (f : α × β → γ)\n  (y : β) : α → γ</code><span class=\"sep\"></span><code class=\"docstring\">The `y`-section of a function on a product. </code>",
+ "72":
+ "<code>NoteKsk.JordanNullSet {d : ℕ} (A : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Jordan null sets. </code>",
+ "719": "<code>α × β → γ</code>",
+ "718":
+ "<code>NoteKsk.Chapter11.functionXSection.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {γ : Type u_3} (f : α × β → γ)\n  (x : α) : β → γ</code><span class=\"sep\"></span><code class=\"docstring\">The `x`-section of a function on a product. </code>",
+ "717": "<code>β</code>",
+ "716":
+ "<code>NoteKsk.Chapter11.ySection.{u_1, u_2} {α : Type u_1} {β : Type u_2} (E : Set (α × β)) (y : β) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">The `y`-section of a subset of a product. </code>",
+ "715": "<code>Set (α × β)</code>",
+ "714":
+ "<code>NoteKsk.Chapter11.xSection.{u_1, u_2} {α : Type u_1} {β : Type u_2} (E : Set (α × β)) (x : α) : Set β</code><span class=\"sep\"></span><code class=\"docstring\">The `x`-section of a subset of a product. </code>",
+ "713":
+ "<code>HasDerivAt.{u, v} {𝕜 : Type u} [NontriviallyNormedField 𝕜] {F : Type v} [AddCommGroup F] [Module 𝕜 F]\n  [TopologicalSpace F] [ContinuousSMul 𝕜 F] (f : 𝕜 → F) (f' : F) (x : 𝕜) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`f` has the derivative `f'` at the point `x`.\n\nThat is, `f x' = f x + (x' - x) • f' + o(x' - x)` where `x'` converges to `x`.\n</code>",
+ "712": "<code>∀ᵐ (a : α) ∂μ, HasDerivAt (fun x ↦ F x a) (F' a) x₀</code>",
+ "711":
+ "<code>∀ᶠ (x : 𝕜) in nhds x₀, MeasureTheory.AEStronglyMeasurable (F x) μ</code>",
+ "710": "<code>Set 𝕜</code>",
+ "71":
+ "<code>NoteKsk.Chapter02.jordanMeasure_eq_outer {d : ℕ} (A : Set (NoteKsk.Space d)) :\n  NoteKsk.jordanMeasure A = NoteKsk.jordanOuterMeasure A</code>",
+ "709": "<code>𝕜</code>",
+ "708": "<code>𝕜 → α → E</code>",
+ "707":
+ "<code>NoteKsk.Chapter10.hasDerivAt_integral_under_dominated_loc_of_lip.{u_1, u_2, u_3} {α : Type u_1} {𝕜 : Type u_2}\n  {E : Type u_3} [MeasurableSpace α] {μ : MeasureTheory.Measure α} [RCLike 𝕜] [NormedAddCommGroup E] [NormedSpace ℝ E]\n  [NormedSpace 𝕜 E] {F : 𝕜 → α → E} {x₀ : 𝕜} {bound : α → ℝ} {s : Set 𝕜} {F' : α → E} (hs : s ∈ nhds x₀)\n  (hF_meas : ∀ᶠ (x : 𝕜) in nhds x₀, MeasureTheory.AEStronglyMeasurable (F x) μ)\n  (hF_int : MeasureTheory.Integrable (F x₀) μ) (hF'_meas : MeasureTheory.AEStronglyMeasurable F' μ)\n  (h_lip : ∀ᵐ (a : α) ∂μ, LipschitzOnWith (Real.nnabs (bound a)) (fun x ↦ F x a) s)\n  (hbound_int : MeasureTheory.Integrable bound μ) (h_diff : ∀ᵐ (a : α) ∂μ, HasDerivAt (fun x ↦ F x a) (F' a) x₀) :\n  MeasureTheory.Integrable F' μ ∧ HasDerivAt (fun x ↦ ∫ (a : α), F x a ∂μ) (∫ (a : α), F' a ∂μ) x₀</code><span class=\"sep\"></span><code class=\"docstring\">Differentiation under the integral sign, one-dimensional derivative form. </code>",
+ "706":
+ "<code>HasFDerivAt.{u_1, u_2, u_3} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type u_2} [AddCommGroup E] [Module 𝕜 E]\n  [TopologicalSpace E] {F : Type u_3} [AddCommGroup F] [Module 𝕜 F] [TopologicalSpace F] (f : E → F) (f' : E →L[𝕜] F)\n  (x : E) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f` has the continuous linear map `f'` as derivative at `x` if\n`f x' = f x + f' (x' - x) + o (x' - x)` when `x'` tends to `x`. </code>",
+ "705": "<code>∀ᵐ (a : α) ∂μ, HasFDerivAt (fun x ↦ F x a) (F' a) x₀</code>",
+ "704":
+ "<code>Real.nnabs : ℝ →*₀ NNReal</code><span class=\"sep\"></span><code class=\"docstring\">The absolute value on `ℝ` as a map to `ℝ≥0`. </code>",
+ "703":
+ "<code>LipschitzOnWith.{u, v} {α : Type u} {β : Type v} [PseudoEMetricSpace α] [PseudoEMetricSpace β] (K : NNReal) (f : α → β)\n  (s : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f` is **Lipschitz continuous** with constant `K ≥ 0` **on `s`** if\nfor all `x, y` in `s` we have `dist (f x) (f y) ≤ K * dist x y`. </code>",
+ "702":
+ "<code>∀ᵐ (a : α) ∂μ, LipschitzOnWith (Real.nnabs (bound a)) (fun x ↦ F x a) s</code>",
+ "701": "<code>MeasureTheory.AEStronglyMeasurable F' μ</code>",
+ "700": "<code>MeasureTheory.Integrable (F x₀) μ</code>",
+ "70":
+ "<code>MeasurableSet.{u_1} {α : Type u_1} [MeasurableSpace α] (s : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`MeasurableSet s` means that `s` is measurable (in the ambient measure space on `α`) </code>",
+ "7": "<code>NoteKsk.Chapter01.IntervalPartition</code>",
+ "699":
+ "<code>∀ᶠ (x : H) in nhds x₀, MeasureTheory.AEStronglyMeasurable (F x) μ</code>",
+ "698": "<code>s ∈ nhds x₀</code>",
+ "697":
+ "<code>ContinuousLinearMap.{u_1, u_2, u_3, u_4} {R : Type u_1} {S : Type u_2} [Semiring R] [Semiring S] (σ : R →+* S)\n  (M : Type u_3) [TopologicalSpace M] [AddCommMonoid M] (M₂ : Type u_4) [TopologicalSpace M₂] [AddCommMonoid M₂]\n  [Module R M] [Module S M₂] : Type (max u_3 u_4)</code><span class=\"sep\"></span><code class=\"docstring\">Continuous linear maps between modules. We only put the type classes that are necessary for the\ndefinition, although in applications `M` and `M₂` will be topological modules over the topological\nring `R`. </code>",
+ "696": "<code>α → H →L[𝕜] E</code>",
+ "695": "<code>Set H</code>",
+ "694": "<code>H</code>",
+ "693": "<code>H → α → E</code>",
+ "692":
+ "<code>RCLike.{u_1} (K : semiOutParam (Type u_1)) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">This typeclass captures properties shared by ℝ and ℂ, with an API that closely matches that of ℂ.\n</code>",
+ "691":
+ "<code>NoteKsk.Chapter10.hasFDerivAt_integral_under_dominated_loc_of_lip.{u_1, u_2, u_3, u_4} {α : Type u_1} {𝕜 : Type u_2}\n  {E : Type u_3} {H : Type u_4} [MeasurableSpace α] {μ : MeasureTheory.Measure α} [RCLike 𝕜] [NormedAddCommGroup E]\n  [NormedSpace ℝ E] [NormedSpace 𝕜 E] [NormedAddCommGroup H] [NormedSpace 𝕜 H] {F : H → α → E} {x₀ : H} {bound : α → ℝ}\n  {s : Set H} {F' : α → H →L[𝕜] E} (hs : s ∈ nhds x₀)\n  (hF_meas : ∀ᶠ (x : H) in nhds x₀, MeasureTheory.AEStronglyMeasurable (F x) μ)\n  (hF_int : MeasureTheory.Integrable (F x₀) μ) (hF'_meas : MeasureTheory.AEStronglyMeasurable F' μ)\n  (h_lip : ∀ᵐ (a : α) ∂μ, LipschitzOnWith (Real.nnabs (bound a)) (fun x ↦ F x a) s)\n  (hbound_int : MeasureTheory.Integrable bound μ) (h_diff : ∀ᵐ (a : α) ∂μ, HasFDerivAt (fun x ↦ F x a) (F' a) x₀) :\n  MeasureTheory.Integrable F' μ ∧ HasFDerivAt (fun x ↦ ∫ (a : α), F x a ∂μ) (∫ (a : α), F' a ∂μ) x₀</code><span class=\"sep\"></span><code class=\"docstring\">Differentiation under the integral sign, Fréchet derivative form.\n\nThe lecture statement is the one-dimensional real special case.  Mathlib's\ntheorem works over `ℝ` or `ℂ` and for Fréchet derivatives.\n</code>",
+ "690": "<code>∀ᵐ (a : α) ∂μ, ContinuousAt (fun x ↦ F x a) x₀</code>",
+ "69":
+ "<code>And (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`And a b`, or `a ∧ b`, is the conjunction of propositions. It can be\nconstructed and destructed like a pair: if `ha : a` and `hb : b` then\n`⟨ha, hb⟩ : a ∧ b`, and if `h : a ∧ b` then `h.left : a` and `h.right : b`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∧` in identifiers is `and`.</code>",
+ "689": "<code>∀ᶠ (x : X) in nhds x₀, ∀ᵐ (a : α) ∂μ, ‖F x a‖ ≤ bound a</code>",
+ "688":
+ "<code>∀ᶠ (x : X) in nhds x₀, MeasureTheory.AEStronglyMeasurable (F x) μ</code>",
+ "687":
+ "<code>NoteKsk.Chapter10.continuousAt_integral_of_dominated.{u_1, u_2, u_3} {α : Type u_1} {X : Type u_2} {G : Type u_3}\n  [MeasurableSpace α] {μ : MeasureTheory.Measure α} [TopologicalSpace X] [FirstCountableTopology X]\n  [NormedAddCommGroup G] [NormedSpace ℝ G] {F : X → α → G} {bound : α → ℝ} {x₀ : X}\n  (hF_meas : ∀ᶠ (x : X) in nhds x₀, MeasureTheory.AEStronglyMeasurable (F x) μ)\n  (hbound : ∀ᶠ (x : X) in nhds x₀, ∀ᵐ (a : α) ∂μ, ‖F x a‖ ≤ bound a) (hbound_int : MeasureTheory.Integrable bound μ)\n  (hcont : ∀ᵐ (a : α) ∂μ, ContinuousAt (fun x ↦ F x a) x₀) : ContinuousAt (fun x ↦ ∫ (a : α), F x a ∂μ) x₀</code><span class=\"sep\"></span><code class=\"docstring\">Pointwise continuity under the integral sign by dominated convergence. </code>",
+ "686": "<code>∀ᵐ (a : α) ∂μ, Continuous fun x ↦ F x a</code>",
+ "685": "<code>∀ (x : X), ∀ᵐ (a : α) ∂μ, ‖F x a‖ ≤ bound a</code>",
+ "684": "<code>X</code>",
+ "683": "<code>∀ (x : X), MeasureTheory.AEStronglyMeasurable (F x) μ</code>",
+ "682": "<code>X → α → G</code>",
+ "681":
+ "<code>FirstCountableTopology.{u} (α : Type u) [t : TopologicalSpace α] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A first-countable space is one in which every point has a\ncountable neighborhood basis. </code>",
+ "680":
+ "<code>NoteKsk.Chapter10.continuous_integral_of_dominated.{u_1, u_2, u_3} {α : Type u_1} {X : Type u_2} {G : Type u_3}\n  [MeasurableSpace α] {μ : MeasureTheory.Measure α} [TopologicalSpace X] [FirstCountableTopology X]\n  [NormedAddCommGroup G] [NormedSpace ℝ G] {F : X → α → G} {bound : α → ℝ}\n  (hF_meas : ∀ (x : X), MeasureTheory.AEStronglyMeasurable (F x) μ)\n  (hbound : ∀ (x : X), ∀ᵐ (a : α) ∂μ, ‖F x a‖ ≤ bound a) (hbound_int : MeasureTheory.Integrable bound μ)\n  (hcont : ∀ᵐ (a : α) ∂μ, Continuous fun x ↦ F x a) : Continuous fun x ↦ ∫ (a : α), F x a ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Continuity under the integral sign by dominated convergence. </code>",
+ "68":
+ "<code>Bornology.IsBounded.{u_2} {α : Type u_2} [Bornology α] (s : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`IsBounded` is the predicate that `s` is bounded relative to the ambient bornology on `α`. </code>",
+ "679": "<code>Summable fun i ↦ ∫ (x : α), ‖F i x‖ ∂μ</code>",
+ "678": "<code>∀ (i : ι), MeasureTheory.Integrable (F i) μ</code>",
+ "677":
+ "<code>NoteKsk.Chapter10.integral_tsum_of_summable_integral_norm.{u_1, u_2, u_3} {α : Type u_1} {ι : Type u_2} {E : Type u_3}\n  [MeasurableSpace α] {μ : MeasureTheory.Measure α} [NormedAddCommGroup E] [NormedSpace ℝ E] [Countable ι]\n  {F : ι → α → E} (hF_int : ∀ (i : ι), MeasureTheory.Integrable (F i) μ)\n  (hF_sum : Summable fun i ↦ ∫ (x : α), ‖F i x‖ ∂μ) : ∑' (i : ι), ∫ (x : α), F i x ∂μ = ∫ (x : α), ∑' (i : ι), F i x ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">A common sufficient condition for exchanging `tsum` and integral. </code>",
+ "676":
+ "<code>HasSum.{u_1, u_2} {α : Type u_1} {β : Type u_2} [AddCommMonoid α] [TopologicalSpace α] (f : β → α) (a : α)\n  (L : SummationFilter β := SummationFilter.unconditional β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`HasSum f a L` means that the (potentially infinite) sum of the `f b` for `b : β`\nconverges to `a` along the SummationFilter `L`.\n\nBy default `L` is the `unconditional` one, corresponding to the limit of all finite sets towards\nthe entire type. So we take the sum over bigger and bigger finite sets. This sum operation is\ninvariant under permuting the terms (while sums for more general summation filters usually are not).\nThis is based on Mario Carneiro's\n[infinite sum `df-tsms` in Metamath](http://us.metamath.org/mpeuni/df-tsms.html).\n\nIn particular, the function `ℕ → ℝ` sending `n` to `(-1) ^ n / (n + 1)` does not have a\nsum for this definition, although it is summable for the `conditional` summation filter that\ntakes limits of sums over `n ∈ {0, ..., X}` as `X → ∞`. However, a series which is *absolutely*\nconvergent with respect to the conditional summation filter is in fact unconditionally summable.\n\nFor the definition and many statements, `α` does not need to be a topological additive monoid,\nonly an additive monoid with a topology (i.e. the addition is not assumed to be continuous). We\nonly add this assumption later, for the lemmas where it is relevant. </code>",
+ "675": "<code>∀ᵐ (x : α) ∂μ, HasSum (fun n ↦ F n x) (f x)</code>",
+ "674":
+ "<code>MeasureTheory.Integrable (fun x ↦ ∑' (n : ι), bound n x) μ</code>",
+ "673":
+ "<code>Summable.{u_1, u_2} {α : Type u_1} {β : Type u_2} [AddCommMonoid α] [TopologicalSpace α] (f : β → α)\n  (L : SummationFilter β := SummationFilter.unconditional β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Summable f` means that `f` has some (infinite) sum with respect to `L`. Use `tsum` to get the\nvalue. </code>",
+ "672": "<code>∀ᵐ (x : α) ∂μ, Summable fun n ↦ bound n x</code>",
+ "671": "<code>∀ (n : ι), ∀ᵐ (x : α) ∂μ, ‖F n x‖ ≤ bound n x</code>",
+ "670": "<code>∀ (n : ι), MeasureTheory.AEStronglyMeasurable (F n) μ</code>",
+ "67":
+ "<code>Iff (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">If and only if, or logical bi-implication. `a ↔ b` means that `a` implies `b` and vice versa.\nBy `propext`, this implies that `a` and `b` are equal and hence any expression involving `a`\nis equivalent to the corresponding expression with `b` instead.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `↔` in identifiers is `iff`.\n\n * The recommended spelling of `&lt;-&gt;` in identifiers is `iff` (prefer `↔` over `&lt;-&gt;`).</code>",
+ "669": "<code>ι → α → E</code>",
+ "668":
+ "<code>NoteKsk.Chapter10.hasSum_integral_of_dominated_convergence.{u_1, u_2, u_3} {α : Type u_1} {ι : Type u_2} {E : Type u_3}\n  [MeasurableSpace α] {μ : MeasureTheory.Measure α} [NormedAddCommGroup E] [NormedSpace ℝ E] [Countable ι]\n  {F : ι → α → E} {f : α → E} (bound : ι → α → ℝ) (hF_meas : ∀ (n : ι), MeasureTheory.AEStronglyMeasurable (F n) μ)\n  (hbound : ∀ (n : ι), ∀ᵐ (x : α) ∂μ, ‖F n x‖ ≤ bound n x) (hbound_summable : ∀ᵐ (x : α) ∂μ, Summable fun n ↦ bound n x)\n  (hbound_int : MeasureTheory.Integrable (fun x ↦ ∑' (n : ι), bound n x) μ)\n  (hsum : ∀ᵐ (x : α) ∂μ, HasSum (fun n ↦ F n x) (f x)) : HasSum (fun n ↦ ∫ (x : α), F n x ∂μ) (∫ (x : α), f x ∂μ)</code><span class=\"sep\"></span><code class=\"docstring\">Termwise integration under a dominated summability hypothesis.\n\nThis is the mathlib `HasSum` form of the lecture theorem\n`∫ (∑ f_n) = ∑ ∫ f_n`.\n</code>",
+ "667": "<code>∃ C, ∀ (n : ℕ), ∀ᵐ (x : α) ∂μ, ‖F n x‖ ≤ C</code>",
+ "666":
+ "<code>NoteKsk.Chapter10.tendsto_integral_of_bounded_convergence.{u_1, u_2} {α : Type u_1} {G : Type u_2} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} [NormedAddCommGroup G] [NormedSpace ℝ G] [MeasureTheory.IsFiniteMeasure μ]\n  {F : ℕ → α → G} {f : α → G} (hF_meas : ∀ (n : ℕ), MeasureTheory.AEStronglyMeasurable (F n) μ)\n  (hbound : ∃ C, ∀ (n : ℕ), ∀ᵐ (x : α) ∂μ, ‖F n x‖ ≤ C)\n  (hlim : ∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ F n x) Filter.atTop (nhds (f x))) :\n  Filter.Tendsto (fun n ↦ ∫ (x : α), F n x ∂μ) Filter.atTop (nhds (∫ (x : α), f x ∂μ))</code><span class=\"sep\"></span><code class=\"docstring\">Bounded convergence theorem on a finite measure space. </code>",
+ "665": "<code>∀ (n : ℕ), MeasureTheory.AEStronglyMeasurable (F n) μ</code>",
+ "664":
+ "<code>NoteKsk.Chapter10.tendsto_integral_of_dominated_convergence.{u_1, u_2} {α : Type u_1} {G : Type u_2} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} [NormedAddCommGroup G] [NormedSpace ℝ G] {F : ℕ → α → G} {f : α → G} (bound : α → ℝ)\n  (hF_meas : ∀ (n : ℕ), MeasureTheory.AEStronglyMeasurable (F n) μ) (hbound_int : MeasureTheory.Integrable bound μ)\n  (hbound : ∀ (n : ℕ), ∀ᵐ (x : α) ∂μ, ‖F n x‖ ≤ bound x)\n  (hlim : ∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ F n x) Filter.atTop (nhds (f x))) :\n  Filter.Tendsto (fun n ↦ ∫ (x : α), F n x ∂μ) Filter.atTop (nhds (∫ (x : α), f x ∂μ))</code><span class=\"sep\"></span><code class=\"docstring\">Dominated convergence theorem for Bochner integrals.\n\nThe lecture statement is real-valued; this mathlib form works for functions\nwith values in any real normed additive group.\n</code>",
+ "663":
+ "<code>∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ F n x) Filter.atTop (nhds (f x))</code>",
+ "662": "<code>∀ (n : ℕ), ∀ᵐ (x : α) ∂μ, ‖F n x‖ ≤ bound x</code>",
+ "661": "<code>MeasureTheory.Integrable bound μ</code>",
+ "660": "<code>α → G</code>",
+ "66":
+ "<code>NoteKsk.Chapter02.jordanMeasurable_iff {d : ℕ} {A : Set (NoteKsk.Space d)} :\n  NoteKsk.JordanMeasurable A ↔\n    Bornology.IsBounded A ∧ MeasurableSet A ∧ NoteKsk.jordanOuterMeasure A = NoteKsk.jordanInnerMeasure A</code>",
+ "659": "<code>ℕ → α → G</code>",
+ "658":
+ "<code>NoteKsk.Chapter10.integrable_limit_of_dominated_convergence.{u_1, u_2} {α : Type u_1} {G : Type u_2} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} [NormedAddCommGroup G] {F : ℕ → α → G} {f : α → G} {bound : α → ℝ}\n  (hf_meas : MeasureTheory.AEStronglyMeasurable f μ) (hbound_int : MeasureTheory.Integrable bound μ)\n  (hbound : ∀ (n : ℕ), ∀ᵐ (x : α) ∂μ, ‖F n x‖ ≤ bound x)\n  (hlim : ∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ F n x) Filter.atTop (nhds (f x))) : MeasureTheory.Integrable f μ</code><span class=\"sep\"></span><code class=\"docstring\">The limit function in dominated convergence has finite integral.  We keep the\na.e. strong measurability of the limit as an explicit hypothesis, because this\nis the way Bochner integrability is represented in mathlib.\n</code>",
+ "657":
+ "<code>NoteKsk.Chapter10.fatou_lintegral_atTop.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : ℕ → α → ENNReal} (hf : ∀ (n : ℕ), Measurable (f n)) :\n  ∫⁻ (x : α), Filter.liminf (fun n ↦ f n x) Filter.atTop ∂μ ≤ Filter.liminf (fun n ↦ ∫⁻ (x : α), f n x ∂μ) Filter.atTop</code><span class=\"sep\"></span><code class=\"docstring\">Sequential Fatou lemma. </code>",
+ "656":
+ "<code>Filter.liminf.{u_1, u_2} {α : Type u_1} {β : Type u_2} [ConditionallyCompleteLattice α] (u : β → α) (f : Filter β) : α</code><span class=\"sep\"></span><code class=\"docstring\">The `liminf` of a function `u` along a filter `f` is the supremum of the `a` such that\nthe inequality `u x ≥ a` eventually holds for `f`. </code>",
+ "655": "<code>∀ (i : ι), Measurable (f i)</code>",
+ "654":
+ "<code>Filter.IsCountablyGenerated.{u_1} {α : Type u_1} (f : Filter α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`IsCountablyGenerated f` means `f = generate s` for some countable `s`. </code>",
+ "653":
+ "<code>NoteKsk.Chapter10.fatou_lintegral.{u_1, u_2} {α : Type u_1} {ι : Type u_2} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : ι → α → ENNReal} {l : Filter ι} [l.IsCountablyGenerated]\n  (hf : ∀ (i : ι), Measurable (f i)) :\n  ∫⁻ (x : α), Filter.liminf (fun i ↦ f i x) l ∂μ ≤ Filter.liminf (fun i ↦ ∫⁻ (x : α), f i x ∂μ) l</code><span class=\"sep\"></span><code class=\"docstring\">Fatou's lemma for `ENNReal`-valued functions. </code>",
+ "652": "<code>∀ (i : ι), AEMeasurable (f i) μ</code>",
+ "651":
+ "<code>Countable.{u} (α : Sort u) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A type `α` is countable if there exists an injective map `α → ℕ`. </code>",
+ "650": "<code>ι → α → ENNReal</code>",
+ "65":
+ "<code>NoteKsk.jordanMeasure {d : ℕ} (A : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Jordan measure of a Jordan-measurable set, represented by the outer value. </code>",
+ "649":
+ "<code>NoteKsk.Chapter10.lintegral_tsum.{u_1, u_2} {α : Type u_1} {ι : Type u_2} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : ι → α → ENNReal} [Countable ι] (hf : ∀ (i : ι), AEMeasurable (f i) μ) :\n  ∫⁻ (x : α), ∑' (i : ι), f i x ∂μ = ∑' (i : ι), ∫⁻ (x : α), f i x ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Termwise integration for nonnegative series. </code>",
+ "648":
+ "<code>∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ f n x) Filter.atTop (nhds (F x))</code>",
+ "647":
+ "<code>NoteKsk.Chapter10.tendsto_lintegral_of_monotone.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : ℕ → α → ENNReal} {F : α → ENNReal} (hf : ∀ (n : ℕ), AEMeasurable (f n) μ)\n  (hmono : ∀ᵐ (x : α) ∂μ, Monotone fun n ↦ f n x)\n  (hlim : ∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ f n x) Filter.atTop (nhds (F x))) :\n  Filter.Tendsto (fun n ↦ ∫⁻ (x : α), f n x ∂μ) Filter.atTop (nhds (∫⁻ (x : α), F x ∂μ))</code><span class=\"sep\"></span><code class=\"docstring\">Monotone convergence expressed as convergence of the integrals. </code>",
+ "646":
+ "<code>NoteKsk.Chapter10.monotone_convergence_lintegral_ae.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : ℕ → α → ENNReal} (hf : ∀ (n : ℕ), AEMeasurable (f n) μ)\n  (hmono : ∀ᵐ (x : α) ∂μ, Monotone fun n ↦ f n x) : ∫⁻ (x : α), ⨆ n, f n x ∂μ = ⨆ n, ∫⁻ (x : α), f n x ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Almost-everywhere measurable version of monotone convergence.  This is often\nthe most convenient form for later convergence arguments.\n</code>",
+ "645":
+ "<code>NoteKsk.Chapter10.monotone_convergence_lintegral.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : ℕ → α → ENNReal} (hf : ∀ (n : ℕ), Measurable (f n)) (hmono : Monotone f) :\n  ∫⁻ (x : α), ⨆ n, f n x ∂μ = ⨆ n, ∫⁻ (x : α), f n x ∂μ</code><span class=\"sep\"></span><code class=\"docstring\">Monotone convergence theorem for nonnegative functions, in `lintegral` form. </code>",
+ "644":
+ "<code>NoteKsk.Chapter09.abs_integral_le_const_mul_measure.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {f : α → ℝ}\n  (hf : MeasureTheory.AEStronglyMeasurable f μ) {M : ℝ} (hM : ∀ᵐ (x : α) ∂μ, |f x| ≤ M) :\n  |∫ (x : α), f x ∂μ| ≤ M * μ.real Set.univ</code>",
+ "643": "<code>∀ᵐ (x : α) ∂μ, |f x| ≤ M</code>",
+ "642":
+ "<code>NoteKsk.Chapter09.integrable_of_ae_abs_le_const.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  [MeasureTheory.IsFiniteMeasure μ] {f : α → ℝ} (hf : MeasureTheory.AEStronglyMeasurable f μ) {M : ℝ}\n  (hM : ∀ᵐ (x : α) ∂μ, |f x| ≤ M) : MeasureTheory.Integrable f μ</code>",
+ "641": "<code>∀ i ∈ s, MeasureTheory.Integrable (f i) μ</code>",
+ "640": "<code>ι → α → ℝ</code>",
+ "64":
+ "<code>NoteKsk.JordanMeasurable {d : ℕ} (A : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Jordan measurability, restricted to bounded sets as in the notes.\n\nThe `MeasurableSet` field records the later theorem that Jordan-measurable sets\nare Lebesgue measurable; this lets Chapter 03 use mathlib's countable additivity\nof `volume` without adding another placeholder.\n</code>",
+ "639": "<code>Finset ι</code>",
+ "638":
+ "<code>NoteKsk.Chapter09.integral_finset_sum.{u_1, u_2} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {ι : Type u_2} (s : Finset ι) {f : ι → α → ℝ} (hf : ∀ i ∈ s, MeasureTheory.Integrable (f i) μ) :\n  ∫ (x : α), ∑ i ∈ s, f i x ∂μ = ∑ i ∈ s, ∫ (x : α), f i x ∂μ</code>",
+ "637":
+ "<code>NoteKsk.Chapter09.integral_sub_real.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α} {f g : α → ℝ}\n  (hf : MeasureTheory.Integrable f μ) (hg : MeasureTheory.Integrable g μ) :\n  ∫ (x : α), f x - g x ∂μ = ∫ (x : α), f x ∂μ - ∫ (x : α), g x ∂μ</code>",
+ "636":
+ "<code>Neg.neg.{u} {α : Type u} [self : Neg α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`-a` computes the negative or opposite of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `neg` (when used as a unary operator).</code>",
+ "635":
+ "<code>NoteKsk.Chapter09.integral_neg_real.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α} (f : α → ℝ) :\n  ∫ (x : α), -f x ∂μ = -∫ (x : α), f x ∂μ</code>",
+ "634":
+ "<code>NoteKsk.Chapter09.integral_add_real.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α} {f g : α → ℝ}\n  (hf : MeasureTheory.Integrable f μ) (hg : MeasureTheory.Integrable g μ) :\n  ∫ (x : α), f x + g x ∂μ = ∫ (x : α), f x ∂μ + ∫ (x : α), g x ∂μ</code>",
+ "633":
+ "<code>NoteKsk.Chapter09.integrable_add_real.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ℝ} (hf : MeasureTheory.Integrable f μ) (hg : MeasureTheory.Integrable g μ) :\n  MeasureTheory.Integrable (fun x ↦ f x + g x) μ</code>",
+ "632":
+ "<code>HSMul.hSMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a • b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent, but it is intended to be used for left actions. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `•` in identifiers is `smul`.</code>",
+ "631":
+ "<code>NoteKsk.Chapter09.integral_smul.{u_1, u_2} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {E : Type u_2} [NormedAddCommGroup E] [NormedSpace ℝ E] (c : ℝ) (f : α → E) :\n  ∫ (x : α), c • f x ∂μ = c • ∫ (x : α), f x ∂μ</code>",
+ "630":
+ "<code>NoteKsk.Chapter09.integral_const_mul_real.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α} (c : ℝ)\n  (f : α → ℝ) : ∫ (x : α), c * f x ∂μ = c * ∫ (x : α), f x ∂μ</code>",
+ "63":
+ "<code>NoteKsk.jordanInnerMeasure {d : ℕ} (A : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Jordan inner measure: supremum of elementary volumes over elementary subsets. </code>",
+ "629": "<code>0 &lt; a</code>",
+ "628":
+ "<code>NoteKsk.Chapter09.chebyshev_integrable_abs.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) {a : ℝ} (ha : 0 &lt; a) :\n  μ {x | a ≤ |f x|} ≤ (∫⁻ (x : α), ENNReal.ofReal |f x| ∂μ) / ENNReal.ofReal a</code><span class=\"sep\"></span><code class=\"docstring\">The lecture statement\n`μ {x | a ≤ |f x|} ≤ a⁻¹ ∫ |f| dμ` is formalized in `ENNReal` form.\nThe right-hand side uses the lower Lebesgue integral of `ENNReal.ofReal |f|`.\n</code>",
+ "627":
+ "<code>HDiv.hDiv.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HDiv α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a / b` computes the result of dividing `a` by `b`.\nThe meaning of this notation is type-dependent.\n* For most types like `Nat`, `Int`, `Rat`, `Real`, `a / 0` is defined to be `0`.\n* For `Nat`, `a / b` rounds downwards.\n* For `Int`, `a / b` rounds downwards if `b` is positive or upwards if `b` is negative.\n  It is implemented as `Int.ediv`, the unique function satisfying\n  `a % b + b * (a / b) = a` and `0 ≤ a % b &lt; natAbs b` for `b ≠ 0`.\n  Other rounding conventions are available using the functions\n  `Int.fdiv` (floor rounding) and `Int.tdiv` (truncation rounding).\n* For `Float`, `a / 0` follows the IEEE 754 semantics for division,\n  usually resulting in `inf` or `nan`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `/` in identifiers is `div`.</code>",
+ "626": "<code>ε ≠ ⊤</code>",
+ "625": "<code>AEMeasurable f μ</code>",
+ "624":
+ "<code>NoteKsk.Chapter09.chebyshev_lintegral.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ENNReal} (hf : AEMeasurable f μ) {ε : ENNReal} (hε0 : ε ≠ 0) (hεtop : ε ≠ ⊤) :\n  μ {x | ε ≤ f x} ≤ (∫⁻ (x : α), f x ∂μ) / ε</code><span class=\"sep\"></span><code class=\"docstring\">Mathlib's Chebyshev/Markov inequality is naturally stated with `ENNReal`\nmeasures and lower Lebesgue integrals.\n</code>",
+ "623":
+ "<code>NoteKsk.Chapter09.integral_abs_eq_zero_iff_ae_eq_zero.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) : ∫ (x : α), |f x| ∂μ = 0 ↔ f =ᵐ[μ] 0</code>",
+ "622":
+ "<code>NoteKsk.Chapter09.norm_integral_le_integral_norm.{u_1, u_2} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {E : Type u_2} [NormedAddCommGroup E] [NormedSpace ℝ E] (f : α → E) :\n  ‖∫ (x : α), f x ∂μ‖ ≤ ∫ (x : α), ‖f x‖ ∂μ</code>",
+ "621":
+ "<code>NoteKsk.Chapter09.abs_integral_le_integral_abs.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  (f : α → ℝ) : |∫ (x : α), f x ∂μ| ≤ ∫ (x : α), |f x| ∂μ</code>",
+ "620":
+ "<code>MeasureTheory.Measure.real.{u_6} {α : Type u_6} {m : MeasurableSpace α} (μ : MeasureTheory.Measure α) (s : Set α) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The real-valued version of a measure. Maps infinite measure sets to zero. Use as `μ.real s`.\nThe API is developed in `Mathlib/MeasureTheory/Measure/Real.lean`. </code>",
+ "62":
+ "<code>NoteKsk.jordanOuterMeasure {d : ℕ} (A : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Jordan outer measure: infimum of elementary volumes over elementary supersets. </code>",
+ "619": "<code>f ≤ᵐ[μ] fun x ↦ b</code>",
+ "618": "<code>(fun x ↦ a) ≤ᵐ[μ] f</code>",
+ "617":
+ "<code>NoteKsk.Chapter09.integral_bounds_of_ae_const_le.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  [MeasureTheory.IsFiniteMeasure μ] {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) {a b : ℝ} (ha : (fun x ↦ a) ≤ᵐ[μ] f)\n  (hb : f ≤ᵐ[μ] fun x ↦ b) : a * μ.real Set.univ ≤ ∫ (x : α), f x ∂μ ∧ ∫ (x : α), f x ∂μ ≤ b * μ.real Set.univ</code>",
+ "616":
+ "<code>NoteKsk.Chapter09.integral_mono_real.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ℝ} (hf : MeasureTheory.Integrable f μ) (hg : MeasureTheory.Integrable g μ) (hfg : f ≤ g) :\n  ∫ (x : α), f x ∂μ ≤ ∫ (x : α), g x ∂μ</code>",
+ "615": "<code>f ≤ᵐ[μ] g</code>",
+ "614":
+ "<code>NoteKsk.Chapter09.integral_mono_ae_real.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ℝ} (hf : MeasureTheory.Integrable f μ) (hg : MeasureTheory.Integrable g μ) (hfg : f ≤ᵐ[μ] g) :\n  ∫ (x : α), f x ∂μ ≤ ∫ (x : α), g x ∂μ</code>",
+ "613":
+ "<code>NoteKsk.Chapter09.integral_aestrongly_congr.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ℝ} (hf : MeasureTheory.Integrable f μ) (hfg : f =ᵐ[μ] g) :\n  MeasureTheory.Integrable g μ ∧ ∫ (x : α), f x ∂μ = ∫ (x : α), g x ∂μ</code>",
+ "612":
+ "<code>ContinuousENorm.{u_8} (E : Type u_8) [TopologicalSpace E] : Type u_8</code><span class=\"sep\"></span><code class=\"docstring\">A type `E` equipped with a continuous map `‖·‖ₑ : E → ℝ≥0∞`\n\nNB. We do not demand that the topology is somehow defined by the enorm:\nfor `ℝ≥0∞` (the motivating example behind this definition), this is not true. </code>",
+ "611":
+ "<code>NoteKsk.Chapter09.integrable_congr_ae.{u_1, u_2} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {E : Type u_2} [TopologicalSpace E] [ContinuousENorm E] {f g : α → E} (hf : MeasureTheory.Integrable f μ)\n  (hfg : f =ᵐ[μ] g) : MeasureTheory.Integrable g μ</code>",
+ "610":
+ "<code>NoteKsk.Chapter09.integral_congr_ae.{u_1, u_2} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {E : Type u_2} [NormedAddCommGroup E] [NormedSpace ℝ E] {f g : α → E} (hfg : f =ᵐ[μ] g) :\n  ∫ (x : α), f x ∂μ = ∫ (x : α), g x ∂μ</code>",
+ "61":
+ "<code>HasSubset.Subset.{u} {α : Type u} [self : HasSubset α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Subset relation: `a ⊆ b`  \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊆` in identifiers is `subset`.</code>",
+ "609":
+ "<code>NoteKsk.Chapter09.setIntegral_union_of_disjoint_of_integrable.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) {A B : Set α} (hAB : Disjoint A B)\n  (hB : MeasurableSet B) : ∫ (x : α) in A ∪ B, f x ∂μ = ∫ (x : α) in A, f x ∂μ + ∫ (x : α) in B, f x ∂μ</code>",
+ "608": "<code>MeasureTheory.IntegrableOn f B μ</code>",
+ "607": "<code>MeasureTheory.IntegrableOn f A μ</code>",
+ "606":
+ "<code>NormedSpace.{u_6, u_7} (𝕜 : Type u_6) (E : Type u_7) [NormedField 𝕜] [SeminormedAddCommGroup E] : Type (max u_6 u_7)</code><span class=\"sep\"></span><code class=\"docstring\">A normed space over a normed field is a vector space endowed with a norm which satisfies the\nequality `‖c • x‖ = ‖c‖ ‖x‖`. We require only `‖c • x‖ ≤ ‖c‖ ‖x‖` in the definition, then prove\n`‖c • x‖ = ‖c‖ ‖x‖` in `norm_smul`.\n\nNote that since this requires `SeminormedAddCommGroup` and not `NormedAddCommGroup`, this\ntypeclass can be used for \"seminormed spaces\" too, just as `Module` can be used for\n\"semimodules\". </code>",
+ "605":
+ "<code>NoteKsk.Chapter09.setIntegral_union_of_disjoint.{u_1, u_2} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {E : Type u_2} [NormedAddCommGroup E] [NormedSpace ℝ E] {f : α → E} {A B : Set α}\n  (hAB : Disjoint A B) (hB : MeasurableSet B) (hfA : MeasureTheory.IntegrableOn f A μ)\n  (hfB : MeasureTheory.IntegrableOn f B μ) :\n  ∫ (x : α) in A ∪ B, f x ∂μ = ∫ (x : α) in A, f x ∂μ + ∫ (x : α) in B, f x ∂μ</code>",
+ "604":
+ "<code>NoteKsk.Chapter09.setIntegral_eq_zero_of_measure_zero.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {N : Set α} (hN : μ N = 0) (f : α → ℝ) : ∫ (x : α) in N, f x ∂μ = 0</code>",
+ "603": "<code>μ Set.univ = 0</code>",
+ "602":
+ "<code>NoteKsk.Chapter09.integral_eq_zero_of_measure_univ_zero.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : α → ℝ} (hμ : μ Set.univ = 0) : ∫ (x : α), f x ∂μ = 0</code>",
+ "601":
+ "<code>NoteKsk.Chapter09.integral_eq_realPositivePart_sub_realNegativePart.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) :\n  ∫ (x : α), f x ∂μ = ∫ (x : α), NoteKsk.realPositivePart f x ∂μ - ∫ (x : α), NoteKsk.realNegativePart f x ∂μ</code>",
+ "600":
+ "<code>Filter.EventuallyLE.{u_1, u_2} {α : Type u_1} {β : Type u_2} [LE β] (l : Filter α) (f g : α → β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f` is eventually less than or equal to a function `g` at a filter `l`. </code>",
+ "60": "<code>E ⊆ F</code>",
+ "6":
+ "<code>NoteKsk.Chapter01.IsValidPointList self.a self.b self.points</code>",
+ "599":
+ "<code>NoteKsk.Chapter09.integrable_iff_exists_integrable_sub_nonneg.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : α → ℝ} :\n  MeasureTheory.Integrable f μ ↔\n    ∃ u v,\n      MeasureTheory.Integrable u μ ∧ MeasureTheory.Integrable v μ ∧ 0 ≤ᵐ[μ] u ∧ 0 ≤ᵐ[μ] v ∧ f =ᵐ[μ] fun x ↦ u x - v x</code><span class=\"sep\"></span><code class=\"docstring\">The lecture statement uses pointwise nonnegative measurable functions and\npointwise equality `f = u - v`.  This formal version uses a.e. nonnegativity\nand a.e. equality, which is the mathlib-native formulation for Bochner\nintegrals and is equivalent for integration purposes.\n</code>",
+ "598":
+ "<code>NoteKsk.Chapter09.realNegativePart_integrable.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) : MeasureTheory.Integrable (NoteKsk.realNegativePart f) μ</code>",
+ "597":
+ "<code>NoteKsk.Chapter09.realPositivePart_integrable.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) : MeasureTheory.Integrable (NoteKsk.realPositivePart f) μ</code>",
+ "596":
+ "<code>NoteKsk.Chapter09.realPositivePart_mul_realNegativePart.{u_1} {α : Type u_1} (f : α → ℝ) (x : α) :\n  NoteKsk.realPositivePart f x * NoteKsk.realNegativePart f x = 0</code>",
+ "595":
+ "<code>NoteKsk.Chapter09.realPositivePart_add_realNegativePart.{u_1} {α : Type u_1} (f : α → ℝ) (x : α) :\n  NoteKsk.realPositivePart f x + NoteKsk.realNegativePart f x = |f x|</code>",
+ "594":
+ "<code>NoteKsk.Chapter09.realPositivePart_sub_realNegativePart.{u_1} {α : Type u_1} (f : α → ℝ) (x : α) :\n  NoteKsk.realPositivePart f x - NoteKsk.realNegativePart f x = f x</code>",
+ "593":
+ "<code>NoteKsk.Chapter09.realNegativePart_nonneg.{u_1} {α : Type u_1} (f : α → ℝ) (x : α) : 0 ≤ NoteKsk.realNegativePart f x</code>",
+ "592":
+ "<code>NoteKsk.Chapter09.realPositivePart_nonneg.{u_1} {α : Type u_1} (f : α → ℝ) (x : α) : 0 ≤ NoteKsk.realPositivePart f x</code>",
+ "591":
+ "<code>NoteKsk.realNegativePart.{u_1} {α : Type u_1} (f : α → ℝ) : α → ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Negative part of a real-valued function, represented as a real-valued function.\nThis is kept separate from the `ENNReal`-valued `negativePart` used in Chapter 08.\n</code>",
+ "590":
+ "<code>NoteKsk.realPositivePart.{u_1} {α : Type u_1} (f : α → ℝ) : α → ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Positive part of a real-valued function, represented as a real-valued function.\nThis is the notation used in Chapter 09 for identities such as\n`f = f⁺ - f⁻`.  The earlier `positivePart` is `ENNReal`-valued because it is\nadapted to lower Lebesgue integrals.\n</code>",
+ "59":
+ "<code>NoteKsk.Chapter02.elementaryVolume_mono {d : ℕ} {E F : Set (NoteKsk.Space d)} (hEF : E ⊆ F) :\n  NoteKsk.elementaryVolume E ≤ NoteKsk.elementaryVolume F</code>",
+ "589":
+ "<code>BoxIntegral.BoxAdditiveMap.volume.{u_1, u_2} {ι : Type u_1} [Fintype ι] {E : Type u_2} [NormedAddCommGroup E]\n  [NormedSpace ℝ E] : BoxIntegral.BoxAdditiveMap ι (E →L[ℝ] E) ⊤</code><span class=\"sep\"></span><code class=\"docstring\">Box-additive map sending each box `I` to the continuous linear endomorphism\n`x ↦ (volume I).toReal • x`. </code>",
+ "588":
+ "<code>BoxIntegral.IntegrationParams.Riemann : BoxIntegral.IntegrationParams</code><span class=\"sep\"></span><code class=\"docstring\">The `BoxIntegral.IntegrationParams` corresponding to the Riemann integral. In the\ncorresponding filter, we require that the diameters of all boxes `J` of a tagged partition are\nbounded from above by a constant upper estimate that may not depend on the geometry of `J`, and each\ntag belongs to the corresponding closed box. </code>",
+ "587":
+ "<code>BoxIntegral.integral.{u, v, w} {ι : Type u} {E : Type v} {F : Type w} [NormedAddCommGroup E] [NormedSpace ℝ E]\n  [NormedAddCommGroup F] [NormedSpace ℝ F] [Fintype ι] (I : BoxIntegral.Box ι) (l : BoxIntegral.IntegrationParams)\n  (f : (ι → ℝ) → E) (vol : BoxIntegral.BoxAdditiveMap ι (E →L[ℝ] F) ⊤) : F</code><span class=\"sep\"></span><code class=\"docstring\">The integral of a function `f` over a box `I` along a filter `l` w.r.t. a volume `vol`.\nReturns zero on non-integrable functions. </code>",
+ "586":
+ "<code>ContinuousAt.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) (x : X) :\n  Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function between topological spaces is continuous at a point `x₀`\nif `f x` tends to `f x₀` when `x` tends to `x₀`. </code>",
+ "585": "<code>∀ᵐ (x : ι → ℝ), ContinuousAt f x</code>",
+ "584":
+ "<code>BoxIntegral.Box.Icc.{u_1} {ι : Type u_1} : BoxIntegral.Box ι ↪o Set (ι → ℝ)</code><span class=\"sep\"></span><code class=\"docstring\">Closed box corresponding to `I : BoxIntegral.Box ι`. </code>",
+ "583": "<code>ι → ℝ</code>",
+ "582": "<code>∃ C, ∀ x ∈ BoxIntegral.Box.Icc I, ‖f x‖ ≤ C</code>",
+ "581": "<code>(ι → ℝ) → ℝ</code>",
+ "580":
+ "<code>BoxIntegral.Box.{u_2} (ι : Type u_2) : Type u_2</code><span class=\"sep\"></span><code class=\"docstring\">A nontrivial rectangular box in `ι → ℝ` with corners `lower` and `upper`. Represents the product\nof half-open intervals `(lower i, upper i]`. </code>",
+ "58":
+ "<code>LE.le.{u} {α : Type u} [self : LE α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-equal relation: `x ≤ y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≤` in identifiers is `le`.</code>",
+ "579": "<code>BoxIntegral.Box ι</code>",
+ "578":
+ "<code>Fintype.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Fintype α` means that `α` is finite, i.e. there are only\nfinitely many distinct elements of type `α`. The evidence of this\nis a finset `elems` (a list up to permutation without duplicates),\ntogether with a proof that everything of type `α` is in the list. </code>",
+ "577":
+ "<code>NoteKsk.Chapter08.boxRiemann_integrableOn_and_integral_eq_of_bounded_aeContinuous.{u_1} {ι : Type u_1} [Fintype ι]\n  {I : BoxIntegral.Box ι} {f : (ι → ℝ) → ℝ} (hb : ∃ C, ∀ x ∈ BoxIntegral.Box.Icc I, ‖f x‖ ≤ C)\n  (hc : ∀ᵐ (x : ι → ℝ), ContinuousAt f x) :\n  MeasureTheory.IntegrableOn f (↑I) MeasureTheory.volume ∧\n    BoxIntegral.integral I BoxIntegral.IntegrationParams.Riemann f BoxIntegral.BoxAdditiveMap.volume =\n      ∫ (x : ι → ℝ) in ↑I, f x</code><span class=\"sep\"></span><code class=\"docstring\">Bounded a.e.-continuous functions on a rectangular box are Lebesgue integrable,\nand mathlib's Riemann `BoxIntegral` has the same value as the Lebesgue integral.\n\nThis theorem deliberately uses mathlib's box-integral API,\n`BoxIntegral.IntegrationParams.Riemann` and `BoxIntegral.BoxAdditiveMap.volume`.\nIt is not a theorem about the Chapter 01 lecture definitions\n`Chapter01.RiemannIntegrableOn` or `Chapter01.riemannIntegral`.\n</code>",
+ "576": "<code>Filter.Tendsto (⇑μ ∘ A) l (nhds 0)</code>",
+ "575": "<code>ι → Set α</code>",
+ "574":
+ "<code>Filter.{u_1} (α : Type u_1) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A filter `F` on a type `α` is a collection of sets of `α` which contains the whole `α`,\nis upwards-closed, and is stable under intersection. We do not forbid this collection to be\nall sets of `α`. </code>",
+ "573": "<code>Filter ι</code>",
+ "572":
+ "<code>NoteKsk.Chapter08.integral_absolute_continuity_filter.{u_1, u_2} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {ι : Type u_2} {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) {l : Filter ι}\n  {A : ι → Set α} (hA : Filter.Tendsto (⇑μ ∘ A) l (nhds 0)) :\n  Filter.Tendsto (fun i ↦ ∫ (x : α) in A i, f x ∂μ) l (nhds 0)</code>",
+ "571": "<code>0 &lt; ε</code>",
+ "570":
+ "<code>NoteKsk.Chapter08.integral_absolute_continuity.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) {ε : ℝ} (hε : 0 &lt; ε) :\n  ∃ δ &gt; 0, ∀ (A : Set α), μ A &lt; δ → ∫⁻ (x : α) in A, ENNReal.ofReal |f x| ∂μ &lt; ENNReal.ofReal ε</code><span class=\"sep\"></span><code class=\"docstring\">Mathlib states the `ε`-`δ` absolute continuity theorem with `ENNReal` bounds\nfor measures.  This is the formal version of the lecture statement\n`μ A &lt; δ ⇒ ∫_A |f| &lt; ε`.\n</code>",
+ "57":
+ "<code>NoteKsk.Chapter02.elementaryVolume_nonneg {d : ℕ} (E : Set (NoteKsk.Space d)) : 0 ≤ NoteKsk.elementaryVolume E</code>",
+ "569":
+ "<code>ENNReal.ofReal (r : ℝ) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">`ofReal x` returns `x` if it is nonnegative, `0` otherwise. </code>",
+ "568":
+ "<code>NoteKsk.Chapter08.integrable_abs_lintegral_ne_top.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) : ∫⁻ (x : α), ENNReal.ofReal |f x| ∂μ ≠ ⊤</code>",
+ "567": "<code>NoteKsk.lintegralNN μ f ≠ ⊤</code>",
+ "566":
+ "<code>NoteKsk.Chapter08.lintegral_absolute_continuity.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ENNReal} (hfin : NoteKsk.lintegralNN μ f ≠ ⊤) {ε : ENNReal} (hε : ε ≠ 0) :\n  ∃ δ &gt; 0, ∀ (A : Set α), μ A &lt; δ → NoteKsk.setLintegralNN μ A f &lt; ε</code>",
+ "565":
+ "<code>NoteKsk.L1Space.{u_1} (α : Type u_1) [MeasurableSpace α] (μ : MeasureTheory.Measure α) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The `L¹` space as mathlib's space of a.e.-equivalence classes of integrable functions. </code>",
+ "564":
+ "<code>NoteKsk.Chapter08.integral_respects_ae_representatives.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f g : α → ℝ} (hfg : f =ᵐ[μ] g) : ∫ (x : α), f x ∂μ = ∫ (x : α), g x ∂μ</code>",
+ "563":
+ "<code>NoteKsk.Chapter08.signed_integral_congr_ae.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ℝ} (hf : MeasureTheory.Integrable f μ) (hfg : f =ᵐ[μ] g) :\n  MeasureTheory.Integrable g μ ∧ ∫ (x : α), f x ∂μ = ∫ (x : α), g x ∂μ</code>",
+ "562":
+ "<code>NoteKsk.Chapter08.setIntegral_eq_zero_of_measure_zero.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {N : Set α} (hN : μ N = 0) (f : α → ℝ) : ∫ (x : α) in N, f x ∂μ = 0</code>",
+ "561":
+ "<code>MeasureTheory.IntegrableOn.{u_1, u_3} {α : Type u_1} {ε : Type u_3} {mα : MeasurableSpace α} [TopologicalSpace ε]\n  [ContinuousENorm ε] (f : α → ε) (s : Set α) (μ : MeasureTheory.Measure α := by volume_tac) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function is `IntegrableOn` a set `s` if it is almost everywhere strongly measurable on `s`\nand if the integral of its pointwise norm over `s` is less than infinity. </code>",
+ "560":
+ "<code>NoteKsk.Chapter08.integrableOn_of_measure_zero.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {N : Set α} (hN : μ N = 0) (f : α → ℝ) : MeasureTheory.IntegrableOn f N μ</code>",
+ "56":
+ "<code>Eq.{u_1} {α : Sort u_1} : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The equality relation. It has one introduction rule, `Eq.refl`.\nWe use `a = b` as notation for `Eq a b`.\nA fundamental property of equality is that it is an equivalence relation.\n```\nvariable (α : Type) (a b c d : α)\nvariable (hab : a = b) (hcb : c = b) (hcd : c = d)\n\nexample : a = d :=\n  Eq.trans (Eq.trans hab (Eq.symm hcb)) hcd\n```\nEquality is much more than an equivalence relation, however. It has the important property that every assertion\nrespects the equivalence, in the sense that we can substitute equal expressions without changing the truth value.\nThat is, given `h1 : a = b` and `h2 : p a`, we can construct a proof for `p b` using substitution: `Eq.subst h1 h2`.\nExample:\n```\nexample (α : Type) (a b : α) (p : α → Prop)\n        (h1 : a = b) (h2 : p a) : p b :=\n  Eq.subst h1 h2\n\nexample (α : Type) (a b : α) (p : α → Prop)\n    (h1 : a = b) (h2 : p a) : p b :=\n  h1 ▸ h2\n```\nThe triangle in the second presentation is a macro built on top of `Eq.subst` and `Eq.symm`, and you can enter it by typing `\\t`.\nFor more information: [Equality](https://lean-lang.org/theorem_proving_in_lean4/quantifiers_and_equality.html#equality)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `=` in identifiers is `eq`.</code>",
+ "559":
+ "<code>NoteKsk.Chapter08.integrable_real_finite_ae.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  (f : α → ℝ) : ∀ᵐ (x : α) ∂μ, ↑|f x| &lt; ⊤</code><span class=\"sep\"></span><code class=\"docstring\">In the lecture, signed measurable functions may be extended-real-valued and\nintegrability implies finiteness a.e.  Here signed integrable functions are\nreal-valued from the start, so the corresponding finiteness statement is\ntautological.\n</code>",
+ "558": "<code>∀ᵐ (x : α) ∂μ, ‖f x‖ ≤ g x</code>",
+ "557": "<code>MeasureTheory.Integrable g μ</code>",
+ "556":
+ "<code>NoteKsk.Chapter08.dominated_integrability.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ℝ} (hg : MeasureTheory.Integrable g μ) (hf : MeasureTheory.AEStronglyMeasurable f μ)\n  (hfg : ∀ᵐ (x : α) ∂μ, ‖f x‖ ≤ g x) : MeasureTheory.Integrable f μ</code>",
+ "555":
+ "<code>MeasureTheory.AEStronglyMeasurable.{u_1, u_2} {α : Type u_1} {β : Type u_2} [TopologicalSpace β] [m : MeasurableSpace α]\n  {m₀ : MeasurableSpace α} (f : α → β) (μ : MeasureTheory.Measure α := by volume_tac) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function is `AEStronglyMeasurable` with respect to a measure `μ` if it is almost everywhere\nequal to the limit of a sequence of simple functions.\n\nOne can specify the sigma-algebra according to which simple functions are taken using the\n`AEStronglyMeasurable[m]` notation in the `MeasureTheory` scope. </code>",
+ "554": "<code>MeasureTheory.AEStronglyMeasurable f μ</code>",
+ "553":
+ "<code>NoteKsk.Chapter08.lebesgueIntegrable_iff_abs.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ℝ} (hf_meas : MeasureTheory.AEStronglyMeasurable f μ) :\n  NoteKsk.LebesgueIntegrable μ f ↔ NoteKsk.LebesgueIntegrable μ fun x ↦ |f x|</code>",
+ "552":
+ "<code>Norm.norm.{u_8} {E : Type u_8} [self : Norm E] : E → ℝ</code><span class=\"sep\"></span><code class=\"docstring\">the `ℝ`-valued norm function. </code>",
+ "551": "<code>α → E</code>",
+ "550":
+ "<code>NormedAddCommGroup.{u_8} (E : Type u_8) : Type u_8</code><span class=\"sep\"></span><code class=\"docstring\">A normed group is an additive group endowed with a norm for which `dist x y = ‖-x + y‖` defines\na metric space structure. </code>",
+ "55":
+ "<code>EmptyCollection.emptyCollection.{u} {α : Type u} [self : EmptyCollection α] : α</code><span class=\"sep\"></span><code class=\"docstring\">`∅` or `{}` is the empty set or empty collection.\nIt is supported by the `EmptyCollection` typeclass. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `{}` in identifiers is `empty`.\n\n * The recommended spelling of `∅` in identifiers is `empty`.</code>",
+ "549":
+ "<code>NoteKsk.Chapter08.integrable_norm.{u_1, u_2} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {E : Type u_2} [NormedAddCommGroup E] {f : α → E} (hf : MeasureTheory.Integrable f μ) :\n  MeasureTheory.Integrable (fun x ↦ ‖f x‖) μ</code>",
+ "548": "<code>f =ᵐ[μ] fun x ↦ u x - v x</code>",
+ "547": "<code>MeasureTheory.Integrable v μ</code>",
+ "546": "<code>MeasureTheory.Integrable u μ</code>",
+ "545":
+ "<code>NoteKsk.Chapter09.integral_eq_sub_of_ae_eq_sub.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f u v : α → ℝ} (hu : MeasureTheory.Integrable u μ) (hv : MeasureTheory.Integrable v μ)\n  (hfg : f =ᵐ[μ] fun x ↦ u x - v x) : ∫ (x : α), f x ∂μ = ∫ (x : α), u x ∂μ - ∫ (x : α), v x ∂μ</code>",
+ "544":
+ "<code>NoteKsk.Chapter08.lebesgueIntegral_eq_integral.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  (f : α → ℝ) : NoteKsk.lebesgueIntegral μ f = ∫ (x : α), f x ∂μ</code>",
+ "543":
+ "<code>ENNReal.toReal (a : ENNReal) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">`toReal x` returns `x` if it is real, `0` otherwise. </code>",
+ "542":
+ "<code>MeasureTheory.integral.{u_6, u_7} {α : Type u_6} {G : Type u_7} [NormedAddCommGroup G] [NormedSpace ℝ G]\n  {x✝ : MeasurableSpace α} (μ : MeasureTheory.Measure α) (f : α → G) : G</code><span class=\"sep\"></span><code class=\"docstring\">The Bochner integral </code>",
+ "541":
+ "<code>MeasureTheory.Integrable.{u_5, u_8} {ε : Type u_5} [TopologicalSpace ε] [ContinuousENorm ε] {α : Type u_8}\n  {x✝ : MeasurableSpace α} (f : α → ε) (μ : MeasureTheory.Measure α := by volume_tac) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Integrable f μ` means that `f` is measurable and that the integral `∫⁻ a, ‖f a‖ ∂μ` is finite.\n`Integrable f` means `Integrable f volume`. </code>",
+ "540": "<code>MeasureTheory.Integrable f μ</code>",
+ "54":
+ "<code>NoteKsk.Chapter02.elementaryVolume_empty {d : ℕ} : NoteKsk.elementaryVolume ∅ = 0</code>",
+ "539":
+ "<code>NoteKsk.Chapter08.integral_eq_positivePart_sub_negativePart.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : α → ℝ} (hf : MeasureTheory.Integrable f μ) :\n  ∫ (x : α), f x ∂μ =\n    (∫⁻ (x : α), NoteKsk.positivePart f x ∂μ).toReal - (∫⁻ (x : α), NoteKsk.negativePart f x ∂μ).toReal</code>",
+ "538":
+ "<code>NoteKsk.lebesgueIntegral.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α) (f : α → ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The signed Lebesgue integral of a real-valued integrable function. </code>",
+ "537":
+ "<code>NoteKsk.LebesgueIntegrable.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α) (f : α → ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Lecture-note synonym for mathlib's Bochner integrability of real-valued functions. </code>",
+ "536":
+ "<code>NoteKsk.Chapter08.negativePart_measurable.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ℝ} (hf : Measurable f) :\n  Measurable (NoteKsk.negativePart f)</code>",
+ "535":
+ "<code>NoteKsk.Chapter08.positivePart_measurable.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ℝ} (hf : Measurable f) :\n  Measurable (NoteKsk.positivePart f)</code>",
+ "534":
+ "<code>NoteKsk.negativePart.{u_1} {α : Type u_1} (f : α → ℝ) : α → ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Negative part of a real-valued function, represented as an `ENNReal`-valued function. </code>",
+ "533":
+ "<code>NoteKsk.positivePart.{u_1} {α : Type u_1} (f : α → ℝ) : α → ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Positive part of a real-valued function, represented as an `ENNReal`-valued function. </code>",
+ "532":
+ "<code>NoteKsk.Chapter08.lintegralNN_eq_zero_iff_ae_eq_zero.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : α → ENNReal} (hf : Measurable f) : NoteKsk.lintegralNN μ f = 0 ↔ f =ᵐ[μ] 0</code>",
+ "531":
+ "<code>NoteKsk.Chapter08.lintegralNN_congr_ae.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ENNReal} (hfg : f =ᵐ[μ] g) : NoteKsk.lintegralNN μ f = NoteKsk.lintegralNN μ g</code>",
+ "530":
+ "<code>NoteKsk.Chapter08.setLintegralNN_eq_zero_of_measure_zero.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {N : Set α} (hN : μ N = 0) (f : α → ENNReal) : NoteKsk.setLintegralNN μ N f = 0</code>",
+ "53":
+ "<code>NoteKsk.elementaryVolume {d : ℕ} (E : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">The volume assigned to an elementary set.  This is deliberately defined by\nmathlib's `volume` for now; Chapter 2 later proves that this agrees with the\nfinite disjoint-box presentation.\n</code>",
+ "529": "<code>MeasurableSet B</code>",
+ "528":
+ "<code>NoteKsk.Chapter08.setLintegralNN_disjoint_union.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {A B : Set α} (hB : MeasurableSet B) (hAB : Disjoint A B) (f : α → ENNReal) :\n  NoteKsk.setLintegralNN μ (A ∪ B) f = NoteKsk.setLintegralNN μ A f + NoteKsk.setLintegralNN μ B f</code>",
+ "527":
+ "<code>NoteKsk.Chapter08.setLintegralNN_eq_indicator.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {A : Set α} (hA : MeasurableSet A) (f : α → ENNReal) :\n  NoteKsk.setLintegralNN μ A f = NoteKsk.lintegralNN μ (A.indicator f)</code>",
+ "526":
+ "<code>NoteKsk.setLintegralNN.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α) (s : Set α)\n  (f : α → ENNReal) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">The lower Lebesgue integral over a subset. </code>",
+ "525": "<code>f ≤ g</code>",
+ "524":
+ "<code>NoteKsk.Chapter08.lintegralNN_mono.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ENNReal} (hfg : f ≤ g) : NoteKsk.lintegralNN μ f ≤ NoteKsk.lintegralNN μ g</code>",
+ "523":
+ "<code>NoteKsk.Chapter08.lintegralNN_const_mul.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : α → ENNReal} (c : ENNReal) (hf : Measurable f) :\n  (NoteKsk.lintegralNN μ fun x ↦ c * f x) = c * NoteKsk.lintegralNN μ f</code>",
+ "522":
+ "<code>NoteKsk.Chapter08.lintegralNN_add.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f g : α → ENNReal} (hf : Measurable f) :\n  (NoteKsk.lintegralNN μ fun x ↦ f x + g x) = NoteKsk.lintegralNN μ f + NoteKsk.lintegralNN μ g</code>",
+ "521": "<code>∀ᵐ (x : α) ∂μ, Monotone fun n ↦ f n x</code>",
+ "520":
+ "<code>AEMeasurable.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace β] {_m : MeasurableSpace α} (f : α → β)\n  (μ : MeasureTheory.Measure α := by volume_tac) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function is almost everywhere measurable if it coincides almost everywhere with a measurable\nfunction.\n\nA similar notion is `MeasureTheory.NullMeasurable`. That notion is equivalent to `AEMeasurable` if\nthe σ-algebra on the codomain is countably generated, but weaker in general. </code>",
+ "52":
+ "<code>NoteKsk.IsElementarySet {d : ℕ} (S : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Elementary sets `𝓐_d`: finite disjoint unions of nondegenerate left half-open boxes.\n</code>",
+ "519": "<code>∀ (n : ℕ), AEMeasurable (f n) μ</code>",
+ "518":
+ "<code>NoteKsk.Chapter08.lintegral_iSup_of_aeMeasurable.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : ℕ → α → ENNReal} (hf : ∀ (n : ℕ), AEMeasurable (f n) μ) (hmono : ∀ᵐ (x : α) ∂μ, Monotone fun n ↦ f n x) :\n  (NoteKsk.lintegralNN μ fun x ↦ ⨆ n, f n x) = ⨆ n, NoteKsk.lintegralNN μ (f n)</code>",
+ "517": "<code>Monotone f</code>",
+ "516": "<code>ℕ → α → ENNReal</code>",
+ "515":
+ "<code>NoteKsk.Chapter08.lintegral_iSup_of_measurable.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  {f : ℕ → α → ENNReal} (hf : ∀ (n : ℕ), Measurable (f n)) (hmono : Monotone f) :\n  (NoteKsk.lintegralNN μ fun x ↦ ⨆ n, f n x) = ⨆ n, NoteKsk.lintegralNN μ (f n)</code>",
+ "514":
+ "<code>NoteKsk.Chapter08.lintegralNN_eq_iSup_eapprox_lintegral.{u_1} {α : Type u_1} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {f : α → ENNReal} (hf : Measurable f) :\n  NoteKsk.lintegralNN μ f = ⨆ n, (MeasureTheory.SimpleFunc.eapprox f n).lintegral μ</code>",
+ "513": "<code>ℕ → NoteKsk.SimpleNNFun α</code>",
+ "512":
+ "<code>NoteKsk.Chapter08.exists_monotone_simpleFunc_approx.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ENNReal}\n  (hf : Measurable f) : ∃ s, Monotone s ∧ (∀ (n : ℕ) (x : α), (s n) x ≤ f x) ∧ ∀ (x : α), ⨆ n, (s n) x = f x</code>",
+ "511":
+ "<code>NoteKsk.Chapter08.iSup_coe_eapprox.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ENNReal} (hf : Measurable f) :\n  ⨆ n, ⇑(MeasureTheory.SimpleFunc.eapprox f n) = f</code>",
+ "510":
+ "<code>NoteKsk.Chapter08.iSup_eapprox_apply.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ENNReal} (hf : Measurable f)\n  (x : α) : ⨆ n, (MeasureTheory.SimpleFunc.eapprox f n) x = f x</code>",
+ "51": "<code>Set (NoteKsk.Space d)</code>",
+ "509":
+ "<code>MeasureTheory.SimpleFunc.eapprox.{u_1} {α : Type u_1} [MeasurableSpace α] :\n  (α → ENNReal) → ℕ → MeasureTheory.SimpleFunc α ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Approximate a function `α → ℝ≥0∞` by a sequence of simple functions. </code>",
+ "508":
+ "<code>Monotone.{u, v} {α : Type u} {β : Type v} [Preorder α] [Preorder β] (f : α → β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f` is monotone if `a ≤ b` implies `f a ≤ f b`. </code>",
+ "507":
+ "<code>NoteKsk.Chapter08.monotone_eapprox.{u_1} {α : Type u_1} [MeasurableSpace α] (f : α → ENNReal) :\n  Monotone (MeasureTheory.SimpleFunc.eapprox f)</code>",
+ "506":
+ "<code>MeasureTheory.SimpleFunc.lintegral.{u_1} {α : Type u_1} {_m : MeasurableSpace α}\n  (f : MeasureTheory.SimpleFunc α ENNReal) (μ : MeasureTheory.Measure α) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Integral of a simple function whose codomain is `ℝ≥0∞`. </code>",
+ "505":
+ "<code>NoteKsk.Chapter08.lintegralNN_def.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  (f : α → ENNReal) : NoteKsk.lintegralNN μ f = ⨆ g, ⨆ (_ : ⇑g ≤ f), MeasureTheory.SimpleFunc.lintegral g μ</code>",
+ "504": "<code>α → ENNReal</code>",
+ "503":
+ "<code>NoteKsk.Chapter08.lintegral_const_eq.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)\n  (c : ENNReal) : ∫⁻ (_x : α), c ∂μ = c * μ Set.univ</code>",
+ "502":
+ "<code>MeasureTheory.lintegral.{u_4} {α : Type u_4} {m : MeasurableSpace α} (μ : MeasureTheory.Measure α) (f : α → ENNReal) :\n  ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">The **lower Lebesgue integral** of a function `f` with respect to a measure `μ`. </code>",
+ "501":
+ "<code>NoteKsk.Chapter08.lintegral_indicator_one_eq_measure.{u_1} {α : Type u_1} [MeasurableSpace α]\n  (μ : MeasureTheory.Measure α) {A : Set α} (hA : MeasurableSet A) : ∫⁻ (x : α), A.indicator (fun x ↦ 1) x ∂μ = μ A</code>",
+ "500": "<code>s ≤ t</code>",
+ "50":
+ "<code>NoteKsk.IsLeftHalfOpenBox {d : ℕ} (S : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The family `𝓔_d`: left half-open rectangles together with the empty set.\nEndpoints are finite real numbers at this stage of the development.\n</code>",
+ "5":
+ "<code class=\"docstring\">The universe of propositions. `Prop ≡ Sort 0`.\n\nEvery proposition is propositionally equal to either `True` or `False`. </code>",
+ "499":
+ "<code>NoteKsk.Chapter08.simpleLintegral_mono.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)\n  {s t : NoteKsk.SimpleNNFun α} (hst : s ≤ t) : NoteKsk.simpleLintegral μ s ≤ NoteKsk.simpleLintegral μ t</code>",
+ "498":
+ "<code>MeasureTheory.SimpleFunc.const.{u_5, u_6} (α : Type u_5) {β : Type u_6} [MeasurableSpace α] (b : β) :\n  MeasureTheory.SimpleFunc α β</code><span class=\"sep\"></span><code class=\"docstring\">Constant function as a `SimpleFunc`. </code>",
+ "497":
+ "<code>NoteKsk.Chapter08.simpleLintegral_const_mul.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)\n  (c : ENNReal) (s : NoteKsk.SimpleNNFun α) :\n  NoteKsk.simpleLintegral μ (MeasureTheory.SimpleFunc.const α c * s) = c * NoteKsk.simpleLintegral μ s</code>",
+ "496":
+ "<code>NoteKsk.Chapter08.simpleLintegral_add.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)\n  (s t : NoteKsk.SimpleNNFun α) :\n  NoteKsk.simpleLintegral μ (s + t) = NoteKsk.simpleLintegral μ s + NoteKsk.simpleLintegral μ t</code>",
+ "495": "<code>∀ (x : α), s x = t x</code>",
+ "494":
+ "<code>NoteKsk.Chapter08.simpleLintegral_congr.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)\n  {s t : NoteKsk.SimpleNNFun α} (hst : ∀ (x : α), s x = t x) : NoteKsk.simpleLintegral μ s = NoteKsk.simpleLintegral μ t</code><span class=\"sep\"></span><code class=\"docstring\">Well-definedness of the simple-function integral is built into mathlib's bundled\n`SimpleFunc`: if two bundled simple functions have the same pointwise values,\ntheir integrals agree.\n</code>",
+ "493":
+ "<code>NoteKsk.lintegralNN.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α) (f : α → ENNReal) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">The lower Lebesgue integral of an `ENNReal`-valued function. </code>",
+ "492":
+ "<code>NoteKsk.Chapter08.lintegralNN_eq_simple.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)\n  (s : NoteKsk.SimpleNNFun α) : (NoteKsk.lintegralNN μ fun x ↦ s x) = NoteKsk.simpleLintegral μ s</code>",
+ "491":
+ "<code>NoteKsk.simpleLintegral.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)\n  (f : NoteKsk.SimpleNNFun α) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">The integral of a nonnegative simple function, using mathlib's `SimpleFunc.lintegral`. </code>",
+ "490": "<code>NoteKsk.SimpleNNFun α</code>",
+ "49":
+ "<code>NoteKsk.Box.Nondegenerate {d : ℕ} (Q : NoteKsk.Box d) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A nondegenerate finite rectangle. </code>",
+ "489":
+ "<code>NoteKsk.Chapter08.simpleNNFun_measurable.{u_1} {α : Type u_1} [MeasurableSpace α] (s : NoteKsk.SimpleNNFun α) :\n  Measurable fun x ↦ s x</code>",
+ "488":
+ "<code>NoteKsk.SimpleNNFun.{u_1} (α : Type u_1) [MeasurableSpace α] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">Nonnegative extended-real-valued simple functions. </code>",
+ "487":
+ "<code>NoteKsk.Chapter07.measurable_of_ae_tendsto_ereal.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  [μ.IsComplete] {f : ℕ → α → EReal} {g : α → EReal} (hf : ∀ (n : ℕ), Measurable (f n))\n  (hlim : ∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ f n x) Filter.atTop (nhds (g x))) : Measurable g</code>",
+ "486":
+ "<code>Filter.Eventually.{u_1} {α : Type u_1} (p : α → Prop) (f : Filter α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`f.Eventually p` or `∀ᶠ x in f, p x` mean that `{x | p x} ∈ f`. E.g., `∀ᶠ x in atTop, p x`\nmeans that `p` holds true for sufficiently large `x`. </code>",
+ "485":
+ "<code>∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ f n x) Filter.atTop (nhds (g x))</code>",
+ "484": "<code>ℕ → α → ℝ</code>",
+ "483":
+ "<code>NoteKsk.Chapter07.measurable_of_ae_tendsto_real.{u_1} {α : Type u_1} [MeasurableSpace α] {μ : MeasureTheory.Measure α}\n  [μ.IsComplete] {f : ℕ → α → ℝ} {g : α → ℝ} (hf : ∀ (n : ℕ), Measurable (f n))\n  (hlim : ∀ᵐ (x : α) ∂μ, Filter.Tendsto (fun n ↦ f n x) Filter.atTop (nhds (g x))) : Measurable g</code>",
+ "482": "<code>ℕ → α → β</code>",
+ "481":
+ "<code>NoteKsk.AEConvergesOn.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α] [TopologicalSpace β]\n  (μ : MeasureTheory.Measure α) (E : Set α) (f : ℕ → α → β) (g : α → β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Almost-everywhere convergence on a set. </code>",
+ "480": "<code>f =ᵐ[μ] g</code>",
+ "48":
+ "<code>ENNReal : Type</code><span class=\"sep\"></span><code class=\"docstring\">The extended nonnegative real numbers. This is usually denoted [0, ∞],\nand is relevant as the codomain of a measure. </code>",
+ "479":
+ "<code>NoteKsk.Chapter07.measurable_of_ae_eq_complete.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {μ : MeasureTheory.Measure α} [μ.IsComplete] {f g : α → β} (hf : Measurable f) (hfg : f =ᵐ[μ] g) :\n  Measurable g</code>",
+ "478":
+ "<code>Equivalence.{u} {α : Sort u} (r : α → α → Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An equivalence relation `r : α → α → Prop` is a relation that is\n\n* reflexive: `r x x`,\n* symmetric: `r x y` implies `r y x`, and\n* transitive: `r x y` and `r y z` implies `r x z`.\n\nEquality is an equivalence relation, and equivalence relations share many of the properties of\nequality.\n</code>",
+ "477":
+ "<code>NoteKsk.Chapter07.aeEqualOn_equivalence.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α] [MeasurableSpace β]\n  (μ : MeasureTheory.Measure α) (E : Set α) : Equivalence (NoteKsk.AEEqualOn μ E)</code>",
+ "476":
+ "<code>NoteKsk.AEEqualOn.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α] [MeasurableSpace β]\n  (μ : MeasureTheory.Measure α) (E : Set α) (f g : α → β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Almost-everywhere equality on a set, expressed using the restricted measure. </code>",
+ "475": "<code>α → Prop</code>",
+ "474":
+ "<code>NoteKsk.AlmostEverywhereOn.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α) (E : Set α)\n  (P : α → Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`P` holds almost everywhere on `E`, expressed using mathlib's restricted\nmeasure.  This is the formal counterpart of the lecture notation\n`P μ-a.e. on E`.\n</code>",
+ "473":
+ "<code>nhds.{u_3} {X : Type u_3} [TopologicalSpace X] (x : X) : Filter X</code><span class=\"sep\"></span><code class=\"docstring\">A set is called a neighborhood of `x` if it contains an open set around `x`. The set of all\nneighborhoods of `x` forms a filter, the neighborhood filter at `x`, is here defined as the\ninfimum over the principal filters of all open sets containing `x`. </code>",
+ "472":
+ "<code>Filter.atTop.{u_3} {α : Type u_3} [Preorder α] : Filter α</code><span class=\"sep\"></span><code class=\"docstring\">`atTop` is the filter representing the limit `→ ∞` on an ordered set.\nIt is generated by the collection of up-sets `{b | a ≤ b}`.\n(The preorder need not have a top element for this to be well defined,\nand indeed is trivial when a top element `x` exists, i.e., it coincides with `pure x`.) </code>",
+ "471":
+ "<code>Filter.Tendsto.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β) (l₁ : Filter α) (l₂ : Filter β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Filter.Tendsto` is the generic \"limit of a function\" predicate.\n`Tendsto f l₁ l₂` asserts that for every `l₂` neighborhood `a`,\nthe `f`-preimage of `a` is an `l₁` neighborhood. </code>",
+ "470":
+ "<code>∀ (x : α), Filter.Tendsto (fun n ↦ f n x) Filter.atTop (nhds (g x))</code>",
+ "47":
+ "<code>NoteKsk.Box.volume {d : ℕ} (Q : NoteKsk.Box d) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">The formal volume of a rectangle, `∏ i (b_i - a_i)`, as an `ENNReal`. </code>",
+ "469":
+ "<code>NoteKsk.Chapter07.measurable_of_pointwise_tendsto.{u_1} {α : Type u_1} [MeasurableSpace α] {f : ℕ → α → EReal}\n  {g : α → EReal} (hf : ∀ (n : ℕ), Measurable (f n))\n  (hlim : ∀ (x : α), Filter.Tendsto (fun n ↦ f n x) Filter.atTop (nhds (g x))) : Measurable g</code><span class=\"sep\"></span><code class=\"docstring\">Pointwise convergence version of `prop:measurable-limsup-liminf`.\n\nThe proof can be filled by identifying the pointwise limit with both limsup and\nliminf.  It is kept as a named statement because later integration chapters\nusually refer to this form directly.\n</code>",
+ "468": "<code>g = NoteKsk.pointwiseLimsup f</code>",
+ "467":
+ "<code>NoteKsk.Chapter07.measurable_of_eq_pointwiseLimsup.{u_1} {α : Type u_1} [MeasurableSpace α] {f : ℕ → α → EReal}\n  {g : α → EReal} (hf : ∀ (n : ℕ), Measurable (f n)) (hg : g = NoteKsk.pointwiseLimsup f) : Measurable g</code>",
+ "466":
+ "<code>NoteKsk.Chapter07.measurable_pointwiseLiminf.{u_1} {α : Type u_1} [MeasurableSpace α] (f : ℕ → α → EReal)\n  (hf : ∀ (n : ℕ), Measurable (f n)) : Measurable (NoteKsk.pointwiseLiminf f)</code>",
+ "465":
+ "<code>NoteKsk.Chapter07.measurable_pointwiseLimsup.{u_1} {α : Type u_1} [MeasurableSpace α] (f : ℕ → α → EReal)\n  (hf : ∀ (n : ℕ), Measurable (f n)) : Measurable (NoteKsk.pointwiseLimsup f)</code>",
+ "464":
+ "<code>NoteKsk.Chapter07.measurable_pointwiseInf.{u_1} {α : Type u_1} [MeasurableSpace α] (f : ℕ → α → EReal)\n  (hf : ∀ (n : ℕ), Measurable (f n)) : Measurable (NoteKsk.pointwiseInf f)</code>",
+ "463": "<code>∀ (n : ℕ), Measurable (f n)</code>",
+ "462":
+ "<code>NoteKsk.Chapter07.measurable_pointwiseSup.{u_1} {α : Type u_1} [MeasurableSpace α] (f : ℕ → α → EReal)\n  (hf : ∀ (n : ℕ), Measurable (f n)) : Measurable (NoteKsk.pointwiseSup f)</code>",
+ "461":
+ "<code>NoteKsk.pointwiseLiminf.{u_1} {α : Type u_1} (f : ℕ → α → EReal) : α → EReal</code><span class=\"sep\"></span><code class=\"docstring\">Pointwise liminf of a sequence of extended-real-valued functions. </code>",
+ "460":
+ "<code>NoteKsk.pointwiseLimsup.{u_1} {α : Type u_1} (f : ℕ → α → EReal) : α → EReal</code><span class=\"sep\"></span><code class=\"docstring\">Pointwise limsup of a sequence of extended-real-valued functions. </code>",
+ "46":
+ "<code>NoteKsk.Box.Icc {d : ℕ} (Q : NoteKsk.Box d) : Set (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">Closed rectangle `∏ i [a_i, b_i]`. </code>",
+ "459":
+ "<code>NoteKsk.pointwiseInf.{u_1} {α : Type u_1} (f : ℕ → α → EReal) : α → EReal</code><span class=\"sep\"></span><code class=\"docstring\">Pointwise infimum of a sequence of extended-real-valued functions. </code>",
+ "458": "<code>ℕ → α → EReal</code>",
+ "457":
+ "<code>NoteKsk.pointwiseSup.{u_1} {α : Type u_1} (f : ℕ → α → EReal) : α → EReal</code><span class=\"sep\"></span><code class=\"docstring\">Pointwise supremum of a sequence of extended-real-valued functions. </code>",
+ "456":
+ "<code>NoteKsk.Chapter07.measurableSet_eq_of_measurable.{u_1} {α : Type u_1} [MeasurableSpace α] {f g : α → EReal}\n  (hf : Measurable f) (hg : Measurable g) : MeasurableSet {x | f x = g x}</code>",
+ "455":
+ "<code>NoteKsk.Chapter07.measurableSet_ge_of_measurable.{u_1} {α : Type u_1} [MeasurableSpace α] {f g : α → EReal}\n  (hf : Measurable f) (hg : Measurable g) : MeasurableSet {x | f x ≥ g x}</code>",
+ "454":
+ "<code>NoteKsk.Chapter07.measurableSet_gt_of_measurable.{u_1} {α : Type u_1} [MeasurableSpace α] {f g : α → EReal}\n  (hf : Measurable f) (hg : Measurable g) : MeasurableSet {x | f x &gt; g x}</code>",
+ "453":
+ "<code>NoteKsk.Chapter07.measurable_reciprocal_global.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ℝ}\n  (hf : Measurable f) : Measurable fun x ↦ (f x)⁻¹</code><span class=\"sep\"></span><code class=\"docstring\">Mathlib also gives the total reciprocal on `ℝ`, with the convention `0⁻¹ = 0`.\nThis is stronger as a measurability statement than the restricted-domain form\nused in the lecture notes.\n</code>",
+ "452":
+ "<code>Inv.inv.{u} {α : Type u} [self : Inv α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a⁻¹` computes the inverse of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⁻¹` in identifiers is `inv`.</code>",
+ "451": "<code>{ x // f x ≠ 0 }</code>",
+ "450":
+ "<code>NoteKsk.Chapter07.measurable_reciprocal_on_nonzero.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ℝ}\n  (hf : Measurable f) : Measurable fun x ↦ (f ↑x)⁻¹</code>",
+ "45":
+ "<code>NoteKsk.Box.Ico {d : ℕ} (Q : NoteKsk.Box d) : Set (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">Left-closed/right-open rectangle `∏ i [a_i, b_i)`. </code>",
+ "449":
+ "<code>NoteKsk.Chapter07.measurable_nonzero_set.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ℝ} (hf : Measurable f) :\n  MeasurableSet {x | f x ≠ 0}</code>",
+ "448":
+ "<code>HPow.hPow.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HPow α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a ^ b` computes `a` to the power of `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `^` in identifiers is `pow`.</code>",
+ "447":
+ "<code>abs.{u_1} {α : Type u_1} [Lattice α] [AddGroup α] (a : α) : α</code><span class=\"sep\"></span><code class=\"docstring\">`abs a`, denoted `|a|`, is the absolute value of `a` </code>",
+ "446": "<code>0 &lt; p</code>",
+ "445":
+ "<code>NoteKsk.Chapter07.measurable_abs_rpow.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ℝ} (hf : Measurable f) (p : ℝ)\n  (_hp : 0 &lt; p) : Measurable fun x ↦ |f x| ^ p</code>",
+ "444":
+ "<code>Min.min.{u} {α : Type u} [self : Min α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">Returns the lesser of its two arguments. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `min` in identifiers is `min`.\n\n * The recommended spelling of `⊓` in identifiers is `inf` (`⊓` is the preferred notation for `min` when the type is not linearly ordered.).</code>",
+ "443":
+ "<code>NoteKsk.Chapter07.measurable_min.{u_1} {α : Type u_1} [MeasurableSpace α] {f g : α → ℝ} (hf : Measurable f)\n  (hg : Measurable g) : Measurable fun x ↦ min (f x) (g x)</code>",
+ "442":
+ "<code>Max.max.{u} {α : Type u} [self : Max α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">Returns the greater of its two arguments. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `max` in identifiers is `max`.\n\n * The recommended spelling of `⊔` in identifiers is `sup` (`⊔` is the preferred notation for `max` when the type is not linearly ordered.).</code>",
+ "441":
+ "<code>NoteKsk.Chapter07.measurable_max.{u_1} {α : Type u_1} [MeasurableSpace α] {f g : α → ℝ} (hf : Measurable f)\n  (hg : Measurable g) : Measurable fun x ↦ max (f x) (g x)</code>",
+ "440":
+ "<code>NoteKsk.Chapter07.measurable_mul.{u_1} {α : Type u_1} [MeasurableSpace α] {f g : α → ℝ} (hf : Measurable f)\n  (hg : Measurable g) : Measurable fun x ↦ f x * g x</code>",
+ "44":
+ "<code>NoteKsk.Box.Ioc {d : ℕ} (Q : NoteKsk.Box d) : Set (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">Left-open/right-closed rectangle `∏ i (a_i, b_i]`. </code>",
+ "439": "<code>Measurable g</code>",
+ "438":
+ "<code>NoteKsk.Chapter07.measurable_add.{u_1} {α : Type u_1} [MeasurableSpace α] {f g : α → ℝ} (hf : Measurable f)\n  (hg : Measurable g) : Measurable fun x ↦ f x + g x</code>",
+ "437":
+ "<code>HMul.hMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a * b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `*` in identifiers is `mul`.</code>",
+ "436":
+ "<code>NoteKsk.Chapter07.measurable_const_mul.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ℝ} (hf : Measurable f)\n  (c : ℝ) : Measurable fun x ↦ c * f x</code>",
+ "435": "<code>Measurable f</code>",
+ "434": "<code>α → ℝ</code>",
+ "433":
+ "<code>NoteKsk.Chapter07.measurable_continuous_real_comp.{u_1} {α : Type u_1} [MeasurableSpace α] {f : α → ℝ} {φ : ℝ → ℝ}\n  (hf : Measurable f) (hφ : Continuous φ) : Measurable (φ ∘ f)</code>",
+ "432": "<code>Continuous φ</code>",
+ "431": "<code>Measurable F</code>",
+ "430": "<code>(Fin n → ℝ) → ℝ</code>",
+ "43": "<code>NoteKsk.Box d</code>",
+ "429": "<code>α → Fin n → ℝ</code>",
+ "428":
+ "<code>NoteKsk.Chapter07.measurable_continuous_comp.{u_1} {α : Type u_1} [MeasurableSpace α] {n : ℕ} {F : α → Fin n → ℝ}\n  {φ : (Fin n → ℝ) → ℝ} (hF : Measurable F) (hφ : Continuous φ) : Measurable (φ ∘ F)</code>",
+ "427":
+ "<code>Function.comp.{u, v, w} {α : Sort u} {β : Sort v} {δ : Sort w} (f : β → δ) (g : α → β) : α → δ</code><span class=\"sep\"></span><code class=\"docstring\">Function composition, usually written with the infix operator `∘`. A new function is created from\ntwo existing functions, where one function's output is used as input to the other.\n\nExamples:\n * `Function.comp List.reverse (List.drop 2) [3, 2, 4, 1] = [1, 4]`\n * `(List.reverse ∘ List.drop 2) [3, 2, 4, 1] = [1, 4]`\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∘` in identifiers is `comp`.</code>",
+ "426": "<code>NoteKsk.MeasurableMap f</code>",
+ "425": "<code>NoteKsk.MeasurableMap g</code>",
+ "424": "<code>β → γ</code>",
+ "423": "<code>Type u_3</code>",
+ "422":
+ "<code>NoteKsk.Chapter07.measurable_comp.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {γ : Type u_3} [MeasurableSpace α]\n  [MeasurableSpace β] [MeasurableSpace γ] {f : α → β} {g : β → γ} (hg : NoteKsk.MeasurableMap g)\n  (hf : NoteKsk.MeasurableMap f) : NoteKsk.MeasurableMap (g ∘ f)</code>",
+ "421": "<code>Fin n</code>",
+ "420": "<code>∀ (i : Fin n), Measurable (f i)</code>",
+ "42":
+ "<code>NoteKsk.Box.Ioo {d : ℕ} (Q : NoteKsk.Box d) : Set (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">Open rectangle `∏ i (a_i, b_i)`. </code>",
+ "419": "<code>Fin n → α → ℝ</code>",
+ "418":
+ "<code>NoteKsk.Chapter07.measurable_vector_map.{u_1} {α : Type u_1} [MeasurableSpace α] {n : ℕ} (f : Fin n → α → ℝ)\n  (hf : ∀ (i : Fin n), Measurable (f i)) : Measurable fun x i ↦ f i x</code>",
+ "417":
+ "<code>NoteKsk.Chapter07.indicator_measurable.{u_1} {α : Type u_1} [MeasurableSpace α] {A : Set α} (hA : MeasurableSet A) :\n  Measurable (A.indicator fun x ↦ 1)</code>",
+ "416":
+ "<code>Continuous.{u, v} {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function between topological spaces is continuous if the preimage\nof every open set is open. Registered as a structure to make sure it is not unfolded by Lean. </code>",
+ "415": "<code>Continuous f</code>",
+ "414":
+ "<code>BorelSpace.{u_6} (α : Type u_6) [TopologicalSpace α] [MeasurableSpace α] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A space with `MeasurableSpace` and `TopologicalSpace` structures such that\nthe `σ`-algebra of measurable sets is exactly the `σ`-algebra generated by open sets. </code>",
+ "413":
+ "<code>NoteKsk.Chapter07.continuous_borelMeasurable.{u_1, u_2} {α : Type u_1} {β : Type u_2} [TopologicalSpace α]\n  [MeasurableSpace α] [BorelSpace α] [TopologicalSpace β] [MeasurableSpace β] [BorelSpace β] {f : α → β}\n  (hf : Continuous f) : Measurable f</code>",
+ "412":
+ "<code>NoteKsk.Chapter07.measurable_ereal_real_level_criterion.{u_1} {α : Type u_1} [MeasurableSpace α] (f : α → EReal) :\n  Measurable f ↔\n    (∀ (a : ℝ), MeasurableSet {x | f x &gt; ↑a}) ∧\n      (∀ (a : ℝ), MeasurableSet {x | f x ≥ ↑a}) ∧\n        (∀ (a : ℝ), MeasurableSet {x | f x &lt; ↑a}) ∧ ∀ (a : ℝ), MeasurableSet {x | f x ≤ ↑a}</code><span class=\"sep\"></span><code class=\"docstring\">Lecture-note criterion `thm:lebesgue-measurable-function-criterion`.\n\nThe blueprint states the criterion with thresholds `a : ℝ`.  The theorem above\nis the mathlib-native all-`EReal` version; this statement keeps the exact\nlecture form as a bridge for later chapters.\n</code>",
+ "411":
+ "<code>GE.ge.{u} {α : Type u} [LE α] (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a ≥ b` is an abbreviation for `b ≤ a`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≥` in identifiers is `ge`.</code>",
+ "410":
+ "<code>GT.gt.{u} {α : Type u} [LT α] (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a &gt; b` is an abbreviation for `b &lt; a`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `&gt;` in identifiers is `gt`.</code>",
+ "41":
+ "<code>NoteKsk.Box (d : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">A coordinate rectangle is recorded by lower and upper endpoints. </code>",
+ "409": "<code>EReal</code>",
+ "408": "<code>α → EReal</code>",
+ "407":
+ "<code>NoteKsk.Chapter07.measurable_ereal_criterion_all_thresholds.{u_1} {α : Type u_1} [MeasurableSpace α] (f : α → EReal) :\n  Measurable f ↔\n    (∀ (a : EReal), MeasurableSet {x | f x &gt; a}) ∧\n      (∀ (a : EReal), MeasurableSet {x | f x ≥ a}) ∧\n        (∀ (a : EReal), MeasurableSet {x | f x &lt; a}) ∧ ∀ (a : EReal), MeasurableSet {x | f x ≤ a}</code>",
+ "406":
+ "<code>NoteKsk.NonnegativeMeasurableERealFunction.{u_1} (α : Type u_1) [MeasurableSpace α] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">Nonnegative extended-real-valued measurable functions. </code>",
+ "405":
+ "<code>NoteKsk.MeasurableRealFunction.{u_1} (α : Type u_1) [MeasurableSpace α] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">Real-valued measurable functions on a measurable space. </code>",
+ "404":
+ "<code>NoteKsk.MeasurableERealFunction.{u_1} (α : Type u_1) [MeasurableSpace α] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">Extended-real-valued measurable functions on a measurable space. </code>",
+ "403":
+ "<code>Set.Iic.{u_1} {α : Type u_1} [Preorder α] (b : α) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">`Iic b` is the left-infinite right-closed interval $(-∞, b]$. </code>",
+ "402":
+ "<code>Set.range.{u, u_1} {α : Type u} {ι : Sort u_1} (f : ι → α) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">Range of a function.\n\nThis function is more flexible than `f '' univ`, as the image requires that the domain is in Type\nand not an arbitrary Sort. </code>",
+ "401":
+ "<code>EReal : Type</code><span class=\"sep\"></span><code class=\"docstring\">The type of extended real numbers `[-∞, ∞]`, constructed as `WithBot (WithTop ℝ)`. </code>",
+ "400":
+ "<code>borel.{u} (α : Type u) [TopologicalSpace α] : MeasurableSpace α</code><span class=\"sep\"></span><code class=\"docstring\">`MeasurableSpace` structure generated by `TopologicalSpace`. </code>",
+ "40": "<code>NoteKsk.Space d</code>",
+ "4":
+ "<code>List.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">Linked lists: ordered lists, in which each element has a reference to the next element.\n\nMost operations on linked lists take time proportional to the length of the list, because each\nelement must be traversed to find the next element.\n\n`List α` is isomorphic to `Array α`, but they are useful for different things:\n* `List α` is easier for reasoning, and `Array α` is modeled as a wrapper around `List α`.\n* `List α` works well as a persistent data structure, when many copies of the tail are shared. When\n  the value is not shared, `Array α` will have better performance because it can do destructive\n  updates.\n</code>",
+ "399":
+ "<code>NoteKsk.Chapter07.borel_eReal_eq_generate_Iic_real :\n  borel EReal = NoteKsk.generatedSigmaAlgebra (Set.range fun a ↦ Set.Iic ↑a)</code><span class=\"sep\"></span><code class=\"docstring\">Mathlib proves `borel_eq_generateFrom_Iic` for all endpoints in an ordered\nBorel space.  The lecture notes use only finite real endpoints in `EReal`; this\nbridge theorem records that form.\n</code>",
+ "398":
+ "<code>NoteKsk.Chapter07.measurable_to_generatedSigmaAlgebra.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β)\n  (C : Set (Set β)) : Measurable f</code>",
+ "397":
+ "<code>NoteKsk.preimageFamily.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β) (C : Set (Set β)) : Set (Set α)</code><span class=\"sep\"></span><code class=\"docstring\">The inverse-image family `f⁻¹(C)` attached to a family of target sets. </code>",
+ "396":
+ "<code>MeasurableSpace.comap.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β) (m : MeasurableSpace β) : MeasurableSpace α</code><span class=\"sep\"></span><code class=\"docstring\">The reverse image of a measurable space under a function. `comap f m` contains the sets\n`s : Set α` such that `s` is the `f`-preimage of a measurable set in `β`. </code>",
+ "395": "<code>Set (Set β)</code>",
+ "394":
+ "<code>NoteKsk.Chapter07.comap_generatedSigmaAlgebra.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β) (C : Set (Set β)) :\n  MeasurableSpace.comap f (NoteKsk.generatedSigmaAlgebra C) = NoteKsk.generatedSigmaAlgebra (NoteKsk.preimageFamily f C)</code>",
+ "393":
+ "<code>Measurable.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α] [MeasurableSpace β] (f : α → β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f` between measurable spaces is measurable if the preimage of every\nmeasurable set is measurable. </code>",
+ "392":
+ "<code>NoteKsk.Chapter07.inducedMeasurableSpace_measurable.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β)\n  [MeasurableSpace β] : Measurable f</code>",
+ "391":
+ "<code>NoteKsk.Chapter07.inducedMeasurableSpace.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β) [MeasurableSpace β] :\n  MeasurableSpace α</code><span class=\"sep\"></span><code class=\"docstring\">The inverse-image σ-algebra induced by a map. </code>",
+ "390":
+ "<code>NoteKsk.Chapter07.preimage_iInter.{u_1, u_2, u_4} {α : Type u_1} {β : Type u_2} {ι : Type u_4} (f : α → β)\n  (B : ι → Set β) : f ⁻¹' ⋂ i, B i = ⋂ i, f ⁻¹' B i</code>",
+ "39": "<code>ℕ</code>",
+ "389": "<code>ι</code>",
+ "388": "<code>ι → Set β</code>",
+ "387": "<code>Type u_4</code>",
+ "386":
+ "<code>NoteKsk.Chapter07.preimage_iUnion.{u_1, u_2, u_4} {α : Type u_1} {β : Type u_2} {ι : Type u_4} (f : α → β)\n  (B : ι → Set β) : f ⁻¹' ⋃ i, B i = ⋃ i, f ⁻¹' B i</code>",
+ "385":
+ "<code>NoteKsk.Chapter07.preimage_compl.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β) (B : Set β) :\n  f ⁻¹' Bᶜ = (f ⁻¹' B)ᶜ</code>",
+ "384":
+ "<code>Set.preimage.{u, v} {α : Type u} {β : Type v} (f : α → β) (s : Set β) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">The preimage of `s : Set β` by `f : α → β`, written `f ⁻¹' s`,\nis the set of `x : α` such that `f x ∈ s`. </code>",
+ "383": "<code>Set β</code>",
+ "382":
+ "<code>NoteKsk.Chapter07.measurableMap_iff_preimage.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α]\n  [MeasurableSpace β] {f : α → β} : NoteKsk.MeasurableMap f ↔ ∀ ⦃B : Set β⦄, MeasurableSet B → MeasurableSet (f ⁻¹' B)</code>",
+ "381": "<code>α → β</code>",
+ "380":
+ "<code>NoteKsk.MeasurableMap.{u_1, u_2} {α : Type u_1} {β : Type u_2} [MeasurableSpace α] [MeasurableSpace β] (f : α → β) :\n  Prop</code><span class=\"sep\"></span><code class=\"docstring\">Lecture-note synonym for mathlib's measurable maps. </code>",
+ "38":
+ "<code>NoteKsk.Space (d : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">The Lean model of `ℝ^d`. </code>",
+ "379":
+ "<code>symmDiff.{u_2} {α : Type u_2} [Max α] [SDiff α] (a b : α) : α</code><span class=\"sep\"></span><code class=\"docstring\">The symmetric difference operator on a type with `⊔` and `\\` is `(A \\ B) ⊔ (B \\ A)`. </code>",
+ "378":
+ "<code>NoteKsk.Chapter06.lebesgueMeasurable_exists_borel_symmDiff_null {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) :\n  ∃ B, MeasurableSet B ∧ NoteKsk.Chapter03.lambdaStar (symmDiff A B) = 0</code>",
+ "377":
+ "<code>Filter.EventuallyEq.{u_1, u_2} {α : Type u_1} {β : Type u_2} (l : Filter α) (f g : α → β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Two functions `f` and `g` are *eventually equal* along a filter `l` if the set of `x` such that\n`f x = g x` belongs to `l`. </code>",
+ "376":
+ "<code>NoteKsk.Chapter06.lebesgueMeasurable_exists_borel_ae_eq {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) : ∃ B, MeasurableSet B ∧ B =ᵐ[MeasureTheory.volume] A</code>",
+ "375":
+ "<code>NoteKsk.Chapter06.lebesgueMeasure_completion_of_borel {d : ℕ} {A : Set (NoteKsk.Space d)} :\n  NoteKsk.Chapter05.LebesgueMeasurableSet A ↔ NoteKsk.CompletedMeasurableSet (NoteKsk.Chapter06.borelMeasure d) A</code>",
+ "374":
+ "<code>NoteKsk.Chapter06.borelMeasure (d : ℕ) : MeasureTheory.Measure (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">The Borel measure on `ℝ^d`.\n\nMathlib's `volume` is used here.  Lebesgue measurable sets are represented in\nChapter 05 by `NullMeasurableSet A volume`, i.e. by the completion of this\nBorel measure.\n</code>",
+ "373":
+ "<code>NoteKsk.Chapter06.borelSet_lebesgueMeasurable {d : ℕ} {A : Set (NoteKsk.Space d)} (hA : MeasurableSet A) :\n  NoteKsk.Chapter05.LebesgueMeasurableSet A</code><span class=\"sep\"></span><code class=\"docstring\">Borel sets in Euclidean space are Lebesgue measurable. </code>",
+ "372":
+ "<code>TopologicalSpace.{u} (X : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A topology on `X`. </code>",
+ "371":
+ "<code>NoteKsk.Chapter06.borelSigmaAlgebra.{u_1} (α : Type u_1) [TopologicalSpace α] : MeasurableSpace α</code><span class=\"sep\"></span><code class=\"docstring\">The Borel σ-algebra of a topological space. </code>",
+ "370":
+ "<code>MeasureTheory.AddContent ENNReal {S | NoteKsk.IsLeftHalfOpenBox S}</code>",
+ "37":
+ "<code>NoteKsk.Chapter01.PiecewiseContinuousOnInterval (f : ℝ → ℝ) (a b : ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A lecture-level predicate for functions continuous on each partition subinterval. </code>",
+ "369":
+ "<code>NoteKsk.Chapter06.lambdaStar_eq_inducedOuterMeasureFromBoxes {d : ℕ} :\n  ∃ m,\n    NoteKsk.IsPremeasureOnSemiring m ∧\n      ∀ (A : Set (NoteKsk.Space d)),\n        NoteKsk.Chapter03.lambdaStar A = (NoteKsk.Chapter06.inducedOuterMeasureFromPremeasure ⋯ m) A</code><span class=\"sep\"></span><code class=\"docstring\">The Lebesgue outer measure is the outer measure induced by the premeasure on\nleft half-open boxes.\n\nThe exact construction depends on reconciling the Chapter 03 box content with\nmathlib's `AddContent` API, so this is left as a named bridge theorem.\n</code>",
+ "368":
+ "<code>NoteKsk.Chapter06.caratheodoryHahn_extension_unique_of_semiring.{u_1} {α : Type u_1} {C : Set (Set α)}\n  [MeasurableSpace α] (hgen : inst✝ = NoteKsk.generatedSigmaAlgebra C) (hC : MeasureTheory.IsSetSemiring C)\n  {μ ν : MeasureTheory.Measure α} (hspan : μ.FiniteSpanningSetsIn C) (hμν : ∀ s ∈ C, μ s = ν s) : μ = ν</code>",
+ "367": "<code>∀ s ∈ C, μ s = ν s</code>",
+ "366": "<code>μ.FiniteSpanningSetsIn C</code>",
+ "365":
+ "<code>IsPiSystem.{u_1} {α : Type u_1} (C : Set (Set α)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A π-system is a collection of subsets of `α` that is closed under binary intersection of\nnon-disjoint sets. Usually it is also required that the collection is nonempty, but we don't do\nthat here. </code>",
+ "364": "<code>IsPiSystem C</code>",
+ "363":
+ "<code>NoteKsk.Chapter06.caratheodoryHahn_extension_unique.{u_1} {α : Type u_1} {C : Set (Set α)} [MeasurableSpace α]\n  (hgen : inst✝ = NoteKsk.generatedSigmaAlgebra C) (hπ : IsPiSystem C) {μ ν : MeasureTheory.Measure α}\n  (hspan : μ.FiniteSpanningSetsIn C) (hμν : ∀ s ∈ C, μ s = ν s) : μ = ν</code><span class=\"sep\"></span><code class=\"docstring\">Uniqueness part in mathlib's standard form.\n\nThe lecture notes state uniqueness under σ-finiteness on the generating\nsemiring.  Mathlib uses the more concrete hypothesis\n`μ.FiniteSpanningSetsIn C`: a countable cover by members of the generator, each\nwith finite `μ`-measure.  This implies σ-finiteness and is the version used by\n`Measure.FiniteSpanningSetsIn.ext`.\n</code>",
+ "362":
+ "<code>NoteKsk.Chapter06.caratheodoryHahn_extension_exists.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) (m : MeasureTheory.AddContent ENNReal C)\n  (hm : NoteKsk.IsPremeasureOnSemiring m) : ∃ μ, ∀ s ∈ C, μ s = m s</code><span class=\"sep\"></span><code class=\"docstring\">Existence part of the Carathéodory--Hahn extension theorem.\n\nCompared with the lecture statement, the generated measurable space is made\nexplicit in the type of the resulting measure.\n</code>",
+ "361": "<code>inst✝ = NoteKsk.generatedSigmaAlgebra C</code>",
+ "360":
+ "<code>NoteKsk.Chapter06.measureFromPremeasure_eq_on_semiring.{u_1} {α : Type u_1} {C : Set (Set α)} [MeasurableSpace α]\n  (hC : MeasureTheory.IsSetSemiring C) (hgen : inst✝ = NoteKsk.generatedSigmaAlgebra C)\n  (m : MeasureTheory.AddContent ENNReal C) (hm : NoteKsk.IsPremeasureOnSemiring m) {s : Set α} (hs : s ∈ C) :\n  (NoteKsk.Chapter06.measureFromPremeasure hC ⋯ m hm) s = m s</code>",
+ "36":
+ "<code>NoteKsk.Chapter01.PiecewiseConstantOnInterval (f : ℝ → ℝ) (a b : ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A lecture-level predicate for functions that are constant on each partition subinterval. </code>",
+ "359": "<code>inst✝ ≤ NoteKsk.generatedSigmaAlgebra C</code>",
+ "358":
+ "<code>NoteKsk.Chapter06.measureFromPremeasure.{u_1} {α : Type u_1} {C : Set (Set α)} [MeasurableSpace α]\n  (hC : MeasureTheory.IsSetSemiring C) (hgen : inst✝ ≤ NoteKsk.generatedSigmaAlgebra C)\n  (m : MeasureTheory.AddContent ENNReal C) (hm : NoteKsk.IsPremeasureOnSemiring m) : MeasureTheory.Measure α</code><span class=\"sep\"></span><code class=\"docstring\">A measure generated from a semiring premeasure on the current measurable space. </code>",
+ "357": "<code>MeasurableSet s</code>",
+ "356":
+ "<code>NoteKsk.Chapter06.inducedOuterMeasureFromPremeasure_caratheodory_generated.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) (m : MeasureTheory.AddContent ENNReal C) {s : Set α} (hs : MeasurableSet s) :\n  NoteKsk.CaratheodoryMeasurableSet (NoteKsk.Chapter06.inducedOuterMeasureFromPremeasure hC m) s</code>",
+ "355":
+ "<code>NoteKsk.Chapter06.inducedOuterMeasureFromPremeasure_caratheodory_of_mem.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) (m : MeasureTheory.AddContent ENNReal C) {s : Set α} (hs : s ∈ C) :\n  NoteKsk.CaratheodoryMeasurableSet (NoteKsk.Chapter06.inducedOuterMeasureFromPremeasure hC m) s</code>",
+ "354":
+ "<code>NoteKsk.Chapter06.inducedOuterMeasureFromPremeasure_eq_on_semiring.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) (m : MeasureTheory.AddContent ENNReal C) (hm : NoteKsk.IsPremeasureOnSemiring m)\n  {s : Set α} (hs : s ∈ C) : (NoteKsk.Chapter06.inducedOuterMeasureFromPremeasure hC m) s = m s</code>",
+ "353":
+ "<code>NoteKsk.Chapter06.inducedOuterMeasureFromPremeasure.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) (m : MeasureTheory.AddContent ENNReal C) : MeasureTheory.OuterMeasure α</code><span class=\"sep\"></span><code class=\"docstring\">The outer measure induced by a semiring premeasure via countable covers. </code>",
+ "352": "<code>NoteKsk.IsPremeasureOnSemiring m</code>",
+ "351":
+ "<code>NoteKsk.Chapter06.premeasureExtensionToAlgebra_isPremeasure.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) (m : MeasureTheory.AddContent ENNReal C)\n  (hm : NoteKsk.IsPremeasureOnSemiring m) :\n  NoteKsk.IsPremeasureOnSemiring (NoteKsk.Chapter06.premeasureExtensionToAlgebra hC m)</code><span class=\"sep\"></span><code class=\"docstring\">If the original content is a premeasure, then its finite-algebra extension is a\npremeasure.\n\nThe proof compares `AddContent.supClosure` with the measure generated by `m`\non `generatedSigmaAlgebra C`; countable subadditivity then follows from the\nouter-measure subadditivity of that generated measure.\n</code>",
+ "350":
+ "<code>NoteKsk.Chapter06.premeasureExtensionToAlgebra_eq_on_semiring.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) (m : MeasureTheory.AddContent ENNReal C) {s : Set α} (hs : s ∈ C) :\n  (NoteKsk.Chapter06.premeasureExtensionToAlgebra hC m) s = m s</code>",
+ "35":
+ "<code>NoteKsk.Chapter01.darbouxIntegral (f : ℝ → ℝ) (a b : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Darboux integral, represented by the upper integral. </code>",
+ "349":
+ "<code>NoteKsk.Chapter06.premeasureExtensionToAlgebra.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) (m : MeasureTheory.AddContent ENNReal C) :\n  MeasureTheory.AddContent ENNReal (NoteKsk.algebraGeneratedBySemiring C)</code><span class=\"sep\"></span><code class=\"docstring\">Extension of an additive content from a semiring to its finite-union algebra.\n\nThis is the theorem `thm:premeasure-extension-to-algebra` in mathlib's form:\n`AddContent.supClosure`.\n</code>",
+ "348": "<code>MeasureTheory.AddContent ENNReal C</code>",
+ "347":
+ "<code>NoteKsk.IsPremeasureOnSemiring.{u_1} {α : Type u_1} {C : Set (Set α)} (m : MeasureTheory.AddContent ENNReal C) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A premeasure on a semiring, in the sense needed for the Carathéodory--Hahn\nextension theorem: an additive content with countable subadditivity.\n</code>",
+ "346":
+ "<code>AddCommMonoid.{u} (M : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">An additive commutative monoid is an additive monoid with commutative `(+)`. </code>",
+ "345":
+ "<code>MeasureTheory.AddContent.{u_1, u_2} {α : Type u_1} (G : Type u_2) [AddCommMonoid G] (C : Set (Set α)) :\n  Type (max u_1 u_2)</code><span class=\"sep\"></span><code class=\"docstring\">An additive content is a set function with value 0 at the empty set which is finitely additive\non a given set of sets. </code>",
+ "344":
+ "<code>Finset.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Finset α` is the type of finite sets of elements of `α`. It is implemented\nas a multiset (a list up to permutation) which has no duplicate elements. </code>",
+ "343":
+ "<code>∀ (I : Finset (Set α)), ↑I ⊆ C → (↑I).PairwiseDisjoint id → ⋃₀ ↑I ∈ C → self.toFun (⋃₀ ↑I) = ∑ u ∈ I, self.toFun u</code>",
+ "342":
+ "<code>MeasureTheory.AddContent.toFun.{u_1, u_2} {α : Type u_1} {G : Type u_2} [AddCommMonoid G] {C : Set (Set α)}\n  (self : MeasureTheory.AddContent G C) : Set α → G</code><span class=\"sep\"></span><code class=\"docstring\">The value of the content on a set. </code>",
+ "341": "<code>MeasureTheory.AddContent G C</code>",
+ "340": "<code>self.toFun ∅ = 0</code>",
+ "34":
+ "<code>NoteKsk.Chapter01.DarbouxIntegrableOn (f : ℝ → ℝ) (a b : ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Darboux integrability on `[a,b]`. </code>",
+ "339":
+ "<code>Set α → G</code><span class=\"sep\"></span><code class=\"docstring\">The value of the content on a set. </code>",
+ "338": "<code>s ∈ NoteKsk.algebraGeneratedBySemiring C</code>",
+ "337":
+ "<code>NoteKsk.Chapter06.algebraGeneratedBySemiring_measurable.{u_1} {α : Type u_1} {C : Set (Set α)} {s : Set α}\n  (hs : s ∈ NoteKsk.algebraGeneratedBySemiring C) : MeasurableSet s</code><span class=\"sep\"></span><code class=\"docstring\">Finite unions of generators are measurable in the generated σ-algebra. </code>",
+ "336": "<code>MeasureTheory.IsSetSemiring C</code>",
+ "335":
+ "<code>NoteKsk.Chapter06.algebraGeneratedBySemiring_isSetRing.{u_1} {α : Type u_1} {C : Set (Set α)}\n  (hC : MeasureTheory.IsSetSemiring C) : MeasureTheory.IsSetRing (NoteKsk.algebraGeneratedBySemiring C)</code><span class=\"sep\"></span><code class=\"docstring\">A semiring generates a ring of sets by finite unions. </code>",
+ "334":
+ "<code>NoteKsk.algebraGeneratedBySemiring.{u_1} {α : Type u_1} (C : Set (Set α)) : Set (Set α)</code><span class=\"sep\"></span><code class=\"docstring\">The finite additive family generated by a semiring of sets.\n\nMathlib represents this as `supClosure C`, the family of finite unions of\nmembers of `C`.\n</code>",
+ "333":
+ "<code>MeasureTheory.IsSetRing.{u_1} {α : Type u_1} (C : Set (Set α)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A ring of sets `C` is a family of sets containing `∅`, stable by union and set difference.\nIt is then also stable by intersection (see `IsSetRing.inter_mem`). </code>",
+ "332": "<code>∀ ⦃s t : Set α⦄, s ∈ C → t ∈ C → s \\ t ∈ C</code>",
+ "331": "<code>∀ ⦃s t : Set α⦄, s ∈ C → t ∈ C → s ∪ t ∈ C</code>",
+ "330":
+ "<code>NoteKsk.FiniteAdditiveFamily.{u_1} {α : Type u_1} (𝓕 : Set (Set α)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A finite additive family of subsets. </code>",
+ "33":
+ "<code>NoteKsk.Chapter01.darbouxLowerIntegral (f : ℝ → ℝ) (a b : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Darboux lower integral: the supremum of lower sums. </code>",
+ "329":
+ "<code>NoteKsk.Chapter06.powerset_isSetSemiring.{u_1} {α : Type u_1} : MeasureTheory.IsSetSemiring Set.univ</code><span class=\"sep\"></span><code class=\"docstring\">The whole powerset is a semiring of sets. </code>",
+ "328":
+ "<code>setOf.{u} {α : Type u} (p : α → Prop) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">Turn a predicate `p : α → Prop` into a set, also written as `{x | p x}` </code>",
+ "327":
+ "<code>NoteKsk.Chapter06.leftHalfOpenBox_isSetSemiring {d : ℕ} : MeasureTheory.IsSetSemiring {S | NoteKsk.IsLeftHalfOpenBox S}</code><span class=\"sep\"></span><code class=\"docstring\">The left half-open boxes from the earlier chapters form a semiring. </code>",
+ "326":
+ "<code>MeasureTheory.IsSetSemiring.{u_1} {α : Type u_1} (C : Set (Set α)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A semi-ring of sets `C` is a family of sets containing `∅`, stable by intersection and such that\nfor all `s, t ∈ C`, `s \\ t` is equal to a disjoint union of finitely many sets in `C`. </code>",
+ "325":
+ "<code>Set.sUnion.{u} {α : Type u} (S : Set (Set α)) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">Union of a set of sets. </code>",
+ "324":
+ "<code>id.{u} {α : Sort u} (a : α) : α</code><span class=\"sep\"></span><code class=\"docstring\">The identity function. `id` takes an implicit argument `α : Sort u`\n(a type in any universe), and an argument `a : α`, and returns `a`.\n\nAlthough this may look like a useless function, one application of the identity\nfunction is to explicitly put a type on an expression. If `e` has type `T`,\nand `T'` is definitionally equal to `T`, then `@id T' e` typechecks, and Lean\nknows that this expression has type `T'` rather than `T`. This can make a\ndifference for typeclass inference, since `T` and `T'` may have different\ntypeclass instances on them. `show T' from e` is sugar for an `@id T' e`\nexpression.\n</code>",
+ "323":
+ "<code>Set.PairwiseDisjoint.{u_1, u_4} {α : Type u_1} {ι : Type u_4} [PartialOrder α] [OrderBot α] (s : Set ι) (f : ι → α) :\n  Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set is `PairwiseDisjoint` under `f`, if the images of any distinct two elements under `f`\nare disjoint.\n\n`s.Pairwise Disjoint` is (definitionally) the same as `s.PairwiseDisjoint id`. We prefer the latter\nin order to allow dot notation on `Set.PairwiseDisjoint`, even though the former unfolds more\nnicely. </code>",
+ "322": "<code>Finset (Set α)</code>",
+ "321":
+ "<code>∀ s ∈ C, ∀ t ∈ C, ∃ I, ↑I ⊆ C ∧ (↑I).PairwiseDisjoint id ∧ s \\ t = ⋃₀ ↑I</code>",
+ "320": "<code>∀ s ∈ C, ∀ t ∈ C, s ∩ t ∈ C</code>",
+ "32":
+ "<code>NoteKsk.Chapter01.darbouxUpperIntegral (f : ℝ → ℝ) (a b : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Darboux upper integral: the infimum of upper sums. </code>",
+ "319": "<code>∅ ∈ C</code>",
+ "318":
+ "<code>MeasureTheory.Measure.IsComplete.{u_2} {α : Type u_2} {x✝ : MeasurableSpace α} (μ : MeasureTheory.Measure α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A measure is complete if every null set is also measurable.\nA null set is a subset of a measurable set with measure `0`.\nSince every measure is defined as a special case of an outer measure, we can more simply state\nthat a set `s` is null if `μ s = 0`. </code>",
+ "317":
+ "<code>MeasureTheory.Measure.completion.{u_2} {α : Type u_2} {x✝ : MeasurableSpace α} (μ : MeasureTheory.Measure α) :\n  MeasureTheory.Measure (MeasureTheory.NullMeasurableSpace α μ)</code><span class=\"sep\"></span><code class=\"docstring\">Given a measure we can complete it to a (complete) measure on all null measurable sets. </code>",
+ "316":
+ "<code>NoteKsk.Chapter06.measure_completion_isComplete.{u_2} {α : Type u_2} [MeasurableSpace α] (μ : MeasureTheory.Measure α) :\n  μ.completion.IsComplete</code>",
+ "315": "<code>A ⊆ N</code>",
+ "314": "<code>μ N = 0</code>",
+ "313":
+ "<code>NoteKsk.Chapter06.null_subset_completedMeasurableSet.{u_2} {α : Type u_2} [MeasurableSpace α]\n  {μ : MeasureTheory.Measure α} {N A : Set α} (hN : μ N = 0) (hA : A ⊆ N) : NoteKsk.CompletedMeasurableSet μ A</code><span class=\"sep\"></span><code class=\"docstring\">Null subsets are measurable in the completed measurable structure. </code>",
+ "312":
+ "<code>NoteKsk.CompletedMeasurableSet.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α) (A : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The measurable sets in the completion of a measure.  Mathlib calls these\n`NullMeasurableSet`s.\n</code>",
+ "311":
+ "<code>NoteKsk.Chapter06.caratheodory_outerMeasure_iUnion_eq_tsum.{u_1} {α : Type u_1} {μ : MeasureTheory.OuterMeasure α}\n  (A : ℕ → Set α) (hA : ∀ (n : ℕ), MeasurableSet (A n)) (hdisj : Pairwise (Function.onFun Disjoint A)) :\n  μ (⋃ n, A n) = ∑' (n : ℕ), μ (A n)</code>",
+ "310":
+ "<code>NoteKsk.Chapter06.caratheodoryMeasurableSpace_iff.{u_1} {α : Type u_1} {μ : MeasureTheory.OuterMeasure α} {A : Set α} :\n  MeasurableSet A ↔ NoteKsk.CaratheodoryMeasurableSet μ A</code><span class=\"sep\"></span><code class=\"docstring\">The σ-algebra of Carathéodory-measurable sets. </code>",
+ "31":
+ "<code>NoteKsk.Chapter01.darbouxLowerValues (f : ℝ → ℝ) (a b : ℝ) : Set ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Lower Darboux sums over all partitions of `[a,b]`. </code>",
+ "309": "<code>∀ (n : ℕ), NoteKsk.CaratheodoryMeasurableSet μ (A n)</code>",
+ "308":
+ "<code>NoteKsk.Chapter06.caratheodory_iUnion.{u_1} {α : Type u_1} {μ : MeasureTheory.OuterMeasure α} (A : ℕ → Set α)\n  (hA : ∀ (n : ℕ), NoteKsk.CaratheodoryMeasurableSet μ (A n)) : NoteKsk.CaratheodoryMeasurableSet μ (⋃ n, A n)</code>",
+ "307":
+ "<code>NoteKsk.Chapter06.caratheodory_inter.{u_1} {α : Type u_1} {μ : MeasureTheory.OuterMeasure α} {A B : Set α}\n  (hA : NoteKsk.CaratheodoryMeasurableSet μ A) (hB : NoteKsk.CaratheodoryMeasurableSet μ B) :\n  NoteKsk.CaratheodoryMeasurableSet μ (A ∩ B)</code>",
+ "306": "<code>NoteKsk.CaratheodoryMeasurableSet μ B</code>",
+ "305":
+ "<code>NoteKsk.Chapter06.caratheodory_union.{u_1} {α : Type u_1} {μ : MeasureTheory.OuterMeasure α} {A B : Set α}\n  (hA : NoteKsk.CaratheodoryMeasurableSet μ A) (hB : NoteKsk.CaratheodoryMeasurableSet μ B) :\n  NoteKsk.CaratheodoryMeasurableSet μ (A ∪ B)</code>",
+ "304": "<code>NoteKsk.CaratheodoryMeasurableSet μ A</code>",
+ "303":
+ "<code>NoteKsk.Chapter06.caratheodory_compl.{u_1} {α : Type u_1} {μ : MeasureTheory.OuterMeasure α} {A : Set α}\n  (hA : NoteKsk.CaratheodoryMeasurableSet μ A) : NoteKsk.CaratheodoryMeasurableSet μ Aᶜ</code>",
+ "302":
+ "<code>NoteKsk.Chapter06.caratheodory_univ.{u_1} {α : Type u_1} (μ : MeasureTheory.OuterMeasure α) :\n  NoteKsk.CaratheodoryMeasurableSet μ Set.univ</code>",
+ "301":
+ "<code>NoteKsk.Chapter06.caratheodory_empty.{u_1} {α : Type u_1} (μ : MeasureTheory.OuterMeasure α) :\n  NoteKsk.CaratheodoryMeasurableSet μ ∅</code>",
+ "300":
+ "<code>NoteKsk.Chapter06.caratheodoryMeasurable_iff.{u_1} {α : Type u_1} {μ : MeasureTheory.OuterMeasure α} {A : Set α} :\n  NoteKsk.CaratheodoryMeasurableSet μ A ↔ ∀ (E : Set α), μ E = μ (E ∩ A) + μ (E \\ A)</code>",
+ "30":
+ "<code>Set.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A set is a collection of elements of some type `α`.\n\nAlthough `Set` is defined as `α → Prop`, this is an implementation detail which should not be\nrelied on. Instead, `setOf` and membership of a set (`∈`) should be used to convert between sets\nand predicates.\n</code>",
+ "3": "<code>List ℝ</code>",
+ "299":
+ "<code>NoteKsk.caratheodoryMeasurableSpace.{u_1} {α : Type u_1} (μ : MeasureTheory.OuterMeasure α) : MeasurableSpace α</code><span class=\"sep\"></span><code class=\"docstring\">The measurable structure consisting of the Carathéodory-measurable sets of an outer measure. </code>",
+ "298":
+ "<code>NoteKsk.CaratheodoryMeasurableSet.{u_1} {α : Type u_1} (μ : MeasureTheory.OuterMeasure α) (A : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Carathéodory measurability for an outer measure. </code>",
+ "297":
+ "<code>NoteKsk.Chapter06.outerMeasure_iUnion_le.{u_1} {α : Type u_1} (μ : MeasureTheory.OuterMeasure α) (A : ℕ → Set α) :\n  μ (⋃ n, A n) ≤ ∑' (n : ℕ), μ (A n)</code>",
+ "296":
+ "<code>NoteKsk.Chapter06.outerMeasure_mono.{u_1} {α : Type u_1} (μ : MeasureTheory.OuterMeasure α) {A B : Set α}\n  (hAB : A ⊆ B) : μ A ≤ μ B</code>",
+ "295":
+ "<code>NoteKsk.Chapter06.outerMeasure_empty.{u_1} {α : Type u_1} (μ : MeasureTheory.OuterMeasure α) : μ ∅ = 0</code>",
+ "294":
+ "<code>Set.indicator.{u_1, u_3} {α : Type u_1} {M : Type u_3} [Zero M] (s : Set α) (f : α → M) (x : α) : M</code><span class=\"sep\"></span><code class=\"docstring\">`Set.indicator s f a` is `f a` if `a ∈ s`, `0` otherwise. </code>",
+ "293":
+ "<code>MeasureTheory.Measure.dirac.{u_1} {α : Type u_1} [MeasurableSpace α] (a : α) : MeasureTheory.Measure α</code><span class=\"sep\"></span><code class=\"docstring\">The dirac measure. </code>",
+ "292": "<code>α</code>",
+ "291":
+ "<code>MeasurableSingletonClass.{u_7} (α : Type u_7) [MeasurableSpace α] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A typeclass mixin for `MeasurableSpace`s such that each singleton is measurable. </code>",
+ "290":
+ "<code>NoteKsk.Chapter06.diracMeasure_apply.{u_1} {α : Type u_1} [MeasurableSpace α] [MeasurableSingletonClass α] (a : α)\n  (A : Set α) : (MeasureTheory.Measure.dirac a) A = A.indicator (fun x ↦ 1) a</code><span class=\"sep\"></span><code class=\"docstring\">Dirac measure, in the mathlib form using `indicator`. </code>",
+ "29":
+ "<code>NoteKsk.Chapter01.darbouxUpperValues (f : ℝ → ℝ) (a b : ℝ) : Set ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Upper Darboux sums over all partitions of `[a,b]`. </code>",
+ "289":
+ "<code>Set.encard.{u_1} {α : Type u_1} (s : Set α) : ℕ∞</code><span class=\"sep\"></span><code class=\"docstring\">The cardinality of a set as a term in `ℕ∞` </code>",
+ "288":
+ "<code>MeasureTheory.Measure.count.{u_1} {α : Type u_1} [MeasurableSpace α] : MeasureTheory.Measure α</code><span class=\"sep\"></span><code class=\"docstring\">Counting measure on any measurable space. </code>",
+ "287":
+ "<code>NoteKsk.Chapter06.countingMeasure_apply.{u_1} {α : Type u_1} [MeasurableSpace α] {A : Set α} (hA : MeasurableSet A) :\n  MeasureTheory.Measure.count A = ↑A.encard</code><span class=\"sep\"></span><code class=\"docstring\">Counting measure assigns the cardinality to a measurable set. </code>",
+ "286":
+ "<code>NoteKsk.Chapter06.sigmaFinite_iff_exists_measurable_finite_spanning.{u_1} {α : Type u_1} [MeasurableSpace α]\n  (μ : MeasureTheory.Measure α) :\n  MeasureTheory.SigmaFinite μ ↔ ∃ S, (∀ (n : ℕ), MeasurableSet (S n)) ∧ (∀ (n : ℕ), μ (S n) &lt; ⊤) ∧ ⋃ n, S n = Set.univ</code><span class=\"sep\"></span><code class=\"docstring\">σ-finiteness, stated as the usual measurable countable exhaustion. </code>",
+ "285":
+ "<code>MeasureTheory.SFinite.{u_1} {α : Type u_1} {m0 : MeasurableSpace α} (μ : MeasureTheory.Measure α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A measure is called s-finite if it is a countable sum of finite measures. </code>",
+ "284":
+ "<code>MeasureTheory.Measure.sum.{u_1, u_5} {α : Type u_1} {ι : Type u_5} {m0 : MeasurableSpace α}\n  (f : ι → MeasureTheory.Measure α) : MeasureTheory.Measure α</code><span class=\"sep\"></span><code class=\"docstring\">Sum of an indexed family of measures. </code>",
+ "283":
+ "<code>MeasureTheory.IsFiniteMeasure.{u_1} {α : Type u_1} {m0 : MeasurableSpace α} (μ : MeasureTheory.Measure α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A measure `μ` is called finite if `μ univ &lt; ∞`. </code>",
+ "282": "<code>ℕ → MeasureTheory.Measure α</code>",
+ "281":
+ "<code>∃ m, (∀ (n : ℕ), MeasureTheory.IsFiniteMeasure (m n)) ∧ μ = MeasureTheory.Measure.sum m</code>",
+ "280":
+ "<code>MeasureTheory.SigmaFinite.{u_1} {α : Type u_1} {m0 : MeasurableSpace α} (μ : MeasureTheory.Measure α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A measure `μ` is called σ-finite if there is a countable collection of sets\n`{ A i | i ∈ ℕ }` such that `μ (A i) &lt; ∞` and `⋃ i, A i = s`. </code>",
+ "28":
+ "<code>NoteKsk.Chapter01.darbouxLowerSum (f : ℝ → ℝ) (P : NoteKsk.Chapter01.IntervalPartition) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Darboux lower sum. </code>",
+ "279":
+ "<code>MeasureTheory.Measure.FiniteSpanningSetsIn.{u_1} {α : Type u_1} {m0 : MeasurableSpace α} (μ : MeasureTheory.Measure α)\n  (C : Set (Set α)) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">`μ` has finite spanning sets in `C` if there is a countable sequence of sets in `C` that have\nfinite measures. This structure is a type, which is useful if we want to record extra properties\nabout the sets, such as that they are monotone.\n`SigmaFinite` is defined in terms of this: `μ` is σ-finite if there exists a sequence of\nfinite spanning sets in the collection of all measurable sets. </code>",
+ "278": "<code>Nonempty (μ.FiniteSpanningSetsIn Set.univ)</code>",
+ "277": "<code>Pairwise (Function.onFun Disjoint A)</code>",
+ "276":
+ "<code>NoteKsk.Chapter06.measure_iUnion_disjoint.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)\n  (A : ℕ → Set α) (hA : ∀ (n : ℕ), MeasurableSet (A n)) (hdisj : Pairwise (Function.onFun Disjoint A)) :\n  μ (⋃ n, A n) = ∑' (n : ℕ), μ (A n)</code>",
+ "275":
+ "<code>NoteKsk.Chapter06.measure_empty.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α) : μ ∅ = 0</code>",
+ "274": "<code>∀ s ∈ C, MeasurableSet s</code>",
+ "273":
+ "<code>NoteKsk.Chapter06.generatedSigmaAlgebra_minimal.{u_1} {α : Type u_1} {C : Set (Set α)} {m : MeasurableSpace α}\n  (hC : ∀ s ∈ C, MeasurableSet s) : NoteKsk.generatedSigmaAlgebra C ≤ m</code><span class=\"sep\"></span><code class=\"docstring\">The generated σ-algebra is the smallest σ-algebra containing the given family. </code>",
+ "272":
+ "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
+ "271": "<code>s ∈ C</code>",
+ "270":
+ "<code>NoteKsk.Chapter06.generatedSigmaAlgebra_contains.{u_1} {α : Type u_1} {C : Set (Set α)} {s : Set α} (hs : s ∈ C) :\n  MeasurableSet s</code><span class=\"sep\"></span><code class=\"docstring\">Members of the generated σ-algebra contain the original generating family. </code>",
+ "27":
+ "<code>NoteKsk.Chapter01.darbouxUpperSum (f : ℝ → ℝ) (P : NoteKsk.Chapter01.IntervalPartition) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Darboux upper sum. </code>",
+ "269": "<code>Set (Set α)</code>",
+ "268":
+ "<code>NoteKsk.generatedSigmaAlgebra.{u_1} {α : Type u_1} (C : Set (Set α)) : MeasurableSpace α</code><span class=\"sep\"></span><code class=\"docstring\">The σ-algebra generated by a family of subsets. </code>",
+ "267": "<code>∀ (n : ℕ), MeasurableSet (A n)</code>",
+ "266":
+ "<code>NoteKsk.Chapter06.sigmaAlgebra_iUnion_mem.{u_1} {α : Type u_1} [MeasurableSpace α] (A : ℕ → Set α)\n  (hA : ∀ (n : ℕ), MeasurableSet (A n)) : MeasurableSet (⋃ n, A n)</code>",
+ "265": "<code>MeasurableSet A</code>",
+ "264":
+ "<code>NoteKsk.Chapter06.sigmaAlgebra_compl_mem.{u_1} {α : Type u_1} [MeasurableSpace α] {A : Set α} (hA : MeasurableSet A) :\n  MeasurableSet Aᶜ</code>",
+ "263":
+ "<code>NoteKsk.Chapter06.sigmaAlgebra_univ_mem.{u_1} {α : Type u_1} [MeasurableSpace α] : MeasurableSet Set.univ</code>",
+ "262":
+ "<code>NoteKsk.Chapter06.sigmaAlgebra_empty_mem.{u_1} {α : Type u_1} [MeasurableSpace α] : MeasurableSet ∅</code>",
+ "261":
+ "<code>NoteKsk.SigmaAlgebra.{u_1} (α : Type u_1) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A σ-algebra on a type.  This is only a lecture-note synonym for mathlib's\n`MeasurableSpace`.\n</code>",
+ "260":
+ "<code>∀ (f : ℕ → Set α),\n  (∀ (i : ℕ), MeasurableSpace.MeasurableSet' self (f i)) → MeasurableSpace.MeasurableSet' self (⋃ i, f i)</code><span class=\"sep\"></span><code class=\"docstring\">The union of a sequence of measurable sets is a measurable set. Use a more general\n`MeasurableSet.iUnion` instead. </code>",
+ "26":
+ "<code>NoteKsk.Chapter01.intervalInf (f : ℝ → ℝ) (u v : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Infimum of `f` on a closed subinterval.\n\nAs with `intervalSup`, boundedness hypotheses are supplied by theorem\nstatements rather than by the definition itself.\n</code>",
+ "259":
+ "<code>∀ (s : Set α), MeasurableSpace.MeasurableSet' self s → MeasurableSpace.MeasurableSet' self sᶜ</code><span class=\"sep\"></span><code class=\"docstring\">The complement of a measurable set is a measurable set. Use `MeasurableSet.compl` instead. </code>",
+ "258": "<code>MeasurableSpace α</code>",
+ "257":
+ "<code>MeasurableSpace.MeasurableSet'.{u_7} {α : Type u_7} (self : MeasurableSpace α) : Set α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Predicate saying that a given set is measurable. Use `MeasurableSet` in the root namespace\ninstead. </code>",
+ "256":
+ "<code>MeasurableSpace.MeasurableSet' self ∅</code><span class=\"sep\"></span><code class=\"docstring\">The empty set is a measurable set. Use `MeasurableSet.empty` instead. </code>",
+ "255": "<code>Type u_7</code>",
+ "254":
+ "<code>Set α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Predicate saying that a given set is measurable. Use `MeasurableSet` in the root namespace\ninstead. </code>",
+ "253":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurable_iff_caratheodory {d : ℕ} {A : Set (NoteKsk.Space d)} :\n  NoteKsk.Chapter05.LebesgueMeasurableSet A ↔ NoteKsk.Chapter05.LebesgueCaratheodoryMeasurable A</code>",
+ "252": "<code>NoteKsk.Chapter05.LebesgueCaratheodoryMeasurable A</code>",
+ "251":
+ "<code>NoteKsk.Chapter05.caratheodory_implies_lebesgueMeasurable {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueCaratheodoryMeasurable A) : NoteKsk.Chapter05.LebesgueMeasurableSet A</code>",
+ "250":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurable_implies_caratheodory {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) : NoteKsk.Chapter05.LebesgueCaratheodoryMeasurable A</code>",
+ "25":
+ "<code>NoteKsk.Chapter01.intervalSup (f : ℝ → ℝ) (u v : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Supremum of `f` on a closed subinterval.\n\nThis is intentionally an extended-real-free lecture definition using mathlib's\ntotalized `sSup`; theorem statements supply the boundedness hypotheses needed\nfor the usual Darboux interpretation.\n</code>",
+ "249": "<code>NoteKsk.Chapter03.lambdaStar E &lt; ⊤</code>",
+ "248":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurable_caratheodory_finite {d : ℕ} {A E : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (_hEfin : NoteKsk.Chapter03.lambdaStar E &lt; ⊤) :\n  NoteKsk.Chapter03.lambdaStar E = NoteKsk.Chapter03.lambdaStar (E ∩ A) + NoteKsk.Chapter03.lambdaStar (E \\ A)</code>",
+ "247":
+ "<code>NoteKsk.Chapter05.LebesgueCaratheodoryMeasurable {d : ℕ} (A : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Carathéodory measurability for Lebesgue outer measure. </code>",
+ "246":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_innerRegular {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) :\n  NoteKsk.Chapter05.lebesgueMeasure A = ⨆ K, ⨆ (_ : K ⊆ A), ⨆ (_ : IsCompact K), NoteKsk.Chapter05.lebesgueMeasure K</code>",
+ "245":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_outerRegular {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (_hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) :\n  NoteKsk.Chapter05.lebesgueMeasure A = ⨅ G, ⨅ (_ : A ⊆ G), ⨅ (_ : IsOpen G), NoteKsk.Chapter05.lebesgueMeasure G</code>",
+ "244":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_translate {d : ℕ} (A : Set (NoteKsk.Space d)) (c : NoteKsk.Space d) :\n  NoteKsk.Chapter05.lebesgueMeasure (NoteKsk.translate A c) = NoteKsk.Chapter05.lebesgueMeasure A</code>",
+ "243":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_translate {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (c : NoteKsk.Space d) :\n  NoteKsk.Chapter05.LebesgueMeasurableSet (NoteKsk.translate A c)</code>",
+ "242": "<code>NoteKsk.Chapter05.lebesgueMeasure (A 0) &lt; ⊤</code>",
+ "241": "<code>∀ (n : ℕ), A (n + 1) ⊆ A n</code>",
+ "240":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_iInter_eq_iInf_of_antitone {d : ℕ} (A : ℕ → Set (NoteKsk.Space d))\n  (hA : ∀ (n : ℕ), NoteKsk.Chapter05.LebesgueMeasurableSet (A n)) (hmono : ∀ (n : ℕ), A (n + 1) ⊆ A n)\n  (hfinite : NoteKsk.Chapter05.lebesgueMeasure (A 0) &lt; ⊤) :\n  NoteKsk.Chapter05.lebesgueMeasure (⋂ n, A n) = ⨅ n, NoteKsk.Chapter05.lebesgueMeasure (A n)</code>",
+ "24":
+ "<code>NoteKsk.Chapter01.riemannIntegral (f : ℝ → ℝ) (a b : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The Riemann integral, when it exists; `0` outside the integrable case. </code>",
+ "239":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_iUnion_le_tsum {d : ℕ} (A : ℕ → Set (NoteKsk.Space d))\n  (_hA : ∀ (n : ℕ), NoteKsk.Chapter05.LebesgueMeasurableSet (A n)) :\n  NoteKsk.Chapter05.lebesgueMeasure (⋃ n, A n) ≤ ∑' (n : ℕ), NoteKsk.Chapter05.lebesgueMeasure (A n)</code>",
+ "238":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_mono {d : ℕ} {A B : Set (NoteKsk.Space d)}\n  (_hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (_hB : NoteKsk.Chapter05.LebesgueMeasurableSet B) (hAB : A ⊆ B) :\n  NoteKsk.Chapter05.lebesgueMeasure A ≤ NoteKsk.Chapter05.lebesgueMeasure B</code>",
+ "237":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_iUnion_eq_tsum {d : ℕ} (A : ℕ → Set (NoteKsk.Space d))\n  (hA : ∀ (n : ℕ), NoteKsk.Chapter05.LebesgueMeasurableSet (A n)) (hdisj : ∀ ⦃m n : ℕ⦄, m ≠ n → Disjoint (A m) (A n)) :\n  NoteKsk.Chapter05.lebesgueMeasure (⋃ n, A n) = ∑' (n : ℕ), NoteKsk.Chapter05.lebesgueMeasure (A n)</code>",
+ "236":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_union_add {d : ℕ} {A B : Set (NoteKsk.Space d)}\n  (_hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (hB : NoteKsk.Chapter05.LebesgueMeasurableSet B)\n  (hdisj : Disjoint A B) :\n  NoteKsk.Chapter05.lebesgueMeasure (A ∪ B) = NoteKsk.Chapter05.lebesgueMeasure A + NoteKsk.Chapter05.lebesgueMeasure B</code>",
+ "235": "<code>∀ (n : ℕ), A n ⊆ A (n + 1)</code>",
+ "234":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_iUnion_eq_iSup_of_mono {d : ℕ} (A : ℕ → Set (NoteKsk.Space d))\n  (_hA : ∀ (n : ℕ), NoteKsk.Chapter05.LebesgueMeasurableSet (A n)) (hmono : ∀ (n : ℕ), A n ⊆ A (n + 1)) :\n  NoteKsk.Chapter05.lebesgueMeasure (⋃ n, A n) = ⨆ n, NoteKsk.Chapter05.lebesgueMeasure (A n)</code>",
+ "233":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_nonneg {d : ℕ} (A : Set (NoteKsk.Space d)) : 0 ≤ NoteKsk.Chapter05.lebesgueMeasure A</code>",
+ "232":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_empty {d : ℕ} : NoteKsk.Chapter05.lebesgueMeasure ∅ = 0</code>",
+ "231":
+ "<code>MeasurableSpace.{u_7} (α : Type u_7) : Type u_7</code><span class=\"sep\"></span><code class=\"docstring\">A measurable space is a space equipped with a σ-algebra. </code>",
+ "230":
+ "<code>MeasureTheory.Measure.{u_6} (α : Type u_6) [MeasurableSpace α] : Type u_6</code><span class=\"sep\"></span><code class=\"docstring\">A measure is defined to be an outer measure that is countably additive on\nmeasurable sets, with the additional assumption that the outer measure is the canonical\nextension of the restricted measure.\n\nThe measure of a set `s`, denoted `μ s`, is an extended nonnegative real. The real-valued version\nis written `μ.real s`.\n</code>",
+ "23":
+ "<code>NoteKsk.Chapter01.RiemannIntegrableOn (f : ℝ → ℝ) (a b : ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Riemann integrability on `[a,b]`. </code>",
+ "229":
+ "<code>MeasureTheory.OuterMeasure.trim.{u_1} {α : Type u_1} [MeasurableSpace α] (m : MeasureTheory.OuterMeasure α) :\n  MeasureTheory.OuterMeasure α</code><span class=\"sep\"></span><code class=\"docstring\">Given an outer measure `m` we can forget its value on non-measurable sets, and then consider\n`m.trim`, the unique maximal outer measure less than that function. </code>",
+ "228": "<code>self.trim ≤ self.toOuterMeasure</code>",
+ "227":
+ "<code>MeasureTheory.Measure.toOuterMeasure.{u_6} {α : Type u_6} [MeasurableSpace α] (self : MeasureTheory.Measure α) :\n  MeasureTheory.OuterMeasure α</code>",
+ "226":
+ "<code>∀ ⦃f : ℕ → Set α⦄,\n  (∀ (i : ℕ), MeasurableSet (f i)) →\n    Pairwise (Function.onFun Disjoint f) → self.toOuterMeasure (⋃ i, f i) = ∑' (i : ℕ), self.toOuterMeasure (f i)</code>",
+ "225": "<code>MeasureTheory.Measure α</code>",
+ "224": "<code>Type u_6</code>",
+ "223": "<code>IsOpen G</code>",
+ "222":
+ "<code>NoteKsk.Chapter05.isOpen_lebesgueMeasurable {d : ℕ} {G : Set (NoteKsk.Space d)} (hG : IsOpen G) :\n  NoteKsk.Chapter05.LebesgueMeasurableSet G</code>",
+ "221":
+ "<code>IsClosed.{u} {X : Type u} [TopologicalSpace X] (s : Set X) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set is closed if its complement is open </code>",
+ "220": "<code>IsClosed F</code>",
+ "22":
+ "<code>NoteKsk.Chapter01.HasRiemannIntegralOn (f : ℝ → ℝ) (a b I : ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`f` has Riemann integral `I` on `[a,b]`. </code>",
+ "219":
+ "<code>NoteKsk.Chapter05.isClosed_lebesgueMeasurable {d : ℕ} {F : Set (NoteKsk.Space d)} (hF : IsClosed F) :\n  NoteKsk.Chapter05.LebesgueMeasurableSet F</code>",
+ "218":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_iInter {d : ℕ} (A : ℕ → Set (NoteKsk.Space d))\n  (hA : ∀ (n : ℕ), NoteKsk.Chapter05.LebesgueMeasurableSet (A n)) : NoteKsk.Chapter05.LebesgueMeasurableSet (⋂ n, A n)</code>",
+ "217":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_diff {d : ℕ} {A B : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (hB : NoteKsk.Chapter05.LebesgueMeasurableSet B) :\n  NoteKsk.Chapter05.LebesgueMeasurableSet (A \\ B)</code>",
+ "216":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_inter {d : ℕ} {A B : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (hB : NoteKsk.Chapter05.LebesgueMeasurableSet B) :\n  NoteKsk.Chapter05.LebesgueMeasurableSet (A ∩ B)</code>",
+ "215": "<code>NoteKsk.Chapter05.LebesgueMeasurableSet B</code>",
+ "214":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_union {d : ℕ} {A B : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (hB : NoteKsk.Chapter05.LebesgueMeasurableSet B) :\n  NoteKsk.Chapter05.LebesgueMeasurableSet (A ∪ B)</code>",
+ "213": "<code>∀ (n : ℕ), NoteKsk.Chapter05.LebesgueMeasurableSet (A n)</code>",
+ "212":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_iUnion {d : ℕ} (A : ℕ → Set (NoteKsk.Space d))\n  (hA : ∀ (n : ℕ), NoteKsk.Chapter05.LebesgueMeasurableSet (A n)) : NoteKsk.Chapter05.LebesgueMeasurableSet (⋃ n, A n)</code>",
+ "211":
+ "<code>Compl.compl.{u_1} {α : Type u_1} [self : Compl α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">Set / lattice complement \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `ᶜ` in identifiers is `compl`.</code>",
+ "210":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_compl {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) : NoteKsk.Chapter05.LebesgueMeasurableSet Aᶜ</code>",
+ "21": "<code>ℝ → ℝ</code>",
+ "209":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_empty {d : ℕ} : NoteKsk.Chapter05.LebesgueMeasurableSet ∅</code>",
+ "208":
+ "<code>Set.univ.{u} {α : Type u} : Set α</code><span class=\"sep\"></span><code class=\"docstring\">The universal set on a type `α` is the set containing all elements of `α`.\n\nThis is conceptually the \"same as\" `α` (in set theory, it is actually the same), but type theory\nmakes the distinction that `α` is a type while `Set.univ` is a term of type `Set α`. `Set.univ` can\nitself be coerced to a type `↥Set.univ` which is in bijection with (but distinct from) `α`. </code>",
+ "207":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_univ {d : ℕ} : NoteKsk.Chapter05.LebesgueMeasurableSet Set.univ</code>",
+ "206": "<code>∀ ⦃m n : ℕ⦄, m ≠ n → Disjoint (A m) (A n)</code>",
+ "205":
+ "<code>∀ (n : ℕ), NoteKsk.Chapter05.LocalLebesgueMeasurable _Q.Icc (A n)</code>",
+ "204":
+ "<code>NoteKsk.Chapter05.localLebesgueMeasurable_iUnion_additive {d : ℕ} (_Q : NoteKsk.Box d) (A : ℕ → Set (NoteKsk.Space d))\n  (hA : ∀ (n : ℕ), NoteKsk.Chapter05.LocalLebesgueMeasurable _Q.Icc (A n))\n  (hdisj : ∀ ⦃m n : ℕ⦄, m ≠ n → Disjoint (A m) (A n)) :\n  NoteKsk.Chapter03.lambdaStar (⋃ n, A n) = ∑' (n : ℕ), NoteKsk.Chapter03.lambdaStar (A n)</code>",
+ "203":
+ "<code>∀ (n : ℕ), NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc (A n)</code>",
+ "202":
+ "<code>NoteKsk.Chapter05.localLebesgueMeasurable_iUnion {d : ℕ} (Q : NoteKsk.Box d) (A : ℕ → Set (NoteKsk.Space d))\n  (hA : ∀ (n : ℕ), NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc (A n)) :\n  NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc (⋃ n, A n)</code>",
+ "201":
+ "<code>NoteKsk.Chapter05.localLebesgueMeasurable_diff {d : ℕ} (Q : NoteKsk.Box d) {A B : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc A) (hB : NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc B) :\n  NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc (A \\ B)</code>",
+ "200":
+ "<code>NoteKsk.Chapter05.localLebesgueMeasurable_inter {d : ℕ} (Q : NoteKsk.Box d) {A B : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc A) (hB : NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc B) :\n  NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc (A ∩ B)</code>",
+ "20":
+ "<code>NoteKsk.Chapter01.riemannSum (f : ℝ → ℝ) (P : NoteKsk.Chapter01.IntervalPartition) (tags : ℕ → ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Riemann sum for a tagged partition. </code>",
+ "2":
+ "<code>Real : Type</code><span class=\"sep\"></span><code class=\"docstring\">The type `ℝ` of real numbers constructed as equivalence classes of Cauchy sequences of rational\nnumbers. </code>",
+ "199": "<code>Disjoint A B</code>",
+ "198": "<code>NoteKsk.Chapter05.LocalLebesgueMeasurable _Q.Icc B</code>",
+ "197": "<code>NoteKsk.Chapter05.LocalLebesgueMeasurable _Q.Icc A</code>",
+ "196":
+ "<code>NoteKsk.Chapter05.localLebesgueMeasurable_union_additive {d : ℕ} (_Q : NoteKsk.Box d) {A B : Set (NoteKsk.Space d)}\n  (_hA : NoteKsk.Chapter05.LocalLebesgueMeasurable _Q.Icc A) (hB : NoteKsk.Chapter05.LocalLebesgueMeasurable _Q.Icc B)\n  (hdisj : Disjoint A B) :\n  NoteKsk.Chapter03.lambdaStar (A ∪ B) = NoteKsk.Chapter03.lambdaStar A + NoteKsk.Chapter03.lambdaStar B</code>",
+ "195": "<code>NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc B</code>",
+ "194":
+ "<code>NoteKsk.Chapter05.localLebesgueMeasurable_union {d : ℕ} (Q : NoteKsk.Box d) {A B : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc A) (hB : NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc B) :\n  NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc (A ∪ B)</code>",
+ "193": "<code>NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc A</code>",
+ "192":
+ "<code>NoteKsk.Chapter05.localLebesgueMeasurable_compl {d : ℕ} (Q : NoteKsk.Box d) {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc A) : NoteKsk.Chapter05.LocalLebesgueMeasurable Q.Icc (Q.Icc \\ A)</code>",
+ "191":
+ "<code>NoteKsk.Chapter05.localLebesgueMeasurable_iff {d : ℕ} {Q A : Set (NoteKsk.Space d)} :\n  NoteKsk.Chapter05.LocalLebesgueMeasurable Q A ↔ A ⊆ Q ∧ NoteKsk.Chapter05.LebesgueMeasurableSet A</code>",
+ "190":
+ "<code>NoteKsk.Chapter05.LocalLebesgueMeasurable {d : ℕ} (Q A : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Measurability inside a bounded window `Q`, written `𝓛(Q)` in the notes. </code>",
+ "19":
+ "<code>Nat : Type</code><span class=\"sep\"></span><code class=\"docstring\">The natural numbers, starting at zero.\n\nThis type is special-cased by both the kernel and the compiler, and overridden with an efficient\nimplementation. Both use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)); at runtime, `Nat` values that are sufficiently small are unboxed.\n</code>",
+ "189":
+ "<code>NoteKsk.Chapter05.finiteOuter_open_approx_criterion {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hAfin : NoteKsk.Chapter03.lambdaStar A &lt; ⊤) (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (ε : ENNReal) :\n  ε ≠ 0 → ∃ U, A ⊆ U ∧ IsOpen U ∧ NoteKsk.Chapter03.lambdaStar (U \\ A) &lt; ε</code>",
+ "188":
+ "<code>NoteKsk.Chapter05.finiteOuter_compact_approx_criterion {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hAfin : NoteKsk.Chapter03.lambdaStar A &lt; ⊤) (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (ε : ENNReal) :\n  ε ≠ 0 → ∃ K, IsCompact K ∧ K ⊆ A ∧ NoteKsk.Chapter03.lambdaStar (A \\ K) &lt; ε</code>",
+ "187":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_eq_jordanMeasure {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.JordanMeasurable A) : NoteKsk.Chapter05.lebesgueMeasure A = NoteKsk.jordanMeasure A</code>",
+ "186": "<code>NoteKsk.JordanMeasurable A</code>",
+ "185":
+ "<code>NoteKsk.Chapter05.jordanMeasurable_lebesgueMeasurable {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.JordanMeasurable A) : NoteKsk.Chapter05.LebesgueMeasurableSet A</code>",
+ "184":
+ "<code>NoteKsk.Chapter05.countable_lebesgueMeasure_eq_zero {d : ℕ} [Nonempty (Fin d)] {A : Set (NoteKsk.Space d)}\n  (hA : A.Countable) : NoteKsk.Chapter05.lebesgueMeasure A = 0</code>",
+ "183":
+ "<code>NoteKsk.Chapter05.countable_lebesgueMeasurable {d : ℕ} [Nonempty (Fin d)] {A : Set (NoteKsk.Space d)}\n  (hA : A.Countable) : NoteKsk.Chapter05.LebesgueMeasurableSet A</code>",
+ "182":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_eq_zero_of_null {d : ℕ} {N : Set (NoteKsk.Space d)}\n  (hN : NoteKsk.Chapter05.LebesgueNullSet N) : NoteKsk.Chapter05.lebesgueMeasure N = 0</code>",
+ "181": "<code>NoteKsk.Chapter05.LebesgueNullSet N</code>",
+ "180":
+ "<code>NoteKsk.Chapter05.lebesgueNullSet_measurable {d : ℕ} {N : Set (NoteKsk.Space d)}\n  (hN : NoteKsk.Chapter05.LebesgueNullSet N) : NoteKsk.Chapter05.LebesgueMeasurableSet N</code>",
+ "18": "<code>ℕ → ℝ</code>",
+ "179":
+ "<code>NoteKsk.Chapter05.boundedMeasurable_intervalCriterion {d : ℕ} (Q : NoteKsk.Box d) {A : Set (NoteKsk.Space d)}\n  (hAQ : A ⊆ Q.Icc) (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) :\n  Q.volume = NoteKsk.Chapter03.lambdaStar A + NoteKsk.Chapter03.lambdaStar (Q.Icc \\ A)</code><span class=\"sep\"></span><code class=\"docstring\">Bounded measurable sets split the containing closed box. </code>",
+ "178": "<code>NoteKsk.Chapter03.lambdaStar A &lt; ⊤</code>",
+ "177":
+ "<code>NoteKsk.Chapter05.finiteOuter_lebesgueMeasurable_inner_eq_outer {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (_hAfin : NoteKsk.Chapter03.lambdaStar A &lt; ⊤) :\n  NoteKsk.Chapter05.LebesgueMeasurableSet A → NoteKsk.Chapter04.lambdaInner A = NoteKsk.Chapter03.lambdaStar A</code><span class=\"sep\"></span><code class=\"docstring\">For finite outer measure, measurability implies the global inner/outer equality.\nThe converse is the constructive criterion developed in the notes; the usable\ndirection needed downstream is this implication.\n</code>",
+ "176":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_inner_eq_outer {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) : NoteKsk.Chapter04.lambdaInner A = NoteKsk.Chapter03.lambdaStar A</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue measurable sets have equal inner and outer measure. </code>",
+ "175":
+ "<code>NoteKsk.closedCube (d : ℕ) (R : ℝ) : Set (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">The closed cube `Q_R = [-R, R]^d` used to localize unbounded sets. </code>",
+ "174": "<code>NoteKsk.Chapter05.LebesgueMeasurableSet A</code>",
+ "173":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_windows {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter05.LebesgueMeasurableSet A) (R : ℝ) :\n  0 &lt; R →\n    NoteKsk.Chapter04.lambdaInner (A ∩ NoteKsk.closedCube d R) =\n      NoteKsk.Chapter03.lambdaStar (A ∩ NoteKsk.closedCube d R)</code><span class=\"sep\"></span><code class=\"docstring\">Window form used in the lecture notes: every bounded cube sees equality of\ninner and outer measure.\n</code>",
+ "172":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure_eq_lambdaStar {d : ℕ} (A : Set (NoteKsk.Space d)) :\n  NoteKsk.Chapter05.lebesgueMeasure A = NoteKsk.Chapter03.lambdaStar A</code>",
+ "171":
+ "<code>MeasureTheory.MeasureSpace.volume.{u_6} {α : Type u_6} [self : MeasureTheory.MeasureSpace α] : MeasureTheory.Measure α</code><span class=\"sep\"></span><code class=\"docstring\">`volume` is the canonical measure on `α`. </code>",
+ "170":
+ "<code>MeasureTheory.NullMeasurableSet.{u_2} {α : Type u_2} [MeasurableSpace α] (s : Set α)\n  (μ : MeasureTheory.Measure α := by volume_tac) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set is called `NullMeasurableSet` if it can be approximated by a measurable set up to\na set of null measure. </code>",
+ "17":
+ "<code>NoteKsk.Chapter01.IntervalPartition.IsTagged (P : NoteKsk.Chapter01.IntervalPartition) (tags : ℕ → ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A tag function chooses one point in each subinterval, indexed from the left. </code>",
+ "169":
+ "<code>NoteKsk.Chapter05.lebesgueMeasurableSet_iff_nullMeasurable {d : ℕ} {A : Set (NoteKsk.Space d)} :\n  NoteKsk.Chapter05.LebesgueMeasurableSet A ↔ MeasureTheory.NullMeasurableSet A MeasureTheory.volume</code>",
+ "168":
+ "<code>NoteKsk.Chapter05.LebesgueNullSet {d : ℕ} (A : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue null sets are sets of outer measure zero. </code>",
+ "167":
+ "<code>NoteKsk.Chapter05.lebesgueMeasure {d : ℕ} (A : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue measure is the restriction of outer measure to measurable sets. </code>",
+ "166":
+ "<code>NoteKsk.Chapter05.LebesgueMeasurableSet {d : ℕ} (A : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue measurable subsets of `ℝ^d`, represented by null-measurable sets for `volume`. </code>",
+ "165":
+ "<code>NoteKsk.Chapter04.lambdaInner_eq_lambdaStar_iff_boxVolume_eq {d : ℕ} (Q : NoteKsk.Box d) {A : Set (NoteKsk.Space d)}\n  (hA : A ⊆ Q.Icc) :\n  NoteKsk.Chapter04.lambdaInner A = NoteKsk.Chapter03.lambdaStar A ↔\n    Q.volume = NoteKsk.Chapter03.lambdaStar A + NoteKsk.Chapter03.lambdaStar (Q.Icc \\ A)</code><span class=\"sep\"></span><code class=\"docstring\">Splitting criterion for equality of inner and outer measure inside a box. </code>",
+ "164":
+ "<code>HSub.hSub.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSub α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a - b` computes the difference of `a` and `b`.\nThe meaning of this notation is type-dependent.\n* For natural numbers, this operator saturates at 0: `a - b = 0` when `a ≤ b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `sub` (when used as a binary operator).</code>",
+ "163": "<code>A ⊆ Q.Icc</code>",
+ "162":
+ "<code>NoteKsk.Chapter04.lambdaInner_eq_boxVolume_sub_lambdaStar_diff {d : ℕ} (Q : NoteKsk.Box d) {A : Set (NoteKsk.Space d)}\n  (hA : A ⊆ Q.Icc) : NoteKsk.Chapter04.lambdaInner A = Q.volume - NoteKsk.Chapter03.lambdaStar (Q.Icc \\ A)</code><span class=\"sep\"></span><code class=\"docstring\">Interval form of inner measure.  This is the form used in Chapter 05 to test\nmeasurability inside a bounded box.\n</code>",
+ "161":
+ "<code>NoteKsk.Chapter04.jordanInnerMeasure_le_lambdaInner {d : ℕ} (A : Set (NoteKsk.Space d)) :\n  NoteKsk.jordanInnerMeasure A ≤ NoteKsk.Chapter04.lambdaInner A</code><span class=\"sep\"></span><code class=\"docstring\">Jordan inner measure is bounded by Lebesgue inner measure. </code>",
+ "160": "<code>NoteKsk.Chapter03.lambdaStar A = 0</code>",
+ "16":
+ "<code>NoteKsk.Chapter01.mesh (P : NoteKsk.Chapter01.IntervalPartition) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Mesh size of a partition: the maximum adjacent interval length. </code>",
+ "159":
+ "<code>NoteKsk.Chapter04.lambdaInner_eq_zero_of_lambdaStar_eq_zero {d : ℕ} {A : Set (NoteKsk.Space d)}\n  (hA : NoteKsk.Chapter03.lambdaStar A = 0) : NoteKsk.Chapter04.lambdaInner A = 0</code><span class=\"sep\"></span><code class=\"docstring\">A set of outer measure zero has inner measure zero. </code>",
+ "158":
+ "<code>NoteKsk.Chapter04.lambdaInner_eq_lambdaStar_of_isCompact {d : ℕ} {K : Set (NoteKsk.Space d)} (hK : IsCompact K) :\n  NoteKsk.Chapter04.lambdaInner K = NoteKsk.Chapter03.lambdaStar K</code><span class=\"sep\"></span><code class=\"docstring\">Compact sets have equal inner and outer measure. </code>",
+ "157":
+ "<code>NoteKsk.Chapter04.lambdaInner_mono {d : ℕ} {A B : Set (NoteKsk.Space d)} (hAB : A ⊆ B) :\n  NoteKsk.Chapter04.lambdaInner A ≤ NoteKsk.Chapter04.lambdaInner B</code>",
+ "156":
+ "<code>NoteKsk.Chapter04.lambdaInner_le_lambdaStar {d : ℕ} (A : Set (NoteKsk.Space d)) :\n  NoteKsk.Chapter04.lambdaInner A ≤ NoteKsk.Chapter03.lambdaStar A</code>",
+ "155":
+ "<code>NoteKsk.Chapter04.lambdaInner_nonneg {d : ℕ} (A : Set (NoteKsk.Space d)) : 0 ≤ NoteKsk.Chapter04.lambdaInner A</code>",
+ "154":
+ "<code>NoteKsk.Chapter04.lambdaInner {d : ℕ} (A : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue inner measure `λ_*`, defined by compact subsets. </code>",
+ "153": "<code>IsCompact C</code>",
+ "152":
+ "<code>NoteKsk.Chapter03.compact_splits_lambdaStar {d : ℕ} {C B : Set (NoteKsk.Space d)} (hC : IsCompact C) :\n  NoteKsk.Chapter03.lambdaStar B = NoteKsk.Chapter03.lambdaStar (B ∩ C) + NoteKsk.Chapter03.lambdaStar (B \\ C)</code><span class=\"sep\"></span><code class=\"docstring\">Compact sets split Lebesgue outer measure of arbitrary sets. </code>",
+ "151":
+ "<code>SDiff.sdiff.{u} {α : Type u} [self : SDiff α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a \\ b` is the set difference of `a` and `b`,\nconsisting of all elements in `a` that are not in `b`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `\\` in identifiers is `sdiff`.</code>",
+ "150":
+ "<code>Inter.inter.{u} {α : Type u} [self : Inter α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a ∩ b` is the intersection of `a` and `b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∩` in identifiers is `inter`.</code>",
+ "15":
+ "<code>Prod.{u, v} (α : Type u) (β : Type v) : Type (max u v)</code><span class=\"sep\"></span><code class=\"docstring\">The product type, usually written `α × β`. Product types are also called pair or tuple types.\nElements of this type are pairs in which the first element is an `α` and the second element is a\n`β`.\n\nProducts nest to the right, so `(x, y, z) : α × β × γ` is equivalent to `(x, (y, z)) : α × (β × γ)`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `×` in identifiers is `Prod`.</code>",
+ "149": "<code>IsCompact K</code>",
+ "148": "<code>NoteKsk.Chapter03.lambdaStar O &lt; ⊤</code>",
+ "147": "<code>IsOpen O</code>",
+ "146":
+ "<code>NoteKsk.Chapter03.finiteOpen_compact_split {d : ℕ} {O K : Set (NoteKsk.Space d)} (_hOopen : IsOpen O)\n  (_hOfin : NoteKsk.Chapter03.lambdaStar O &lt; ⊤) (hK : IsCompact K) :\n  NoteKsk.Chapter03.lambdaStar O = NoteKsk.Chapter03.lambdaStar (O ∩ K) + NoteKsk.Chapter03.lambdaStar (O \\ K)</code><span class=\"sep\"></span><code class=\"docstring\">Splitting a finite-measure open set by a compact set. </code>",
+ "145":
+ "<code>IsCompact.{u_1} {X : Type u_1} [TopologicalSpace X] (s : Set X) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set `s` is compact if for every nontrivial filter `f` that contains `s`,\nthere exists `a ∈ s` such that every set of `f` meets every neighborhood of `a`. </code>",
+ "144":
+ "<code>Ne.{u} {α : Sort u} (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a ≠ b`, or `Ne a b` is defined as `¬ (a = b)` or `a = b → False`,\nand asserts that `a` and `b` are not equal.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≠` in identifiers is `ne`.</code>",
+ "143": "<code>ε ≠ 0</code>",
+ "142": "<code>ENNReal</code>",
+ "141": "<code>NoteKsk.Chapter03.lambdaStar U &lt; ⊤</code>",
+ "140":
+ "<code>IsOpen.{u} {X : Type u} [TopologicalSpace X] : Set X → Prop</code><span class=\"sep\"></span><code class=\"docstring\">`IsOpen s` means that `s` is open in the ambient topological space on `X` </code>",
+ "14":
+ "<code>NoteKsk.Chapter01.IntervalPartition.subintervals (P : NoteKsk.Chapter01.IntervalPartition) : List (ℝ × ℝ)</code><span class=\"sep\"></span><code class=\"docstring\">Adjacent subinterval endpoints of the partition. </code>",
+ "139": "<code>IsOpen U</code>",
+ "138":
+ "<code>NoteKsk.Chapter03.finiteOpen_innerCompact_exists {d : ℕ} {U : Set (NoteKsk.Space d)} (hUopen : IsOpen U)\n  (hUfin : NoteKsk.Chapter03.lambdaStar U &lt; ⊤) {ε : ENNReal} (hε : ε ≠ 0) :\n  ∃ K, IsCompact K ∧ K ⊆ U ∧ NoteKsk.Chapter03.lambdaStar U ≤ NoteKsk.Chapter03.lambdaStar K + ε</code><span class=\"sep\"></span><code class=\"docstring\">Finite-measure open sets can be approximated from inside by compact sets.\nThe `ENNReal` form avoids subtracting an epsilon from an extended value.\n</code>",
+ "137": "<code>NoteKsk.Chapter03.PositiveDistanceApart A B</code>",
+ "136":
+ "<code>NoteKsk.Chapter03.lambdaStar_union_of_positiveDistanceApart {d : ℕ} {A B : Set (NoteKsk.Space d)}\n  (hsep : NoteKsk.Chapter03.PositiveDistanceApart A B) :\n  NoteKsk.Chapter03.lambdaStar (A ∪ B) = NoteKsk.Chapter03.lambdaStar A + NoteKsk.Chapter03.lambdaStar B</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue outer measure is additive on sets separated by positive distance. </code>",
+ "135":
+ "<code>NoteKsk.Chapter03.PositiveDistanceApart {d : ℕ} (A B : Set (NoteKsk.Space d)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Two sets are separated by a positive distance. </code>",
+ "134":
+ "<code>NoteKsk.Chapter03.lambdaStar_outerRegular_open {d : ℕ} (A : Set (NoteKsk.Space d)) :\n  NoteKsk.Chapter03.lambdaStar A = NoteKsk.Chapter03.lambdaStarByOpenSupersets A</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue outer measure is outer regular: approximate from above by open sets. </code>",
+ "133":
+ "<code>NoteKsk.Chapter03.lambdaStarByOpenSupersets {d : ℕ} (A : Set (NoteKsk.Space d)) : ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Infimum of `λ*(G)` over open supersets `G ⊇ A`. </code>",
+ "132":
+ "<code>NoteKsk.translate {d : ℕ} (A : Set (NoteKsk.Space d)) (c : NoteKsk.Space d) : Set (NoteKsk.Space d)</code><span class=\"sep\"></span><code class=\"docstring\">Translate a set by a vector. </code>",
+ "131":
+ "<code>NoteKsk.Chapter03.lambdaStar_translate {d : ℕ} (A : Set (NoteKsk.Space d)) (c : NoteKsk.Space d) :\n  NoteKsk.Chapter03.lambdaStar (NoteKsk.translate A c) = NoteKsk.Chapter03.lambdaStar A</code><span class=\"sep\"></span><code class=\"docstring\">Lebesgue outer measure is invariant under translations. </code>",
+ "130":
+ "<code>NoteKsk.Chapter03.lambdaStar_isOuterMeasureFunction (d : ℕ) :\n  NoteKsk.Chapter03.IsOuterMeasureFunction fun A ↦ NoteKsk.Chapter03.lambdaStar A</code><span class=\"sep\"></span><code class=\"docstring\">`λ*` is a Carathéodory outer measure in the unbundled sense of the notes. </code>",
+ "13":
+ "<code>NoteKsk.Chapter01.IntervalPartition.vertices (P : NoteKsk.Chapter01.IntervalPartition) : List ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Vertices of the partition, including the endpoints. </code>",
+ "129":
+ "<code>HAdd.hAdd.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HAdd α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a + b` computes the sum of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `+` in identifiers is `add`.</code>",
+ "128":
+ "<code>Union.union.{u} {α : Type u} [self : Union α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a ∪ b` is the union of `a` and `b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∪` in identifiers is `union`.</code>",
+ "127":
+ "<code>NoteKsk.Chapter03.lambdaStar_union_le {d : ℕ} (A B : Set (NoteKsk.Space d)) :\n  NoteKsk.Chapter03.lambdaStar (A ∪ B) ≤ NoteKsk.Chapter03.lambdaStar A + NoteKsk.Chapter03.lambdaStar B</code>",
+ "126": "<code>ℕ → Set (NoteKsk.Space d)</code>",
+ "125":
+ "<code>NoteKsk.Chapter03.lambdaStar_iUnion_le {d : ℕ} (A : ℕ → Set (NoteKsk.Space d)) :\n  NoteKsk.Chapter03.lambdaStar (⋃ n, A n) ≤ ∑' (n : ℕ), NoteKsk.Chapter03.lambdaStar (A n)</code>",
+ "124": "<code>A ⊆ B</code>",
+ "123":
+ "<code>NoteKsk.Chapter03.lambdaStar_mono {d : ℕ} {A B : Set (NoteKsk.Space d)} (hAB : A ⊆ B) :\n  NoteKsk.Chapter03.lambdaStar A ≤ NoteKsk.Chapter03.lambdaStar B</code>",
+ "122":
+ "<code>NoteKsk.Chapter03.lambdaStar_empty {d : ℕ} : NoteKsk.Chapter03.lambdaStar ∅ = 0</code>",
+ "121":
+ "<code>tsum.{u_4, u_5} {α : Type u_4} {β : Type u_5} [AddCommMonoid α] [TopologicalSpace α] (f : β → α)\n  (L : SummationFilter β := SummationFilter.unconditional β) : α</code><span class=\"sep\"></span><code class=\"docstring\">`∑' i, f i` is the unconditional sum of `f` if it exists, or 0 otherwise.\n\nMore generally, if `L` is a `SummationFilter`, `∑'[L] i, f i` is the sum of `f` with respect to\n`L` if it exists, and `0` otherwise.\n\n(Note that even if the unconditional sum exists, it might not be unique if the topology is not\nseparated. When the support of `f` is finite, we make the most reasonable choice, to use the sum\nover the support. Otherwise, we choose arbitrarily an `a` satisfying `HasSum f a`. Similar remarks\napply to more general summation filters.)\n</code>",
+ "120":
+ "<code>Disjoint.{u_1} {α : Type u_1} [PartialOrder α] [OrderBot α] (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Two elements of a lattice are disjoint if their inf is the bottom element.\n  (This generalizes disjoint sets, viewed as members of the subset lattice.)\n\nNote that we define this without reference to `⊓`, as this allows us to talk about orders where\nthe infimum is not unique, or where implementing `Inf` would require additional `Decidable`\narguments. </code>",
+ "12":
+ "<code class=\"docstring\">A type universe. `Type ≡ Type 0`, `Type u ≡ Sort (u + 1)`. </code>",
+ "119":
+ "<code>Function.onFun.{u₁, u₂, u₃} {α : Sort u₁} {β : Sort u₂} {φ : Sort u₃} (f : β → β → φ) (g : α → β) : α → α → φ</code><span class=\"sep\"></span><code class=\"docstring\">Given functions `f : β → β → φ` and `g : α → β`, produce a function `α → α → φ` that evaluates\n`g` on each argument, then applies `f` to the results. Can be used, e.g., to transfer a relation\nfrom `β` to `α`. </code>",
+ "118":
+ "<code>Pairwise.{u_1} {α : Type u_1} (r : α → α → Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A relation `r` holds pairwise if `r i j` for all `i ≠ j`. </code>",
+ "117": "<code>ℕ → Set α</code>",
+ "116":
+ "<code>∀ (s : ℕ → Set α), Pairwise (Function.onFun Disjoint s) → self.measureOf (⋃ i, s i) ≤ ∑' (i : ℕ), self.measureOf (s i)</code>",
+ "115": "<code>Set α</code>",
+ "114":
+ "<code>∀ {s₁ s₂ : Set α}, s₁ ⊆ s₂ → self.measureOf s₁ ≤ self.measureOf s₂</code>",
+ "113":
+ "<code>MeasureTheory.OuterMeasure.measureOf.{u_2} {α : Type u_2} (self : MeasureTheory.OuterMeasure α) : Set α → ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Outer measure function. Use automatic coercion instead. </code>",
+ "112": "<code>MeasureTheory.OuterMeasure α</code>",
+ "111": "<code>self.measureOf ∅ = 0</code>",
+ "110": "<code>Type u_2</code>",
+ "11":
+ "<code>NoteKsk.Chapter01.IntervalPartition : Type</code><span class=\"sep\"></span><code class=\"docstring\">A finite partition of `[a,b]`, stored by its interior division points. </code>",
+ "109":
+ "<code>Set α → ENNReal</code><span class=\"sep\"></span><code class=\"docstring\">Outer measure function. Use automatic coercion instead. </code>",
+ "108": "<code>Set α → ENNReal</code>",
+ "107": "<code>Type u_1</code>",
+ "106":
+ "<code>NoteKsk.Chapter03.IsOuterMeasureFunction.{u_1} {α : Type u_1} (μ : Set α → ENNReal) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Unbundled outer-measure axioms for comparison with the text. </code>",
+ "105":
+ "<code>Top.top.{u_1} {α : Type u_1} [self : Top α] : α</code><span class=\"sep\"></span><code class=\"docstring\">The top (`⊤`, `\\top`) element \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊤` in identifiers is `top`.</code>",
+ "104":
+ "<code>LT.lt.{u} {α : Type u} [self : LT α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-than relation: `x &lt; y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `&lt;` in identifiers is `lt`.</code>",
+ "103":
+ "<code>NoteKsk.Chapter03.lambdaStar_lt_top_of_isBounded {d : ℕ} {A : Set (NoteKsk.Space d)} (hA : Bornology.IsBounded A) :\n  NoteKsk.Chapter03.lambdaStar A &lt; ⊤</code><span class=\"sep\"></span><code class=\"docstring\">Bounded subsets of `ℝ^d` have finite Lebesgue outer measure. </code>",
+ "102": "<code>A ⊆ Q.Ioc</code>",
+ "101":
+ "<code>NoteKsk.Chapter03.lambdaStar_le_boxVolume_of_subset {d : ℕ} {A : Set (NoteKsk.Space d)} {Q : NoteKsk.Box d}\n  (hA : A ⊆ Q.Ioc) : NoteKsk.Chapter03.lambdaStar A ≤ Q.volume</code><span class=\"sep\"></span><code class=\"docstring\">If `A` is covered by one left half-open box, `λ*(A) ≤ |Q|`. </code>",
+ "100":
+ "<code>NoteKsk.Chapter03.lambdaStar_boxIcc {d : ℕ} (Q : NoteKsk.Box d) : NoteKsk.Chapter03.lambdaStar Q.Icc = Q.volume</code>",
+ "10":
+ "<code>NoteKsk.Chapter01.IntervalPartition.points (self : NoteKsk.Chapter01.IntervalPartition) : List ℝ</code>",
+ "1": "<code>ℝ</code>",
+ "0":
+ "<code>NoteKsk.Chapter01.IsValidPointList (a b : ℝ) (points : List ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Interior points of a partition of `[a,b]`, strictly increasing and inside the interval. </code>"}
