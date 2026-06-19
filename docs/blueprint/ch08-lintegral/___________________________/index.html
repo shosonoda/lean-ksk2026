@@ -8028,6 +8028,13 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.6955" data-verso-hover="225">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-MeasureTheory.Measure" data-verso-hover="230">MeasureTheory.Measure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.6951" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.6957" data-verso-hover="504">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.6951" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable abbrev lintegralNN {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (f : α → ENNReal) : ENNReal :=
+  ∫⁻ x, f x ∂μ</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The lower Lebesgue integral of an `ENNReal`-valued function. </pre></div>
   </div>
@@ -8868,6 +8875,13 @@ n & (f(x)\ge n)
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.18204" data-verso-hover="225">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-MeasureTheory.Measure" data-verso-hover="230">MeasureTheory.Measure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18200" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.18205" data-verso-hover="115">s</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18200" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.18207" data-verso-hover="504">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18200" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable abbrev setLintegralNN {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (s : Set α) (f : α → ENNReal) : ENNReal :=
+  ∫⁻ x in s, f x ∂μ</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The lower Lebesgue integral over a subset. </pre></div>
   </div>

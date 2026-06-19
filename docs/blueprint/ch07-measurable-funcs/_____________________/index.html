@@ -8201,6 +8201,12 @@ bridge theorem records that form.
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.15453" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.15453" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev MeasurableERealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → EReal // Measurable f }</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Extended-real-valued measurable functions on a measurable space. </pre></div>
   </div>
@@ -8224,6 +8230,12 @@ bridge theorem records that form.
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.15455" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.15455" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev MeasurableRealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → ℝ // Measurable f }</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Real-valued measurable functions on a measurable space. </pre></div>
   </div>
@@ -8247,6 +8259,12 @@ bridge theorem records that form.
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.15457" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.15457" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev NonnegativeMeasurableERealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → EReal // Measurable f ∧ 0 ≤ f }</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Nonnegative extended-real-valued measurable functions. </pre></div>
   </div>
@@ -8365,6 +8383,12 @@ bridge theorem records that form.
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.17209" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17209" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev MeasurableERealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → EReal // Measurable f }</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Extended-real-valued measurable functions on a measurable space. </pre></div>
   </div>
@@ -8388,6 +8412,12 @@ bridge theorem records that form.
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.17211" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17211" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev MeasurableRealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → ℝ // Measurable f }</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Real-valued measurable functions on a measurable space. </pre></div>
   </div>
@@ -8411,6 +8441,12 @@ bridge theorem records that form.
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.17213" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17213" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev NonnegativeMeasurableERealFunction (α : Type*) [MeasurableSpace α] : Type _ :=
+  { f : α → EReal // Measurable f ∧ 0 ≤ f }</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Nonnegative extended-real-valued measurable functions. </pre></div>
   </div>

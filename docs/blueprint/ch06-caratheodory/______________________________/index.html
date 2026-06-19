@@ -8028,6 +8028,13 @@ B\subset\bigcup_{n=1}^{\infty}A_n,\ A_n\in\calA\ (n=1,2,\ldots)
     </span><span class="const token" data-binding="const-MeasureTheory.AddContent" data-verso-hover="345">MeasureTheory.AddContent</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.40338" data-verso-hover="269">C</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-MeasureTheory.OuterMeasure" data-verso-hover="76">MeasureTheory.OuterMeasure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.40337" data-verso-hover="107">α</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable def inducedOuterMeasureFromPremeasure
+    (hC : IsSetSemiring C) (m : AddContent ENNReal C) : OuterMeasure α :=
+  inducedOuterMeasure (fun s (_hs : s ∈ C) =&gt; m s) hC.empty_mem (by simp)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The outer measure induced by a semiring premeasure via countable covers. </pre></div>
   </div>
@@ -8186,6 +8193,13 @@ B\subset\bigcup_{n=1}^{\infty}E_n,\ E_n\in\calE\ (n=1,2,\ldots)
     </span><span class="const token" data-binding="const-MeasureTheory.AddContent" data-verso-hover="345">MeasureTheory.AddContent</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.41579" data-verso-hover="269">C</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-MeasureTheory.OuterMeasure" data-verso-hover="76">MeasureTheory.OuterMeasure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.41578" data-verso-hover="107">α</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable def inducedOuterMeasureFromPremeasure
+    (hC : IsSetSemiring C) (m : AddContent ENNReal C) : OuterMeasure α :=
+  inducedOuterMeasure (fun s (_hs : s ∈ C) =&gt; m s) hC.empty_mem (by simp)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The outer measure induced by a semiring premeasure via countable covers. </pre></div>
   </div>
@@ -8466,6 +8480,16 @@ B\subset\bigcup_{n=1}^{\infty}E_n,\ E_n\in\calE\ (n=1,2,\ldots)
     </span><span class="const token" data-binding="const-NoteKsk.IsPremeasureOnSemiring" data-verso-hover="347">NoteKsk.IsPremeasureOnSemiring</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.45518" data-verso-hover="348">m</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-MeasureTheory.Measure" data-verso-hover="230">MeasureTheory.Measure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.45505" data-verso-hover="107">α</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable def measureFromPremeasure [MeasurableSpace α]
+    (hC : IsSetSemiring C)
+    (hgen : ‹MeasurableSpace α› ≤ generatedSigmaAlgebra C)
+    (m : AddContent ENNReal C) (hm : IsPremeasureOnSemiring m) :
+    Measure α :=
+  m.measure hC hgen hm</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">A measure generated from a semiring premeasure on the current measurable space. </pre></div>
   </div>

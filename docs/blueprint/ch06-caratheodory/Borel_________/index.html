@@ -8013,6 +8013,12 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.55173" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-TopologicalSpace" data-verso-hover="372">TopologicalSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.55173" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.55173" data-verso-hover="107">α</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev borelSigmaAlgebra (α : Type*) [TopologicalSpace α] : MeasurableSpace α :=
+  borel α</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The Borel σ-algebra of a topological space. </pre></div>
   </div>
@@ -8266,6 +8272,12 @@ Lebesgue可測集合全体 <code class="bp_math inline" data-bp-tex-prelude-id="
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">abbrev</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter06.borelMeasure" data-verso-hover="374">NoteKsk.Chapter06.borelMeasure</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.57516" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-MeasureTheory.Measure" data-verso-hover="230">MeasureTheory.Measure</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.57516" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev borelMeasure (d : ℕ) : Measure (Space d) :=
+  volume</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The Borel measure on `ℝ^d`.
 

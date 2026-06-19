@@ -8000,6 +8000,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">abbrev</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.realPositivePart" data-verso-hover="590">NoteKsk.realPositivePart.{u_1}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">}</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.14" data-verso-hover="434">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable abbrev realPositivePart {α : Type*} (f : α → ℝ) : α → ℝ :=
+  fun x =&gt; max (f x) 0</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Positive part of a real-valued function, represented as a real-valued function.
 This is the notation used in Chapter 09 for identities such as
@@ -8025,6 +8031,12 @@ adapted to lower Lebesgue integrals.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">abbrev</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.realNegativePart" data-verso-hover="591">NoteKsk.realNegativePart.{u_1}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.17" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">}</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.19" data-verso-hover="434">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable abbrev realNegativePart {α : Type*} (f : α → ℝ) : α → ℝ :=
+  fun x =&gt; max (-f x) 0</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Negative part of a real-valued function, represented as a real-valued function.
 This is kept separate from the `ENNReal`-valued `negativePart` used in Chapter 08.

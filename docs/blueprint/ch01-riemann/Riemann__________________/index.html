@@ -8033,6 +8033,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.IsValidPointList" data-verso-hover="0">NoteKsk.Chapter01.IsValidPointList</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.11" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.13" data-verso-hover="3">points</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-List" data-verso-hover="4">List</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def IsValidPointList (a b : ℝ) (points : List ℝ) : Prop :=
+  a ≤ b ∧ points.Pairwise (fun x y =&gt; x &lt; y) ∧ ∀ x ∈ points, a &lt; x ∧ x &lt; b</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Interior points of a partition of `[a,b]`, strictly increasing and inside the interval. </pre></div>
   </div>
@@ -8093,6 +8099,12 @@ window.onload = () => {
     </span><span class="const token" data-binding="const-NoteKsk.Chapter01.IntervalPartition" data-verso-hover="11">NoteKsk.Chapter01.IntervalPartition</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-List" data-verso-hover="4">List</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def vertices (P : IntervalPartition) : List ℝ :=
+  P.a :: (P.points ++ [P.b])</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Vertices of the partition, including the endpoints. </pre></div>
   </div>
@@ -8117,6 +8129,12 @@ window.onload = () => {
     </span><span class="const token" data-binding="const-NoteKsk.Chapter01.IntervalPartition" data-verso-hover="11">NoteKsk.Chapter01.IntervalPartition</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-List" data-verso-hover="4">List</span><span class="inter-text"> </span><span class="const token" data-binding="const-Prod" data-verso-hover="15">(</span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="const token" data-binding="const-Prod" data-verso-hover="15">×</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="const token" data-binding="const-Prod" data-verso-hover="15">)</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def subintervals (P : IntervalPartition) : List (ℝ × ℝ) :=
+  P.vertices.zip P.vertices.tail</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Adjacent subinterval endpoints of the partition. </pre></div>
   </div>
@@ -8140,6 +8158,12 @@ window.onload = () => {
     </span><span class="const token" data-binding="const-NoteKsk.Chapter01.IntervalPartition" data-verso-hover="11">NoteKsk.Chapter01.IntervalPartition</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def mesh (P : IntervalPartition) : ℝ :=
+  (P.subintervals.map (fun uv =&gt; |uv.2 - uv.1|)).foldl max 0</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Mesh size of a partition: the maximum adjacent interval length. </pre></div>
   </div>
@@ -8216,6 +8240,12 @@ window.onload = () => {
     </span><span class="const token" data-binding="const-NoteKsk.Chapter01.IntervalPartition" data-verso-hover="11">NoteKsk.Chapter01.IntervalPartition</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1250" data-verso-hover="18">tags</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def IsTagged (P : IntervalPartition) (tags : ℕ → ℝ) : Prop :=
+  ∀ item ∈ P.subintervals.zipIdx, tags item.2 ∈ Set.Icc item.1.1 item.1.2</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">A tag function chooses one point in each subinterval, indexed from the left. </pre></div>
   </div>
@@ -8240,6 +8270,12 @@ window.onload = () => {
     </span><span class="const token" data-binding="const-NoteKsk.Chapter01.IntervalPartition" data-verso-hover="11">NoteKsk.Chapter01.IntervalPartition</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1255" data-verso-hover="18">tags</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def riemannSum (f : ℝ → ℝ) (P : IntervalPartition) (tags : ℕ → ℝ) : ℝ :=
+  (P.subintervals.mapIdx fun i uv =&gt; f (tags i) * (uv.2 - uv.1)).sum</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Riemann sum for a tagged partition. </pre></div>
   </div>
@@ -8370,6 +8406,13 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.HasRiemannIntegralOn" data-verso-hover="22">NoteKsk.Chapter01.HasRiemannIntegralOn</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2617" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2618" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2619" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2620" data-verso-hover="1">I</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def HasRiemannIntegralOn (f : ℝ → ℝ) (a b I : ℝ) : Prop :=
+  ∀ ε &gt; 0, ∃ δ &gt; 0, ∀ P tags,
+    P.a = a → P.b = b → P.IsTagged tags → mesh P &lt; δ → |riemannSum f P tags - I| &lt; ε</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">`f` has Riemann integral `I` on `[a,b]`. </pre></div>
   </div>
@@ -8391,6 +8434,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.RiemannIntegrableOn" data-verso-hover="23">NoteKsk.Chapter01.RiemannIntegrableOn</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2622" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2623" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2624" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def RiemannIntegrableOn (f : ℝ → ℝ) (a b : ℝ) : Prop :=
+  ∃ I, HasRiemannIntegralOn f a b I</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Riemann integrability on `[a,b]`. </pre></div>
   </div>
@@ -8412,6 +8461,16 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.riemannIntegral" data-verso-hover="24">NoteKsk.Chapter01.riemannIntegral</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2626" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2627" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2628" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def riemannIntegral (f : ℝ → ℝ) (a b : ℝ) : ℝ :=
+  by
+    classical
+    exact if h : ∃ I, HasRiemannIntegralOn f a b I then Classical.choose h else 0
+
+/-! ## Darboux sums -/</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The Riemann integral, when it exists; `0` outside the integrable case. </pre></div>
   </div>

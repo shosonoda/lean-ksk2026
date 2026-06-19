@@ -7991,6 +7991,12 @@ U(f,\mathcal{P}) &:= \sum_{i=1}^n (x_i - x_{i-1}) \sup_{x \in [x_{i-1}, x_i]} f(
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.intervalSup" data-verso-hover="25">NoteKsk.Chapter01.intervalSup</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.4285" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.4286" data-verso-hover="1">u</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4287" data-verso-hover="1">v</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def intervalSup (f : ℝ → ℝ) (u v : ℝ) : ℝ :=
+  sSup (f '' Set.Icc u v)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Supremum of `f` on a closed subinterval.
 
@@ -8017,6 +8023,12 @@ for the usual Darboux interpretation.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.intervalInf" data-verso-hover="26">NoteKsk.Chapter01.intervalInf</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.4289" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.4290" data-verso-hover="1">u</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4291" data-verso-hover="1">v</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def intervalInf (f : ℝ → ℝ) (u v : ℝ) : ℝ :=
+  sInf (f '' Set.Icc u v)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Infimum of `f` on a closed subinterval.
 
@@ -8046,6 +8058,12 @@ statements rather than by the definition itself.
     </span><span class="const token" data-binding="const-NoteKsk.Chapter01.IntervalPartition" data-verso-hover="11">NoteKsk.Chapter01.IntervalPartition</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def darbouxUpperSum (f : ℝ → ℝ) (P : IntervalPartition) : ℝ :=
+  (P.subintervals.map fun uv =&gt; intervalSup f uv.1 uv.2 * (uv.2 - uv.1)).sum</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Darboux upper sum. </pre></div>
   </div>
@@ -8071,6 +8089,12 @@ statements rather than by the definition itself.
     </span><span class="const token" data-binding="const-NoteKsk.Chapter01.IntervalPartition" data-verso-hover="11">NoteKsk.Chapter01.IntervalPartition</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def darbouxLowerSum (f : ℝ → ℝ) (P : IntervalPartition) : ℝ :=
+  (P.subintervals.map fun uv =&gt; intervalInf f uv.1 uv.2 * (uv.2 - uv.1)).sum</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Darboux lower sum. </pre></div>
   </div>
@@ -8159,6 +8183,12 @@ statements rather than by the definition itself.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.darbouxUpperValues" data-verso-hover="29">NoteKsk.Chapter01.darbouxUpperValues</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.5245" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.5246" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.5247" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def darbouxUpperValues (f : ℝ → ℝ) (a b : ℝ) : Set ℝ :=
+  {U | ∃ P : IntervalPartition, P.a = a ∧ P.b = b ∧ U = darbouxUpperSum f P}</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Upper Darboux sums over all partitions of `[a,b]`. </pre></div>
   </div>
@@ -8180,6 +8210,12 @@ statements rather than by the definition itself.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.darbouxLowerValues" data-verso-hover="31">NoteKsk.Chapter01.darbouxLowerValues</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.5249" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.5250" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.5251" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def darbouxLowerValues (f : ℝ → ℝ) (a b : ℝ) : Set ℝ :=
+  {L | ∃ P : IntervalPartition, P.a = a ∧ P.b = b ∧ L = darbouxLowerSum f P}</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Lower Darboux sums over all partitions of `[a,b]`. </pre></div>
   </div>
@@ -8201,6 +8237,12 @@ statements rather than by the definition itself.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.darbouxUpperIntegral" data-verso-hover="32">NoteKsk.Chapter01.darbouxUpperIntegral</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.5253" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.5254" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.5255" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def darbouxUpperIntegral (f : ℝ → ℝ) (a b : ℝ) : ℝ :=
+  sInf (darbouxUpperValues f a b)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Darboux upper integral: the infimum of upper sums. </pre></div>
   </div>
@@ -8222,6 +8264,12 @@ statements rather than by the definition itself.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.darbouxLowerIntegral" data-verso-hover="33">NoteKsk.Chapter01.darbouxLowerIntegral</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.5257" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.5258" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.5259" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def darbouxLowerIntegral (f : ℝ → ℝ) (a b : ℝ) : ℝ :=
+  sSup (darbouxLowerValues f a b)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Darboux lower integral: the supremum of lower sums. </pre></div>
   </div>
@@ -8296,6 +8344,12 @@ statements rather than by the definition itself.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.DarbouxIntegrableOn" data-verso-hover="34">NoteKsk.Chapter01.DarbouxIntegrableOn</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.6058" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.6059" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.6060" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def DarbouxIntegrableOn (f : ℝ → ℝ) (a b : ℝ) : Prop :=
+  darbouxUpperIntegral f a b = darbouxLowerIntegral f a b</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Darboux integrability on `[a,b]`. </pre></div>
   </div>
@@ -8317,6 +8371,14 @@ statements rather than by the definition itself.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter01.darbouxIntegral" data-verso-hover="35">NoteKsk.Chapter01.darbouxIntegral</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.6062" data-verso-hover="21">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.6063" data-verso-hover="1">a</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.6064" data-verso-hover="1">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def darbouxIntegral (f : ℝ → ℝ) (a b : ℝ) : ℝ :=
+  darbouxUpperIntegral f a b
+
+/-! ## Auxiliary predicates for deferred statements -/</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Darboux integral, represented by the upper integral. </pre></div>
   </div>

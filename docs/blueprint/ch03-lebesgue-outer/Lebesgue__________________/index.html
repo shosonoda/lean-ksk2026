@@ -8001,6 +8001,14 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.17555" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">}</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.17557" data-verso-hover="108">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17555" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def IsOuterMeasureFunction {α : Type*} (μ : Set α → ENNReal) : Prop :=
+  μ ∅ = 0 ∧
+    (∀ ⦃A B : Set α⦄, A ⊆ B → μ A ≤ μ B) ∧
+    (∀ A : ℕ → Set α, μ (⋃ n, A n) ≤ ∑' n, μ (A n))</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Unbundled outer-measure axioms for comparison with the text. </pre></div>
   </div>

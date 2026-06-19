@@ -8022,6 +8022,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">abbrev</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.positivePart" data-verso-hover="533">NoteKsk.positivePart.{u_1}</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.26618" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.26620" data-verso-hover="434">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.26618" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.26618" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable abbrev positivePart {α : Type*} (f : α → ℝ) : α → ENNReal :=
+  fun x =&gt; ENNReal.ofReal (f x)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Positive part of a real-valued function, represented as an `ENNReal`-valued function. </pre></div>
   </div>
@@ -8043,6 +8049,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">abbrev</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.negativePart" data-verso-hover="534">NoteKsk.negativePart.{u_1}</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.26623" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.26625" data-verso-hover="434">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.26623" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.26623" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable abbrev negativePart {α : Type*} (f : α → ℝ) : α → ENNReal :=
+  fun x =&gt; ENNReal.ofReal (-f x)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Negative part of a real-valued function, represented as an `ENNReal`-valued function. </pre></div>
   </div>
@@ -8254,6 +8266,13 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.27215" data-verso-hover="225">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-MeasureTheory.Measure" data-verso-hover="230">MeasureTheory.Measure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.27211" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.27217" data-verso-hover="434">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.27211" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev LebesgueIntegrable {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (f : α → ℝ) : Prop :=
+  Integrable f μ</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Lecture-note synonym for mathlib's Bochner integrability of real-valued functions. </pre></div>
   </div>
@@ -8278,6 +8297,13 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.27222" data-verso-hover="225">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-MeasureTheory.Measure" data-verso-hover="230">MeasureTheory.Measure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.27218" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.27224" data-verso-hover="434">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.27218" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Real" data-verso-hover="2">ℝ</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">noncomputable abbrev lebesgueIntegral {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (f : α → ℝ) : ℝ :=
+  ∫ x, f x ∂μ</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The signed Lebesgue integral of a real-valued integrable function. </pre></div>
   </div>
@@ -9322,6 +9348,12 @@ tautological.
   </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.38425" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.38429" data-verso-hover="225">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-MeasureTheory.Measure" data-verso-hover="230">MeasureTheory.Measure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.38425" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev L1Space (α : Type*) [MeasurableSpace α] (μ : Measure α) : Type _ :=
+  α →₁[μ] ℝ</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The `L¹` space as mathlib's space of a.e.-equivalence classes of integrable functions. </pre></div>
   </div>

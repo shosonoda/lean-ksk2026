@@ -8091,6 +8091,12 @@ Lebesgue可測集合全体を</p>
   </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.14" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.16" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.14" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def LebesgueMeasurableSet {d : ℕ} (A : Set (Space d)) : Prop :=
+  NullMeasurableSet A (volume : Measure (Space d))</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Lebesgue measurable subsets of `ℝ^d`, represented by null-measurable sets for `volume`. </pre></div>
   </div>
@@ -8113,6 +8119,12 @@ Lebesgue可測集合全体を</p>
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter05.lebesgueMeasure" data-verso-hover="167">NoteKsk.Chapter05.lebesgueMeasure</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.17" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.19" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def lebesgueMeasure {d : ℕ} (A : Set (Space d)) : ENNReal :=
+  lambdaStar A</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Lebesgue measure is the restriction of outer measure to measurable sets. </pre></div>
   </div>
@@ -8135,6 +8147,12 @@ Lebesgue可測集合全体を</p>
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter05.LebesgueNullSet" data-verso-hover="168">NoteKsk.Chapter05.LebesgueNullSet</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.20" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.22" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.20" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def LebesgueNullSet {d : ℕ} (A : Set (Space d)) : Prop :=
+  lambdaStar A = 0</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Lebesgue null sets are sets of outer measure zero. </pre></div>
   </div>
@@ -8687,6 +8705,12 @@ Lebesgue零集合はLebesgue可測であり，Lebesgue測度は <code class="bp_
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Chapter05.LebesgueNullSet" data-verso-hover="168">NoteKsk.Chapter05.LebesgueNullSet</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.10815" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.10817" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10815" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def LebesgueNullSet {d : ℕ} (A : Set (Space d)) : Prop :=
+  lambdaStar A = 0</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Lebesgue null sets are sets of outer measure zero. </pre></div>
   </div>

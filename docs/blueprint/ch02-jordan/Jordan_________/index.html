@@ -8017,6 +8017,14 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.JordanNullSet" data-verso-hover="72">NoteKsk.JordanNullSet</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.17901" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.17903" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17901" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def JordanNullSet {d : ℕ} (A : Set (Space d)) : Prop :=
+  jordanOuterMeasure A = 0
+
+/-! ## Finite additive families -/</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Jordan null sets. </pre></div>
   </div>

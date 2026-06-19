@@ -8243,6 +8243,12 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.9043" data-verso-hover="112">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-MeasureTheory.OuterMeasure" data-verso-hover="76">MeasureTheory.OuterMeasure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.9041" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.9044" data-verso-hover="115">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.9041" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def CaratheodoryMeasurableSet {α : Type*} (μ : OuterMeasure α) (A : Set α) : Prop :=
+  μ.IsCaratheodory A</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Carathéodory measurability for an outer measure. </pre></div>
   </div>
@@ -8267,6 +8273,12 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.9047" data-verso-hover="112">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-MeasureTheory.OuterMeasure" data-verso-hover="76">MeasureTheory.OuterMeasure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.9045" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.9045" data-verso-hover="107">α</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev caratheodoryMeasurableSpace {α : Type*} (μ : OuterMeasure α) : MeasurableSpace α :=
+  μ.caratheodory</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The measurable structure consisting of the Carathéodory-measurable sets of an outer measure. </pre></div>
   </div>
@@ -8850,6 +8862,13 @@ B_n:=A_n\setminus\bigcup_{k&lt;n}A_k\quad(n\ge2)</code></p>
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.22293" data-verso-hover="225">μ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-MeasureTheory.Measure" data-verso-hover="230">MeasureTheory.Measure</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.22289" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.22294" data-verso-hover="115">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.22289" data-verso-hover="107">α</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def CompletedMeasurableSet {α : Type*} [MeasurableSpace α]
+    (μ : Measure α) (A : Set α) : Prop :=
+  NullMeasurableSet A μ</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The measurable sets in the completion of a measure.  Mathlib calls these
 `NullMeasurableSet`s.

@@ -8055,6 +8055,13 @@ window.onload = () => {
     <div class="narrow-only">
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">abbrev</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1295" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev Space (d : ℕ) : Type := Fin d → ℝ
+
+/-! ## Boxes and elementary sets -/</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The Lean model of `ℝ^d`. </pre></div>
   </div>
@@ -8107,6 +8114,12 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1305" data-verso-hover="43">Q</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-NoteKsk.Box" data-verso-hover="41">NoteKsk.Box</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1303" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1303" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def Ioo (Q : Box d) : Set (Space d) :=
+  Set.pi Set.univ fun i =&gt; Set.Ioo (Q.lower i) (Q.upper i)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Open rectangle `∏ i (a_i, b_i)`. </pre></div>
   </div>
@@ -8129,6 +8142,12 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1309" data-verso-hover="43">Q</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-NoteKsk.Box" data-verso-hover="41">NoteKsk.Box</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1307" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1307" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def Ioc (Q : Box d) : Set (Space d) :=
+  Set.pi Set.univ fun i =&gt; Set.Ioc (Q.lower i) (Q.upper i)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Left-open/right-closed rectangle `∏ i (a_i, b_i]`. </pre></div>
   </div>
@@ -8151,6 +8170,12 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1313" data-verso-hover="43">Q</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-NoteKsk.Box" data-verso-hover="41">NoteKsk.Box</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1311" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1311" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def Ico (Q : Box d) : Set (Space d) :=
+  Set.pi Set.univ fun i =&gt; Set.Ico (Q.lower i) (Q.upper i)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Left-closed/right-open rectangle `∏ i [a_i, b_i)`. </pre></div>
   </div>
@@ -8173,6 +8198,12 @@ window.onload = () => {
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1317" data-verso-hover="43">Q</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-NoteKsk.Box" data-verso-hover="41">NoteKsk.Box</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1315" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1315" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def Icc (Q : Box d) : Set (Space d) :=
+  Set.Icc Q.lower Q.upper</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Closed rectangle `∏ i [a_i, b_i]`. </pre></div>
   </div>
@@ -8194,6 +8225,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Box.volume" data-verso-hover="47">NoteKsk.Box.volume</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.1319" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1321" data-verso-hover="43">Q</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-NoteKsk.Box" data-verso-hover="41">NoteKsk.Box</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1319" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def volume (Q : Box d) : ENNReal :=
+  ∏ i, ENNReal.ofReal (Q.upper i - Q.lower i)</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The formal volume of a rectangle, `∏ i (b_i - a_i)`, as an `ENNReal`. </pre></div>
   </div>
@@ -8215,6 +8252,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.Box.Nondegenerate" data-verso-hover="49">NoteKsk.Box.Nondegenerate</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.1322" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1324" data-verso-hover="43">Q</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-NoteKsk.Box" data-verso-hover="41">NoteKsk.Box</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1322" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def Nondegenerate (Q : Box d) : Prop :=
+  ∀ i, Q.lower i &lt; Q.upper i</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">A nondegenerate finite rectangle. </pre></div>
   </div>
@@ -8236,6 +8279,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.IsLeftHalfOpenBox" data-verso-hover="50">NoteKsk.IsLeftHalfOpenBox</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.1325" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.1327" data-verso-hover="51">S</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1325" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def IsLeftHalfOpenBox {d : ℕ} (S : Set (Space d)) : Prop :=
+  S = ∅ ∨ ∃ Q : Box d, Q.Nondegenerate ∧ Q.Ioc = S</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The family `𝓔_d`: left half-open rectangles together with the empty set.
 Endpoints are finite real numbers at this stage of the development.
@@ -8368,6 +8417,15 @@ Endpoints are finite real numbers at this stage of the development.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.IsElementarySet" data-verso-hover="52">NoteKsk.IsElementarySet</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.2648" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2650" data-verso-hover="51">S</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2648" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def IsElementarySet {d : ℕ} (S : Set (Space d)) : Prop :=
+  ∃ n : ℕ, ∃ Q : Fin n → Box d,
+    (∀ j, (Q j).Nondegenerate) ∧
+    (∀ ⦃i j : Fin n⦄, i ≠ j → Disjoint ((Q i).Ioc) ((Q j).Ioc)) ∧
+    S = ⋃ j, (Q j).Ioc</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Elementary sets `𝓐_d`: finite disjoint unions of nondegenerate left half-open boxes.
 </pre></div>
@@ -8390,6 +8448,12 @@ Endpoints are finite real numbers at this stage of the development.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.elementaryVolume" data-verso-hover="53">NoteKsk.elementaryVolume</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.2651" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2653" data-verso-hover="51">E</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2651" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def elementaryVolume {d : ℕ} (E : Set (Space d)) : ENNReal :=
+  (volume : Measure (Space d)) E</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The volume assigned to an elementary set.  This is deliberately defined by
 mathlib's `volume` for now; Chapter 2 later proves that this agrees with the

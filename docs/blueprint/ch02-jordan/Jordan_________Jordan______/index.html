@@ -8029,6 +8029,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.jordanOuterMeasure" data-verso-hover="62">NoteKsk.jordanOuterMeasure</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.13495" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.13497" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.13495" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def jordanOuterMeasure {d : ℕ} (A : Set (Space d)) : ENNReal :=
+  ⨅ E : Set (Space d), ⨅ _hE : IsElementarySet E, ⨅ _hAE : A ⊆ E, elementaryVolume E</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Jordan outer measure: infimum of elementary volumes over elementary supersets. </pre></div>
   </div>
@@ -8050,6 +8056,12 @@ window.onload = () => {
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.jordanInnerMeasure" data-verso-hover="63">NoteKsk.jordanInnerMeasure</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.13498" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.13500" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.13498" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def jordanInnerMeasure {d : ℕ} (A : Set (Space d)) : ENNReal :=
+  ⨆ E : Set (Space d), ⨆ _hE : IsElementarySet E, ⨆ _hEA : E ⊆ A, elementaryVolume E</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Jordan inner measure: supremum of elementary volumes over elementary subsets. </pre></div>
   </div>
@@ -8245,6 +8257,12 @@ Jordan理論は本質的に有界集合の理論である．
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.JordanMeasurable" data-verso-hover="64">NoteKsk.JordanMeasurable</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.15929" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.15931" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.15929" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def JordanMeasurable {d : ℕ} (A : Set (Space d)) : Prop :=
+  Bornology.IsBounded A ∧ MeasurableSet A ∧ jordanOuterMeasure A = jordanInnerMeasure A</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Jordan measurability, restricted to bounded sets as in the notes.
 
@@ -8271,6 +8289,12 @@ of `volume` without adding another placeholder.
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">def</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.jordanMeasure" data-verso-hover="65">NoteKsk.jordanMeasure</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="var token" data-binding="var-_uniq.15932" data-verso-hover="39">d</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="19">ℕ</span><span class="unknown token" data-binding="">}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.15934" data-verso-hover="51">A</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Set" data-verso-hover="30">Set</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-NoteKsk.Space" data-verso-hover="38">NoteKsk.Space</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.15932" data-verso-hover="39">d</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-ENNReal" data-verso-hover="48">ENNReal</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">def jordanMeasure {d : ℕ} (A : Set (Space d)) : ENNReal :=
+  jordanOuterMeasure A</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Jordan measure of a Jordan-measurable set, represented by the outer value. </pre></div>
   </div>

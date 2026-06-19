@@ -8025,6 +8025,12 @@ instead. </pre></div>
       <pre class="bp_external_decl_signature signature hl lean block"><span class="keyword token">abbrev</span> <span class="inter-text"></span><span class="const token" data-binding="const-NoteKsk.SigmaAlgebra" data-verso-hover="261">NoteKsk.SigmaAlgebra.{u_1}</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.48" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-7243200735919010059" data-verso-hover="12">Type u_1</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev SigmaAlgebra (α : Type*) : Type _ :=
+  MeasurableSpace α</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">A σ-algebra on a type.  This is only a lecture-note synonym for mathlib's
 `MeasurableSpace`.
@@ -8138,6 +8144,13 @@ instead. </pre></div>
   </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.933" data-verso-hover="107">α</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.934" data-verso-hover="110">β</span><span class="unknown token" data-binding="">]</span><span class="inter-text">
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.938" data-verso-hover="381">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.933" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.934" data-verso-hover="110">β</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="5">Prop</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev MeasurableMap {α β : Type*} [MeasurableSpace α] [MeasurableSpace β]
+    (f : α → β) : Prop :=
+  Measurable f</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">Lecture-note synonym for mathlib's measurable maps. </pre></div>
   </div>
@@ -8443,6 +8456,12 @@ f^{-1}\left(\bigcap_{s\in S}B_s\right)
   </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.4391" data-verso-hover="381">f</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4388" data-verso-hover="107">α</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4389" data-verso-hover="110">β</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4389" data-verso-hover="110">β</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
   </span><span class="const token" data-binding="const-MeasurableSpace" data-verso-hover="231">MeasurableSpace</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4388" data-verso-hover="107">α</span></pre></div>
     </div>
+  
+  <div class="bp_external_decl_section bp_external_decl_source_body">
+    <p class="bp_external_decl_section_label">Definition body</p>
+    <pre class="bp_external_decl_stmt bp_external_decl_def_body hl lean block">abbrev inducedMeasurableSpace (f : α → β) [MeasurableSpace β] : MeasurableSpace α :=
+  MeasurableSpace.comap f inferInstance</pre>
+  </div>
   <div class="bp_external_decl_body">
     <pre class="docstring">The inverse-image σ-algebra induced by a map. </pre></div>
   </div>
