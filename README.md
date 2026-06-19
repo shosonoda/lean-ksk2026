@@ -1,6 +1,6 @@
 # lean-ksk2026
 
-2026年度「解析数理工学」（Lebesgue積分論）の講義資料に付随する Lean / Verso Blueprint です．
+Lebesgue積分論の講義資料に付随する Lean / Verso Blueprint です．
 
 URL : [https://shosonoda.github.io/lean-ksk2026/](https://shosonoda.github.io/lean-ksk2026/)
 
