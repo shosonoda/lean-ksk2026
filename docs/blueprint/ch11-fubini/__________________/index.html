@@ -7901,7 +7901,7 @@ window.onload = () => {
             <div class="split-toc">
               <div class="title">
                 <label for="--verso-manual-toc-chapter-ch11-fubini" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-chapter-ch11-fubini" checked="checked"></label><span class="number">11.</span> <span class=""><a href="ch11-fubini/#chapter-ch11-fubini">Fubiniと変数変換</a></span></div>
-              <table><tr class="current numbered"><td class="num">11.1.</td><td><a href="ch11-fubini/__________________/#ch11-fubini-section-001">積測度と切片</a></td></tr><tr class="numbered"><td class="num">11.2.</td><td><a href="ch11-fubini/Tonelli_________/#ch11-fubini-section-002">Tonelliの定理</a></td></tr><tr class="numbered"><td class="num">11.3.</td><td><a href="ch11-fubini/Fubini_________/#ch11-fubini-section-003">Fubiniの定理</a></td></tr><tr class="numbered"><td class="num">11.4.</td><td><a href="ch11-fubini/Lebesgue_____________________/#ch11-fubini-section-004">Lebesgue測度での積測度</a></td></tr><tr class="numbered"><td class="num">11.5.</td><td><a href="ch11-fubini/____________/#ch11-fubini-section-005">変数変換</a></td></tr><tr class="current numbered"><td class="num">11.6.</td><td><a href="ch11-fubini/__________________/#ch11-fubini-section-006">解釈とまとめ</a></td></tr></table></div>
+              <table><tr class="current numbered"><td class="num">11.1.</td><td><a href="ch11-fubini/__________________/#ch11-fubini-section-001">積測度と切片</a></td></tr><tr class="numbered"><td class="num">11.2.</td><td><a href="ch11-fubini/Tonelli_________/#ch11-fubini-section-002">Tonelliの定理</a></td></tr><tr class="numbered"><td class="num">11.3.</td><td><a href="ch11-fubini/Fubini_________/#ch11-fubini-section-003">Fubiniの定理</a></td></tr><tr class="numbered"><td class="num">11.4.</td><td><a href="ch11-fubini/____________/#ch11-fubini-section-004">変数変換</a></td></tr><tr class="current numbered"><td class="num">11.5.</td><td><a href="ch11-fubini/__________________/#ch11-fubini-section-005">解釈とまとめ</a></td></tr></table></div>
             <div class="split-toc">
               <div class="title">
                 <span class="no-toggle"></span><span class="number">11.1.</span> <span class="current"><a href="ch11-fubini/__________________/#ch11-fubini-section-001">積測度と切片</a></span></div>
@@ -7915,14 +7915,22 @@ window.onload = () => {
             <a class="local-button active" href="ch11-fubini/#chapter-ch11-fubini" rel="prev" title="11. Fubiniと変数変換"><span class="arrow">←</span><span class="where">11. Fubiniと変数変換</span></a><a class="local-button active" href="ch11-fubini/Tonelli_________/#ch11-fubini-section-002" rel="next" title="11.2. Tonelliの定理"><span class="where">11.2. Tonelliの定理</span><span class="arrow">→</span></a></nav>
           <section>
             <h1>
-              11.6. 解釈とまとめ<span class="permalink-widget inline"><a href="find/?domain=Verso.Genre.Manual.section&amp;name=ch11-fubini-section-006" title="Permalink">🔗</a></span></h1>
+              11.5. 解釈とまとめ<span class="permalink-widget inline"><a href="find/?domain=Verso.Genre.Manual.section&amp;name=ch11-fubini-section-005" title="Permalink">🔗</a></span></h1>
             <p>
-              Tonelliの定理は「非負なら積分順序を自由に選べる」という定理である．
-Fubiniの定理は「絶対可積分なら符号があっても積分順序を交換できる」という定理である．
-実際の計算では，<code class="bp_math inline" data-bp-tex-prelude-id="default">f\ge0</code> ならTonelli，符号があるなら <code class="bp_math inline" data-bp-tex-prelude-id="default">\int\int |f|&lt;\infty</code> を確認してFubini，という順で使う．</p>
+              積測度は，可測矩形の体積を積で定めることから出発して構成される．
+そのうえで切片の可測性を確認すると，Cavalieriの原理が得られる．
+これは集合に関するFubiniの定理であり，指示関数に対する積分順序の交換と見なせる．</p>
+            <p>
+              Tonelliの定理は，この集合版の結果を非負可測関数へ拡張したものである．
+非負なら積分値が <code class="bp_math inline" data-bp-tex-prelude-id="default">\infty</code> になる可能性を許して，積分順序を自由に選べる．
+Fubiniの定理は，絶対可積分なら符号があっても積分順序を交換できる，という定理である．
+実際の計算では，<code class="bp_math inline" data-bp-tex-prelude-id="default">f\ge0</code> ならTonelliを使い，符号がある場合は <code class="bp_math inline" data-bp-tex-prelude-id="default">|f|</code> にTonelliを適用して，直接の積分または反復積分のうち有限性を確かめやすいものを一つ調べてからFubiniを使う．</p>
             <p>
               変数変換公式は，Lebesgue測度が向きを持たず，体積だけを測ることを反映している．
 そのためJacobianは <code class="bp_math inline" data-bp-tex-prelude-id="default">\det D\Phi</code> ではなく <code class="bp_math inline" data-bp-tex-prelude-id="default">|\det D\Phi|</code> として現れる．
+一方，線積分や微分形式の積分のように向きを含む体系では，符号つきのJacobianや境界の向きが本質的に残る．
+本章で扱った affine 変換，体積の変換，極座標公式は一般の変数変換公式から得られる．
+さらに広い視点では，一般の変数変換公式は余面積公式の同次元の場合として理解できる．
 多変数積分では，積分順序を変える操作と変数を取り替える操作を組み合わせることで，計算しにくい積分を扱いやすい形へ変形する．
 </p>
             </section>

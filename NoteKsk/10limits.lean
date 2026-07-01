@@ -46,6 +46,16 @@ theorem monotone_convergence_lintegral {f : ℕ → α → ENNReal}
   simpa using MeasureTheory.lintegral_iSup (μ := μ) hf hmono
 
 /--
+In the pointwise version of monotone convergence, the limit function is the
+pointwise supremum.  Its measurability is part of the conclusion.
+-/
+theorem monotone_convergence_lintegral_with_measurable_limit {f : ℕ → α → ENNReal}
+    (hf : ∀ n, Measurable (f n)) (hmono : Monotone f) :
+    Measurable (fun x => ⨆ n, f n x) ∧
+      (∫⁻ x, (⨆ n, f n x) ∂μ) = ⨆ n, ∫⁻ x, f n x ∂μ := by
+  exact ⟨Measurable.iSup hf, monotone_convergence_lintegral (μ := μ) hf hmono⟩
+
+/--
 Almost-everywhere measurable version of monotone convergence.  This is often
 the most convenient form for later convergence arguments.
 -/
@@ -70,6 +80,30 @@ theorem lintegral_tsum {f : ι → α → ENNReal} [Countable ι]
     (hf : ∀ i, AEMeasurable (f i) μ) :
     (∫⁻ x, ∑' i, f i x ∂μ) = ∑' i, ∫⁻ x, f i x ∂μ := by
   simpa using MeasureTheory.lintegral_tsum (μ := μ) hf
+
+/--
+The simple-function approximation theorem from Chapter 08 follows immediately
+from monotone convergence: if simple functions increase pointwise to `f`, then
+their integrals increase to the integral of `f`.
+-/
+theorem simpleFunc_lintegral_eq_iSup_of_monotone_limit
+    {s : ℕ → SimpleNNFun α} {f : α → ENNReal}
+    (hmono : Monotone s)
+    (hlim : (⨆ n : ℕ, (s n : α → ENNReal)) = f) :
+    (∫⁻ x, f x ∂μ) = ⨆ n : ℕ, (s n).lintegral μ := by
+  have hs_meas : ∀ n, Measurable fun x => (s n : α → ENNReal) x := fun n =>
+    (s n).measurable
+  have hmono' : Monotone fun n : ℕ => (s n : α → ENNReal) := by
+    intro i j hij x
+    exact hmono hij x
+  calc
+    (∫⁻ x, f x ∂μ) = ∫⁻ x, (⨆ n : ℕ, (s n : α → ENNReal) x) ∂μ := by
+      rw [← hlim]
+      simp [iSup_apply]
+    _ = ⨆ n : ℕ, ∫⁻ x, (s n : α → ENNReal) x ∂μ := by
+      simpa using MeasureTheory.lintegral_iSup (μ := μ) hs_meas hmono'
+    _ = ⨆ n : ℕ, (s n).lintegral μ := by
+      simp [MeasureTheory.SimpleFunc.lintegral_eq_lintegral]
 
 end MonotoneConvergence
 
@@ -187,6 +221,18 @@ theorem integral_tsum_of_summable_integral_norm
   exact MeasureTheory.integral_tsum_of_summable_integral_norm
     (μ := μ) hF_int hF_sum
 
+/--
+The same theorem in the lecture-note orientation: the integration functional
+commutes with absolutely summable `L¹` series.
+-/
+theorem integral_tsum_eq_tsum_integral_of_summable_integral_norm
+    {F : ι → α → E}
+    (hF_int : ∀ i, Integrable (F i) μ)
+    (hF_sum : Summable fun i => ∫ x, ‖F i x‖ ∂μ) :
+    (∫ x, ∑' i, F i x ∂μ) = ∑' i, ∫ x, F i x ∂μ := by
+  exact (integral_tsum_of_summable_integral_norm
+    (μ := μ) hF_int hF_sum).symm
+
 end TermwiseIntegration
 
 /-! ## 5. Parameter-dependent integrals -/
@@ -275,6 +321,53 @@ theorem hasDerivAt_integral_under_dominated_loc_of_lip
     hasDerivAt_integral_of_dominated_loc_of_lip
       (μ := μ) (F := F) (x₀ := x₀) (bound := bound) (s := s) (F' := F')
       hs hF_meas hF_int hF'_meas h_lip hbound_int h_diff
+
+/--
+Laplace-transform style differentiation formula on `[0, ∞)`, stated as a
+direct application of the preceding mathlib parametric-integral theorem.
+
+The analytic hypotheses are packaged in the same form as
+`hasDerivAt_integral_under_dominated_loc_of_lip`: local measurability,
+integrability at the base point, measurability of the derivative, a local
+Lipschitz domination, integrability of the bound, and the pointwise derivative
+formula.
+-/
+theorem hasDerivAt_laplace_transform_of_dominated_loc_of_lip
+    {f bound : ℝ → ℝ} {s₀ : ℝ} {U : Set ℝ}
+    (hU : U ∈ 𝓝 s₀)
+    (hF_meas : ∀ᶠ s in 𝓝 s₀,
+      AEStronglyMeasurable
+        (fun t : ℝ => Real.exp (-(s * t)) * f t)
+        (volume.restrict (Set.Ici 0)))
+    (hF_int : Integrable
+      (fun t : ℝ => Real.exp (-(s₀ * t)) * f t)
+      (volume.restrict (Set.Ici 0)))
+    (hF'_meas : AEStronglyMeasurable
+      (fun t : ℝ => (-t * Real.exp (-(s₀ * t))) * f t)
+      (volume.restrict (Set.Ici 0)))
+    (h_lip : ∀ᵐ t ∂volume.restrict (Set.Ici 0),
+      LipschitzOnWith (Real.nnabs (bound t))
+        (fun s : ℝ => Real.exp (-(s * t)) * f t) U)
+    (hbound_int : Integrable bound (volume.restrict (Set.Ici 0)))
+    (h_diff : ∀ᵐ t ∂volume.restrict (Set.Ici 0),
+      HasDerivAt
+        (fun s : ℝ => Real.exp (-(s * t)) * f t)
+        ((-t * Real.exp (-(s₀ * t))) * f t) s₀) :
+    Integrable
+        (fun t : ℝ => (-t * Real.exp (-(s₀ * t))) * f t)
+        (volume.restrict (Set.Ici 0)) ∧
+      HasDerivAt
+        (fun s : ℝ =>
+          ∫ t, Real.exp (-(s * t)) * f t ∂volume.restrict (Set.Ici 0))
+        (∫ t, (-t * Real.exp (-(s₀ * t))) * f t ∂volume.restrict (Set.Ici 0))
+        s₀ := by
+  simpa using
+    hasDerivAt_integral_under_dominated_loc_of_lip
+      (μ := volume.restrict (Set.Ici 0)) (𝕜 := ℝ)
+      (F := fun s t => Real.exp (-(s * t)) * f t)
+      (x₀ := s₀) (bound := bound) (s := U)
+      (F' := fun t => (-t * Real.exp (-(s₀ * t))) * f t)
+      hU hF_meas hF_int hF'_meas h_lip hbound_int h_diff
 
 end DifferentiationUnderIntegral
 

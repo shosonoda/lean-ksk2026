@@ -11,25 +11,33 @@ import NoteKsk.Defs
 This file follows the streamlined chapter
 `blueprint/src/chapters/11fubini02.tex`.
 
-The lecture notes state the theorems first for Euclidean Lebesgue measure and
-then for change of variables.  The formalization uses mathlib's native general
+The lecture notes state the theorems first for product measures and then for
+Euclidean change of variables.  The formalization uses mathlib's native general
 forms:
 
-* product measures are `μ.prod ν`;
+* product measures are `μ.prod ν`, on the product measurable space;
+* measurability of sections and Cavalieri's principle are represented by
+  section lemmas and `MeasureTheory.Measure.prod_apply`;
 * Tonelli is `MeasureTheory.lintegral_prod`;
 * Fubini is `MeasureTheory.integral_prod` and
   `MeasureTheory.integral_integral_swap`;
+* the practical integrability criterion is `MeasureTheory.integrable_prod_iff`
+  and its swapped version;
 * change of variables is the Jacobian image formula from
   `Mathlib.MeasureTheory.Function.Jacobian`.
 
-The Jacobian statements below are more general than the affine special cases in
-the lecture notes.  Affine and linear transformations are obtained by
-specializing the derivative to a constant linear map.
+The Jacobian statements below are more general than the affine special case in
+the lecture notes.  Affine transformations are obtained by specializing the
+derivative to a constant linear map.  The polar-coordinate formula is also
+derived from the same change-of-variables theorem by applying it on local
+spherical coordinate charts and ignoring null sets.  The coarea formula is more
+general; the usual same-dimensional change-of-variables theorem can be viewed
+as its `m = n` case, but we do not formalize coarea here.
 -/
 
 noncomputable section
 
-open scoped BigOperators ENNReal Topology
+open scoped BigOperators ENNReal Interval Topology
 open Set MeasureTheory Filter
 
 namespace NoteKsk
@@ -163,6 +171,45 @@ theorem ae_integrable_section_right [SFinite ν]
   exact ((MeasureTheory.integrable_prod_iff
     (μ := μ) (ν := ν) hf.aestronglyMeasurable).mp hf).1
 
+/--
+Tonelli applied to the norm.  This is the formal counterpart of the lecture's
+rule that the product integral of `|f|` and the two iterated integrals of `|f|`
+are the same extended nonnegative number.
+-/
+theorem lintegral_enorm_prod [SFinite ν]
+    {f : α × β → E} (hf : AEMeasurable (fun z => ‖f z‖ₑ) (μ.prod ν)) :
+    (∫⁻ z, ‖f z‖ₑ ∂(μ.prod ν)) =
+      ∫⁻ x, ∫⁻ y, ‖f (x, y)‖ₑ ∂ν ∂μ := by
+  simpa using
+    MeasureTheory.lintegral_prod (μ := μ) (ν := ν) (fun z => ‖f z‖ₑ) hf
+
+/-- The same absolute-integrability check with the order of integration swapped. -/
+theorem lintegral_enorm_prod_symm [SFinite μ] [SFinite ν]
+    {f : α × β → E} (hf : AEMeasurable (fun z => ‖f z‖ₑ) (μ.prod ν)) :
+    (∫⁻ z, ‖f z‖ₑ ∂(μ.prod ν)) =
+      ∫⁻ y, ∫⁻ x, ‖f (x, y)‖ₑ ∂μ ∂ν := by
+  simpa using
+    MeasureTheory.lintegral_prod_symm (μ := μ) (ν := ν) (fun z => ‖f z‖ₑ) hf
+
+/--
+The standard mathlib integrability criterion behind the lecture's
+"check whichever absolute integral is easiest" rule.
+-/
+theorem integrable_prod_iff_sections [SFinite ν]
+    {f : α × β → E} (hf : AEStronglyMeasurable f (μ.prod ν)) :
+    Integrable f (μ.prod ν) ↔
+      (∀ᵐ x ∂μ, Integrable (fun y : β => f (x, y)) ν) ∧
+        Integrable (fun x : α => ∫ y : β, ‖f (x, y)‖ ∂ν) μ := by
+  simpa using MeasureTheory.integrable_prod_iff (μ := μ) (ν := ν) (f := f) hf
+
+/-- The same integrability criterion with the product factors swapped. -/
+theorem integrable_prod_iff_sections_symm [SFinite μ] [SFinite ν]
+    {f : α × β → E} (hf : AEStronglyMeasurable f (μ.prod ν)) :
+    Integrable f (μ.prod ν) ↔
+      (∀ᵐ y ∂ν, Integrable (fun x : α => f (x, y)) μ) ∧
+        Integrable (fun y : β => ∫ x : α, ‖f (x, y)‖ ∂μ) ν := by
+  simpa using MeasureTheory.integrable_prod_iff' (μ := μ) (ν := ν) (f := f) hf
+
 variable [NormedSpace ℝ E]
 
 /-- Fubini's theorem for Bochner integrals. -/
@@ -207,7 +254,32 @@ theorem integral_prod_mul [SFinite μ] [SFinite ν] {L : Type*} [RCLike L]
 
 end Fubini
 
-/-! ## 4. Change of variables -/
+/-! ## 4. Orientation and absolute value -/
+
+section OrientationExample
+
+/--
+The reflection `x = -y` preserves the positive length of the unit interval.
+This mirrors the Lebesgue-measure computation in the notes: the Jacobian
+contributes `|-1| = 1`.
+-/
+theorem reflected_unit_interval_length :
+    (∫ y in (-1 : ℝ)..0, (fun _ : ℝ => (1 : ℝ)) y) =
+      ∫ x in (0 : ℝ)..1, (fun _ : ℝ => (1 : ℝ)) x := by
+  norm_num [intervalIntegral.integral_const]
+
+/--
+If the oriented one-form `dx` is pulled back by `x = -y`, the factor is `-1`.
+This is the sign that the Lebesgue change-of-variables formula discards by
+taking the absolute value of the Jacobian.
+-/
+theorem reflected_unit_interval_oriented_form :
+    (∫ y in (-1 : ℝ)..0, (fun _ : ℝ => (-1 : ℝ)) y) = -1 := by
+  norm_num [intervalIntegral.integral_const]
+
+end OrientationExample
+
+/-! ## 5. Change of variables -/
 
 section ChangeOfVariables
 
@@ -252,6 +324,15 @@ theorem integral_image_eq_integral_abs_det_fderiv_smul
   simpa using
     MeasureTheory.integral_image_eq_integral_abs_det_fderiv_smul
       (μ := μ) hs hφ' hφ g
+
+/-
+Affine transformations are obtained from the two Jacobian formulas above by
+taking `φ x = T x + b` and `φ' x = T`.  The `ℝⁿ` polar-coordinate formula in the
+notes is a local consequence of the same theorem after covering the sphere by
+charts and removing null sets.  The coarea formula goes in the opposite
+direction conceptually: in the same-dimensional case, its level sets are
+zero-dimensional and it reduces to the Jacobian change-of-variables theorem.
+-/
 
 end ChangeOfVariables
 
