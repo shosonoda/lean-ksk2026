@@ -1,1 +1,0 @@
-window.docContents[37].resolve({"/ch05-lebesgue-measure/#chapter-ch05-lebesgue-measure":{"contents":"本章の目標\n有界な窓で切ったときにLebesgue外測度  とLebesgue内測度  が一致する集合を\nLebesgue可測集合と定める．\nそのうえで，Lebesgue可測集合全体が -加法族をなし，\nLebesgue測度が可算加法的な測度になることを確認する．\n\n\n\n\n\n\n\n\n\n\n\n","context":"Lebesgue積分講義ノート","header":"5. Lebesgue測度","id":"/ch05-lebesgue-measure/#chapter-ch05-lebesgue-measure"}});

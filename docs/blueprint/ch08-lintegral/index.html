@@ -7901,14 +7901,14 @@ window.onload = () => {
             <div class="split-toc">
               <div class="title">
                 <label for="--verso-manual-toc-chapter-ch08-lintegral" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-chapter-ch08-lintegral" checked="checked"></label><span class="number">8.</span> <span class="current"><a href="ch08-lintegral/#chapter-ch08-lintegral">Lebesgue積分</a></span></div>
-              <table><tr class="numbered"><td class="num">8.1.</td><td><a href="ch08-lintegral/__________________/#ch08-lintegral-section-001">単関数の積分</a></td></tr><tr class="numbered"><td class="num">8.2.</td><td><a href="ch08-lintegral/___________________________/#ch08-lintegral-section-002">非負可測関数の積分</a></td></tr><tr class="numbered"><td class="num">8.3.</td><td><a href="ch08-lintegral/____________-almost-everywhere/#ch08-lintegral-section-003">零集合と almost everywhere</a></td></tr><tr class="numbered"><td class="num">8.4.</td><td><a href="ch08-lintegral/_______________________________________/#ch08-lintegral-section-004">実数値符号付可測関数の積分</a></td></tr><tr class="numbered"><td class="num">8.5.</td><td><a href="ch08-lintegral/________________________/#ch08-lintegral-section-005">積分の絶対連続性</a></td></tr><tr class="numbered"><td class="num">8.6.</td><td><a href="ch08-lintegral/_________/#ch08-lintegral-section-006">具体例</a></td></tr><tr class="numbered"><td class="num">8.7.</td><td><a href="ch08-lintegral/Riemann__________________/#ch08-lintegral-section-007">Riemann積分との関係</a></td></tr><tr class="numbered"><td class="num">8.8.</td><td><a href="ch08-lintegral/__________________/#ch08-lintegral-section-008">解釈とまとめ</a></td></tr></table></div>
+              <table><tr class="numbered"><td class="num">8.1.</td><td><a href="ch08-lintegral/section-001/#ch08-lintegral-section-001">単関数の積分</a></td></tr><tr class="numbered"><td class="num">8.2.</td><td><a href="ch08-lintegral/section-002/#ch08-lintegral-section-002">非負可測関数の積分</a></td></tr><tr class="numbered"><td class="num">8.3.</td><td><a href="ch08-lintegral/section-003/#ch08-lintegral-section-003">零集合と almost everywhere</a></td></tr><tr class="numbered"><td class="num">8.4.</td><td><a href="ch08-lintegral/section-004/#ch08-lintegral-section-004">実数値符号付可測関数の積分</a></td></tr><tr class="numbered"><td class="num">8.5.</td><td><a href="ch08-lintegral/section-005/#ch08-lintegral-section-005">積分の絶対連続性</a></td></tr><tr class="numbered"><td class="num">8.6.</td><td><a href="ch08-lintegral/section-006/#ch08-lintegral-section-006">具体例</a></td></tr><tr class="numbered"><td class="num">8.7.</td><td><a href="ch08-lintegral/section-007/#ch08-lintegral-section-007">Riemann積分との関係</a></td></tr><tr class="numbered"><td class="num">8.8.</td><td><a href="ch08-lintegral/section-008/#ch08-lintegral-section-008">解釈とまとめ</a></td></tr></table></div>
             </div>
           </div>
         <div class="last"></div>
         </nav>
       <main><div class="content-wrapper">
           <nav class="prev-next-buttons">
-            <a class="local-button active" href="ch07-measurable-funcs/__________________/#ch07-measurable-funcs-section-009" rel="prev" title="7.9. 解釈とまとめ"><span class="arrow">←</span><span class="where">7.9. 解釈とまとめ</span></a><a class="local-button active" href="ch08-lintegral/__________________/#ch08-lintegral-section-001" rel="next" title="8.1. 単関数の積分"><span class="where">8.1. 単関数の積分</span><span class="arrow">→</span></a></nav>
+            <a class="local-button active" href="ch07-measurable-funcs/section-009/#ch07-measurable-funcs-section-009" rel="prev" title="7.9. 解釈とまとめ"><span class="arrow">←</span><span class="where">7.9. 解釈とまとめ</span></a><a class="local-button active" href="ch08-lintegral/section-001/#ch08-lintegral-section-001" rel="next" title="8.1. 単関数の積分"><span class="where">8.1. 単関数の積分</span><span class="arrow">→</span></a></nav>
           <section>
             <h1>
               8. Lebesgue積分<span class="permalink-widget inline"><a href="find/?domain=Verso.Genre.Manual.section&amp;name=chapter-ch08-lintegral" title="Permalink">🔗</a></span></h1>
@@ -7921,25 +7921,25 @@ window.onload = () => {
               以後，本章の一般論では測度空間 <code class="bp_math inline" data-bp-tex-prelude-id="default">(X,\calM,\mu)</code> を固定し，順を追って可測関数<code class="bp_math inline" data-bp-tex-prelude-id="default">f \in M(X)</code>の測度<code class="bp_math inline" data-bp-tex-prelude-id="default">\mu</code>による可測集合<code class="bp_math inline" data-bp-tex-prelude-id="default">E \in \calM</code>上のLebesgue積分 <code class="bp_math inline" data-bp-tex-prelude-id="default">\int_E f \,d \mu</code> を定義する．これは <code class="bp_math inline" data-bp-tex-prelude-id="default">\int_E f(x) d\mu(x)</code> とか <code class="bp_math inline" data-bp-tex-prelude-id="default">\int_E f(x) \mu(dx)</code> と書くこともある．なお，Lebesgue測度<code class="bp_math inline" data-bp-tex-prelude-id="default">\lambda</code>によるLebesgue可測関数<code class="bp_math inline" data-bp-tex-prelude-id="default">f : (\eRR^d,\calL_d) \to (\eRR,\calB(\eRR))</code> のLebesgue積分を，（狭義の）Lebesgue積分と定義するテキストもあるが，本講義では特に区別しない．</p>
             <ol class="section-toc">
               <li>
-                <a href="ch08-lintegral/__________________/#ch08-lintegral-section-001"><span class="number">8.1.</span> 単関数の積分</a></li>
+                <a href="ch08-lintegral/section-001/#ch08-lintegral-section-001"><span class="number">8.1.</span> 単関数の積分</a></li>
               <li>
-                <a href="ch08-lintegral/___________________________/#ch08-lintegral-section-002"><span class="number">8.2.</span> 非負可測関数の積分</a></li>
+                <a href="ch08-lintegral/section-002/#ch08-lintegral-section-002"><span class="number">8.2.</span> 非負可測関数の積分</a></li>
               <li>
-                <a href="ch08-lintegral/____________-almost-everywhere/#ch08-lintegral-section-003"><span class="number">8.3.</span> 零集合と almost everywhere</a></li>
+                <a href="ch08-lintegral/section-003/#ch08-lintegral-section-003"><span class="number">8.3.</span> 零集合と almost everywhere</a></li>
               <li>
-                <a href="ch08-lintegral/_______________________________________/#ch08-lintegral-section-004"><span class="number">8.4.</span> 実数値符号付可測関数の積分</a></li>
+                <a href="ch08-lintegral/section-004/#ch08-lintegral-section-004"><span class="number">8.4.</span> 実数値符号付可測関数の積分</a></li>
               <li>
-                <a href="ch08-lintegral/________________________/#ch08-lintegral-section-005"><span class="number">8.5.</span> 積分の絶対連続性</a></li>
+                <a href="ch08-lintegral/section-005/#ch08-lintegral-section-005"><span class="number">8.5.</span> 積分の絶対連続性</a></li>
               <li>
-                <a href="ch08-lintegral/_________/#ch08-lintegral-section-006"><span class="number">8.6.</span> 具体例</a></li>
+                <a href="ch08-lintegral/section-006/#ch08-lintegral-section-006"><span class="number">8.6.</span> 具体例</a></li>
               <li>
-                <a href="ch08-lintegral/Riemann__________________/#ch08-lintegral-section-007"><span class="number">8.7.</span> Riemann積分との関係</a></li>
+                <a href="ch08-lintegral/section-007/#ch08-lintegral-section-007"><span class="number">8.7.</span> Riemann積分との関係</a></li>
               <li>
-                <a href="ch08-lintegral/__________________/#ch08-lintegral-section-008"><span class="number">8.8.</span> 解釈とまとめ</a></li>
+                <a href="ch08-lintegral/section-008/#ch08-lintegral-section-008"><span class="number">8.8.</span> 解釈とまとめ</a></li>
               </ol>
             </section>
           <nav class="prev-next-buttons">
-            <a class="local-button active" href="ch07-measurable-funcs/__________________/#ch07-measurable-funcs-section-009" rel="prev" title="7.9. 解釈とまとめ"><span class="arrow">←</span><span class="where">7.9. 解釈とまとめ</span></a><a class="local-button active" href="ch08-lintegral/__________________/#ch08-lintegral-section-001" rel="next" title="8.1. 単関数の積分"><span class="where">8.1. 単関数の積分</span><span class="arrow">→</span></a></nav>
+            <a class="local-button active" href="ch07-measurable-funcs/section-009/#ch07-measurable-funcs-section-009" rel="prev" title="7.9. 解釈とまとめ"><span class="arrow">←</span><span class="where">7.9. 解釈とまとめ</span></a><a class="local-button active" href="ch08-lintegral/section-001/#ch08-lintegral-section-001" rel="next" title="8.1. 単関数の積分"><span class="where">8.1. 単関数の積分</span><span class="arrow">→</span></a></nav>
           </div>
         </main></div>
     </body>

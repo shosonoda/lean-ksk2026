@@ -1,0 +1,1 @@
+window.docContents[67].resolve({"/ch11-fubini/#chapter-ch11-fubini":{"contents":"本章の目標\n本章では，多変数積分を計算するための2つの道具を事実として使える形で整理する．\n前半では一般の測度空間上でTonelliの定理とFubiniの定理を述べ，積分順序を交換する条件を確認する．\n後半ではLebesgue測度上の変数変換公式を述べ，Jacobianの絶対値が面積・体積の伸び縮みを表すことを確認する．\n\n\n\n\n\n\n\n\n\n\n\n","context":"Lebesgue積分講義ノート","header":"11. Fubiniと変数変換","id":"/ch11-fubini/#chapter-ch11-fubini"}});
